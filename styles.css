@@ -173,8 +173,14 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
 }
 .nav__logo{
   font-family:var(--display);font-weight:600;font-size:22px;letter-spacing:-.02em;
+  opacity:0;transform:translateX(-10px);
+  transition:opacity .5s cubic-bezier(.2,.8,.2,1), transform .5s cubic-bezier(.2,.8,.2,1);
+  pointer-events:none;
 }
 .nav__logo i{font-style:italic;color:var(--accent)}
+.nav.is-scrolled .nav__logo{
+  opacity:1;transform:translateX(0);pointer-events:auto;
+}
 .nav__links{display:flex;gap:28px;font-family:var(--mono);font-size:13px;letter-spacing:.02em}
 .nav__links a{position:relative;padding:6px 2px;color:var(--muted);transition:color .25s}
 .nav__links a:hover{color:var(--text)}
