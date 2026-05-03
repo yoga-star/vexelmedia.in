@@ -63,6 +63,41 @@ function kickOff(){
   initNavScroll();
 }
 
+/* ---------- SMOOTH SCROLL HELPER (bypasses Lenis hijack) ---------- */
+function smoothScrollToEl(el, offset = 0, duration = 900){
+  if (!el) return;
+  const startY = window.pageYOffset;
+  const targetY = el.getBoundingClientRect().top + startY + offset;
+  const distance = targetY - startY;
+  if (Math.abs(distance) < 2) return;
+  const startTime = performance.now();
+  // ease-in-out cubic
+  const ease = t => t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  let rafId = null;
+  let stopped = false;
+  function step(now){
+    if (stopped) return;
+    const elapsed = now - startTime;
+    const t = Math.min(1, elapsed / duration);
+    const y = startY + distance * ease(t);
+    window.scrollTo(0, y); // legacy form is instant — bypasses smooth hijack
+    if (t < 1) rafId = requestAnimationFrame(step);
+    else if (lenis) {
+      try { lenis.resize(); } catch(e) {}
+    }
+  }
+  rafId = requestAnimationFrame(step);
+  // Failsafe: if RAF never runs (e.g. backgrounded tab) for 100ms, jump instantly
+  setTimeout(() => {
+    if (Math.abs(window.pageYOffset - startY) < 2 && rafId !== null) {
+      stopped = true;
+      cancelAnimationFrame(rafId);
+      window.scrollTo(0, targetY);
+      if (lenis) { try { lenis.resize(); } catch(e) {} }
+    }
+  }, 100);
+}
+
 /* ---------- MOBILE MENU ---------- */
 function initMobileMenu(){
   const burger = document.getElementById('navBurger');
@@ -70,30 +105,56 @@ function initMobileMenu(){
   const close  = document.getElementById('mobileMenuClose');
   if (!burger || !menu) return;
 
+  // NOTE: We deliberately do NOT call lenis.stop() / lenis.start() here.
+  // body.overflow:hidden (via .is-mobi-open) is enough to prevent page scroll,
+  // and keeping Lenis running means lenis.scrollTo() works correctly when a
+  // menu link is tapped. Stopping/starting Lenis breaks scrollTo silently.
   const open = () => {
     menu.classList.add('is-open');
     menu.setAttribute('aria-hidden', 'false');
     burger.setAttribute('aria-expanded', 'true');
     document.body.classList.add('is-mobi-open');
-    if (lenis) lenis.stop();
   };
   const shut = () => {
     menu.classList.remove('is-open');
     menu.setAttribute('aria-hidden', 'true');
     burger.setAttribute('aria-expanded', 'false');
     document.body.classList.remove('is-mobi-open');
-    if (lenis) lenis.start();
   };
 
   burger.addEventListener('click', e => { e.stopPropagation(); open(); });
   close?.addEventListener('click', shut);
 
-  // Auto-close when any internal link is tapped
+  // Link tap handler — handle same-page anchors specially because Lenis
+  // is paused while the menu is open, so its anchor handler can't scroll.
+  const onLinkTap = e => {
+    const a = e.currentTarget;
+    const href = a.getAttribute('href') || '';
+    const isHashOnly = href.startsWith('#') && href.length > 1;
+
+    if (isHashOnly){
+      e.preventDefault();
+      // Stop the document-level Lenis anchor handler from firing — its
+      // scrollTo() is unreliable right after a menu open/close cycle.
+      e.stopImmediatePropagation();
+      const tgt = document.querySelector(href);
+      shut(); // closes menu and clears body scroll-lock
+      if (tgt){
+        // Wait for menu transition to finish, then smooth-scroll. We use a
+        // hand-rolled rAF animation that calls window.scrollTo(_, _) (legacy
+        // signature, instant) on each frame — this bypasses Lenis's smooth
+        // hijack while still feeling smooth.
+        setTimeout(() => smoothScrollToEl(tgt, -64, 900), 600);
+      }
+      return;
+    }
+
+    // External / cross-page / mailto / tel — just close after a tick
+    // so the browser still does the navigation.
+    setTimeout(shut, 50);
+  };
   menu.querySelectorAll('[data-mobi-link]').forEach(a => {
-    a.addEventListener('click', () => {
-      // Let same-page anchors scroll naturally — close after a brief tick
-      setTimeout(shut, 50);
-    });
+    a.addEventListener('click', onLinkTap);
   });
 
   // ESC key closes
