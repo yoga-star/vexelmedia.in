@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vexel Media — Design-first growth for modern brands</title>
+<meta name="description" content="Vexel Media is a design-first creative & marketing studio in Bengaluru. We blend bold design, performance marketing, and AI to scale ambitious businesses — from first impression to final conversion.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Vexel Media — Design-first growth for modern brands">
+<meta property="og:description" content="A design-first creative & marketing studio in Bengaluru.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#services" data-cursor="link">/services</a>
+    <a href="#packages" data-cursor="link">/packages</a>
+    <a href="#studio" data-cursor="link">/studio</a>
+    <a href="#contact" data-cursor="link">/contact</a>
+  </nav>
+  <a href="contact.html" class="nav__cta magnetic" data-cursor="link">Book a call <span class="arrow">→</span></a>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__meta">
+    <span><i>/Studio</i> · Vexel Media</span>
+    <span><i>/Based</i> · Bengaluru, IN</span>
+    <span><i>/Year</i> · Est. 2024</span>
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__eyebrow"><span class="dot"></span>Available for new projects · 2026</div>
+
+    <h1 class="hero__title" data-split>Design-first growth for <em>modern</em> brands.</h1>
+
+    <p class="hero__sub" data-reveal>We blend <strong>bold design</strong>, <strong>performance marketing</strong>, and <strong>AI</strong> to scale ambitious businesses — from first impression to final conversion.</p>
+
+    <div class="hero__ctas" data-reveal>
+      <a href="contact.html" class="btn btn--primary magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+      <a href="#packages" class="btn btn--ghost magnetic" data-cursor="link">View packages</a>
+    </div>
+  </div>
+
+  <div class="hero__scroll">scroll to explore</div>
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__glow hero__glow--2" aria-hidden="true"></div>
+</section>
+
+<!-- VELOCITY MARQUEE -->
+<section class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marqueeTrack">
+    <span class="marquee__group">
+      <span>Branding</span><span class="dotsep">·</span>
+      <span><em>Social Media</em></span><span class="dotsep">·</span>
+      <span>Meta Ads</span><span class="dotsep">·</span>
+      <span><em>Google Ads</em></span><span class="dotsep">·</span>
+      <span>SEO</span><span class="dotsep">·</span>
+      <span><em>Web Design</em></span><span class="dotsep">·</span>
+      <span>UGC Video</span><span class="dotsep">·</span>
+      <span><em>Creative Strategy</em></span><span class="dotsep">·</span>
+      <span>Content</span><span class="dotsep">·</span>
+      <span><em>AI &amp; Automation</em></span><span class="dotsep">·</span>
+    </span>
+    <span class="marquee__group" aria-hidden="true">
+      <span>Branding</span><span class="dotsep">·</span>
+      <span><em>Social Media</em></span><span class="dotsep">·</span>
+      <span>Meta Ads</span><span class="dotsep">·</span>
+      <span><em>Google Ads</em></span><span class="dotsep">·</span>
+      <span>SEO</span><span class="dotsep">·</span>
+      <span><em>Web Design</em></span><span class="dotsep">·</span>
+      <span>UGC Video</span><span class="dotsep">·</span>
+      <span><em>Creative Strategy</em></span><span class="dotsep">·</span>
+      <span>Content</span><span class="dotsep">·</span>
+      <span><em>AI &amp; Automation</em></span><span class="dotsep">·</span>
+    </span>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto" id="studio">
+  <div class="manifesto__sticky">
+    <div class="container">
+      <span class="section-label" data-reveal>/ The studio philosophy</span>
+      <div class="manifesto__layout">
+        <aside class="manifesto__left">
+          <div class="manifesto__counter">
+            <span id="stageNum">01</span>
+            <span class="muted">/ 04</span>
+          </div>
+          <p class="manifesto__sub"><em>Four ideas that shape how we think, build, and ship work that actually pays back.</em></p>
+          <div class="manifesto__progress"><i id="manifestoProgress"></i></div>
+        </aside>
+        <div class="manifesto__right">
+          <div class="manifesto__stage" data-stage="01">
+            <h2>Marketing should be <em>accountable.</em></h2>
+            <p>Not in a "here's a monthly PDF" way. In a "here's what we spent, here's what came back, here's what we're changing next month" way. Every rupee answers to a number.</p>
+          </div>
+          <div class="manifesto__stage" data-stage="02">
+            <h2>Design isn't <em>decoration.</em></h2>
+            <p>It's the layer that decides whether someone trusts you in 2 seconds — or scrolls past forever. We treat every pixel, headline, and pause as a conversion lever.</p>
+          </div>
+          <div class="manifesto__stage" data-stage="03">
+            <h2>We'd rather lose a deal <em>than overpromise.</em></h2>
+            <p>If we don't think we can deliver results, we'll say so. Our reputation matters more than any single contract — and our work calendar reflects that.</p>
+          </div>
+          <div class="manifesto__stage" data-stage="04">
+            <h2>AI is a tool, <em>not a strategy.</em></h2>
+            <p>We use it to ship faster, test more, and scale creative — not to replace the thinking. The strategy stays human. The execution gets superpowers.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="manifesto__spacer"></div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services__head">
+      <span class="section-label" data-reveal>/ Services</span>
+      <h2 class="section-title" data-reveal>Six disciplines. <br>One obsession: <em>craft that converts.</em></h2>
+    </div>
+
+    <div class="services__grid">
+      <article class="service tilt" data-cursor="link">
+        <div class="service__spot"></div>
+        <div class="service__inner">
+          <div class="service__top"><span class="service__num">01</span><span class="service__tag">/ Branding</span></div>
+          <h3 class="service__title">Brand <em>systems</em></h3>
+          <p class="service__desc">Identities that feel inevitable — strategy, naming, logos, type, and guidelines that scale across every touchpoint.</p>
+          <span class="service__more">Learn more <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="service tilt" data-cursor="link">
+        <div class="service__spot"></div>
+        <div class="service__inner">
+          <div class="service__top"><span class="service__num">02</span><span class="service__tag">/ Social</span></div>
+          <h3 class="service__title">Always-on <em>content</em></h3>
+          <p class="service__desc">Content systems that build audience, trust, and revenue across Instagram, LinkedIn, YouTube, and Reels.</p>
+          <span class="service__more">Learn more <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="service tilt" data-cursor="link">
+        <div class="service__spot"></div>
+        <div class="service__inner">
+          <div class="service__top"><span class="service__num">03</span><span class="service__tag">/ Meta Ads</span></div>
+          <h3 class="service__title">Performance <em>creative</em></h3>
+          <p class="service__desc">Funnels that turn scroll into sales. We obsess over CPA, hook rate, and creative iteration so you don't have to.</p>
+          <span class="service__more">Learn more <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="service tilt" data-cursor="link">
+        <div class="service__spot"></div>
+        <div class="service__inner">
+          <div class="service__top"><span class="service__num">04</span><span class="service__tag">/ Google Ads</span></div>
+          <h3 class="service__title">Intent <em>capture</em></h3>
+          <p class="service__desc">Search, Performance Max, and YouTube — engineered around the highest-intent, highest-value keywords in your category.</p>
+          <span class="service__more">Learn more <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="service tilt" data-cursor="link">
+        <div class="service__spot"></div>
+        <div class="service__inner">
+          <div class="service__top"><span class="service__num">05</span><span class="service__tag">/ SEO</span></div>
+          <h3 class="service__title">Compounding <em>traffic</em></h3>
+          <p class="service__desc">Technical foundations, content that ranks, and backlinks that move needles — built for the AI search era.</p>
+          <span class="service__more">Learn more <span class="arrow">→</span></span>
+        </div>
+      </article>
+
+      <article class="service tilt" data-cursor="link">
+        <div class="service__spot"></div>
+        <div class="service__inner">
+          <div class="service__top"><span class="service__num">06</span><span class="service__tag">/ Web</span></div>
+          <h3 class="service__title">Cinematic <em>websites</em></h3>
+          <p class="service__desc">Fast, modern sites in Next.js with flawless design, SEO, and conversion baked in — not bolted on.</p>
+          <span class="service__more">Learn more <span class="arrow">→</span></span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- WORK — TEMPORARILY DISABLED (remove `hidden` attribute on the <section> tag below to re-enable) -->
+<section class="work" id="work" hidden>
+  <div class="container work__head">
+    <span class="section-label" data-reveal>/ Selected work</span>
+    <h2 class="section-title" data-reveal>Receipts, <em>not promises.</em></h2>
+    <p class="work__hint" data-reveal>← drag horizontally · or scroll →</p>
+  </div>
+
+  <div class="work__rail-wrap" data-cursor="drag">
+    <div class="work__rail" id="workRail">
+      <article class="case" style="--g1:#1a3d5c;--g2:#0a1f33">
+        <div class="case__inner">
+          <div class="case__top"><span class="case__tag">/ Education</span><span class="case__num">01 / 05</span></div>
+          <span class="case__mark">VS</span>
+          <div class="case__bot">
+            <h3 class="case__name">Vidhya Shekhar Group</h3>
+            <p class="case__result">Hyperlocal Meta Ads + landing</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" style="--g1:#0d4f3c;--g2:#062318">
+        <div class="case__inner">
+          <div class="case__top"><span class="case__tag">/ Healthcare</span><span class="case__num">02 / 05</span></div>
+          <span class="case__mark">M+</span>
+          <div class="case__bot">
+            <h3 class="case__name">MedAbroad</h3>
+            <p class="case__result">Reels + Kannada video scripts</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" style="--g1:#3a2d5c;--g2:#181028">
+        <div class="case__inner">
+          <div class="case__top"><span class="case__tag">/ Consulting</span><span class="case__num">03 / 05</span></div>
+          <span class="case__mark">VG</span>
+          <div class="case__bot">
+            <h3 class="case__name">VS Global</h3>
+            <p class="case__result">₹1Cr scholarship campaign</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" style="--g1:#5c3e1f;--g2:#2a1a10">
+        <div class="case__inner">
+          <div class="case__top"><span class="case__tag">/ D2C · Kids</span><span class="case__num">04 / 05</span></div>
+          <span class="case__mark">WK</span>
+          <div class="case__bot">
+            <h3 class="case__name">Wow Kids</h3>
+            <p class="case__result">Brand system + social</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="case" style="--g1:#4d1a3d;--g2:#23081a">
+        <div class="case__inner">
+          <div class="case__top"><span class="case__tag">/ Studio</span><span class="case__num">05 / 05</span></div>
+          <span class="case__mark">SR</span>
+          <div class="case__bot">
+            <h3 class="case__name">Sindhureddy Design</h3>
+            <p class="case__result">Identity + portfolio site</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="work__progress"><i id="workProgress"></i></div>
+  </div>
+</section>
+
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats__head">
+      <span class="section-label" data-reveal>/ By the numbers</span>
+      <h2 class="section-title" data-reveal>Small studio,<br><em>serious receipts.</em></h2>
+    </div>
+    <div class="stats__grid">
+      <div class="stat" data-reveal>
+        <span class="stat__num">/01</span>
+        <span class="stat__count" data-target="120" data-suffix="+">0</span>
+        <span class="stat__label">Brands helped scale</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num">/02</span>
+        <span class="stat__count" data-target="40" data-suffix="%">0</span>
+        <span class="stat__label">Avg drop in cost-per-lead</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num">/03</span>
+        <span class="stat__count" data-target="6" data-suffix="×">0</span>
+        <span class="stat__label">Avg return on ad spend</span>
+      </div>
+      <div class="stat" data-reveal>
+        <span class="stat__num">/04</span>
+        <span class="stat__count" data-target="98" data-suffix="%">0</span>
+        <span class="stat__label">Client retention rate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages" id="packages">
+  <div class="container">
+    <div class="packages__head">
+      <div class="packages__head-l">
+        <span class="packages__eyebrow" data-reveal>/ Full-stack marketing</span>
+        <h2 class="section-title" data-reveal>Everything,<br><em>under one roof.</em></h2>
+      </div>
+      <div class="packages__head-r" data-reveal>
+        <p class="packages__intro">Social, paid, SEO, web and creative — coordinated by a single team so nothing slips through the cracks. Transparent retainers built for Bengaluru SMBs and D2C brands.</p>
+      </div>
+    </div>
+
+    <div class="packages__grid">
+
+      <!-- TIER — BASIC -->
+      <article class="pack" data-reveal>
+        <header class="pack__head">
+          <span class="pack__audience">For first-time advertisers</span>
+          <h3 class="pack__name">Basic</h3>
+          <div class="pack__price">
+            <span class="pack__amt">₹20,000</span>
+            <span class="pack__unit">/month</span>
+          </div>
+          <p class="pack__summary">Show up on social and run your first paid campaigns — without breaking the bank.</p>
+        </header>
+        <ul class="pack__features">
+          <li><span class="check">✓</span><span>1 social platform (IG or FB)</span></li>
+          <li><span class="check">✓</span><span>8 captions + scheduling / month</span></li>
+          <li><span class="check">✓</span><span>1 ad platform (Meta OR Google)</span></li>
+          <li><span class="check">✓</span><span>6 ad creatives — designed monthly</span></li>
+          <li><span class="check">✓</span><span>Monthly performance report</span></li>
+          <li><span class="check check--no">×</span><span class="muted">No website / no SEO / no social-post design</span></li>
+        </ul>
+        <a href="contact.html?package=basic" class="pack__cta magnetic" data-cursor="link">Choose Basic <span class="arrow">→</span></a>
+      </article>
+
+      <!-- TIER — STARTER -->
+      <article class="pack" data-reveal>
+        <header class="pack__head">
+          <span class="pack__audience">For early-stage brands</span>
+          <h3 class="pack__name">Starter</h3>
+          <div class="pack__price">
+            <span class="pack__amt">₹35,000</span>
+            <span class="pack__unit">/month</span>
+          </div>
+          <p class="pack__summary">Social + one ad channel for early-stage brands ready to test paid.</p>
+        </header>
+        <ul class="pack__features">
+          <li><span class="check">✓</span><span>Social Media — Basic tier</span></li>
+          <li><span class="check">✓</span><span>1 ad platform (Meta OR Google)</span></li>
+          <li><span class="check">✓</span><span>Landing page design</span></li>
+          <li><span class="check">✓</span><span>Monthly reporting</span></li>
+          <li><span class="check">✓</span><span>Ad creative production</span></li>
+        </ul>
+        <a href="contact.html?package=starter" class="pack__cta magnetic" data-cursor="link">Choose Starter <span class="arrow">→</span></a>
+      </article>
+
+      <!-- TIER — GROWTH (POPULAR) -->
+      <article class="pack pack--popular" data-reveal>
+        <span class="pack__badge"><span class="dot"></span>Most popular</span>
+        <header class="pack__head">
+          <span class="pack__audience">For scaling brands</span>
+          <h3 class="pack__name">Growth</h3>
+          <div class="pack__price">
+            <span class="pack__amt">₹60,000</span>
+            <span class="pack__unit">/month</span>
+          </div>
+          <p class="pack__summary">Full-funnel marketing for scaling brands with product-market fit.</p>
+        </header>
+        <ul class="pack__features">
+          <li><span class="check">✓</span><span>Social Media — Growth tier</span></li>
+          <li><span class="check">✓</span><span>Meta + Google Ads management</span></li>
+          <li><span class="check">✓</span><span>Website / landing pages</span></li>
+          <li><span class="check">✓</span><span>SEO basics</span></li>
+          <li><span class="check">✓</span><span>Bi-weekly strategy calls</span></li>
+          <li><span class="check">✓</span><span>Ad creative production</span></li>
+        </ul>
+        <a href="contact.html?package=growth" class="pack__cta pack__cta--solid magnetic" data-cursor="link">Choose Growth <span class="arrow">→</span></a>
+      </article>
+
+      <!-- TIER — SCALE -->
+      <article class="pack" data-reveal>
+        <header class="pack__head">
+          <span class="pack__audience">For serious growth</span>
+          <h3 class="pack__name">Scale</h3>
+          <div class="pack__price">
+            <span class="pack__amt">₹80,000</span>
+            <span class="pack__unit">/month</span>
+          </div>
+          <p class="pack__summary">A full in-house marketing team at a fraction of the cost.</p>
+        </header>
+        <ul class="pack__features">
+          <li><span class="check">✓</span><span>Social Media — Premium tier</span></li>
+          <li><span class="check">✓</span><span>Meta + Google + YouTube ads</span></li>
+          <li><span class="check">✓</span><span>SEO + content engine</span></li>
+          <li><span class="check">✓</span><span>Funnel building + email automation</span></li>
+          <li><span class="check">✓</span><span>Weekly strategy calls</span></li>
+          <li><span class="check">✓</span><span>UGC video production</span></li>
+          <li><span class="check">✓</span><span>Dedicated account manager</span></li>
+        </ul>
+        <a href="contact.html?package=scale" class="pack__cta magnetic" data-cursor="link">Choose Scale <span class="arrow">→</span></a>
+      </article>
+
+    </div>
+
+    <p class="packages__note" data-reveal>* All prices in INR. Ad spend billed separately to your own accounts. GST extra. Minimum 3-month commitment for retainers.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta__glow" aria-hidden="true"></div>
+  <div class="cta__grid" aria-hidden="true"></div>
+  <div class="container">
+    <span class="section-label" data-reveal>Ready when you are</span>
+    <h2 class="cta__title" data-reveal>Let's build something <em>unforgettable.</em></h2>
+    <p class="cta__sub" data-reveal>Most agencies will give you a templated pitch in 24 hours. We'd rather give you an honest conversation in 30 minutes — no decks, no jargon, just clarity on what's possible.</p>
+    <div class="cta__btns" data-reveal>
+      <a href="contact.html" class="btn btn--primary magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+      <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20project" class="btn btn--ghost magnetic" data-cursor="link" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+    <div class="cta__phone" data-reveal>
+      <span class="muted">or call</span>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <span class="muted">·</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Navigate</span>
+      <a href="#top" data-cursor="link">Home</a>
+      <a href="#services" data-cursor="link">Services</a>
+      <a href="#packages" data-cursor="link">Packages</a>
+      <a href="#studio" data-cursor="link">About</a>
+      <a href="#contact" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="#services" data-cursor="link">Branding</a>
+      <a href="#services" data-cursor="link">Social Media</a>
+      <a href="#services" data-cursor="link">Meta Ads</a>
+      <a href="#services" data-cursor="link">Google Ads</a>
+      <a href="#services" data-cursor="link">SEO</a>
+      <a href="#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <a href="#" data-cursor="link">Instagram</a>
+      <a href="#" data-cursor="link">LinkedIn</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

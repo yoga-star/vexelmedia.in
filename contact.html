@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Start a project — Vexel Media</title>
+<meta name="description" content="Tell us about your project, or message us on WhatsApp. We reply within 6 hours during business days.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Start a project — Vexel Media">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="index.html#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#services" data-cursor="link">/services</a>
+    <a href="index.html#packages" data-cursor="link">/packages</a>
+    <a href="index.html#studio" data-cursor="link">/studio</a>
+    <a href="contact.html" class="is-active" data-cursor="link">/contact</a>
+  </nav>
+  <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20project" class="nav__cta magnetic" data-cursor="link" target="_blank" rel="noopener">WhatsApp <span class="arrow">→</span></a>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="container">
+    <div class="contact-hero__inner">
+      <span class="section-label" data-reveal>/ Start a project · vexel.media</span>
+      <h1 class="contact-hero__title" data-reveal>Tell us about<br>your <em>project.</em></h1>
+      <p class="contact-hero__sub" data-reveal>Fill the form and we'll come back within 6 hours with thoughts, questions, and a clear next step. Or skip the form and message us directly — we genuinely don't mind.</p>
+    </div>
+  </div>
+  <div class="contact-hero__glow" aria-hidden="true"></div>
+</section>
+
+<!-- FORM + DIRECT -->
+<section class="contact-grid">
+  <div class="container">
+    <div class="cg__layout">
+
+      <!-- LEFT — FORM -->
+      <div class="cg__form-wrap" data-reveal>
+        <span class="cg__col-label">/ The detailed way</span>
+        <h2 class="cg__col-title">Project brief.</h2>
+        <p class="cg__col-sub">Takes about 2 minutes. The more you tell us, the sharper the first reply.</p>
+
+        <form id="briefForm" class="brief" novalidate>
+          <!-- honeypot -->
+          <div class="brief__hp" aria-hidden="true">
+            <label>Don't fill this <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Your name <i>*</i></span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Yoga MN">
+            </label>
+            <label class="field">
+              <span class="field__label">Email <i>*</i></span>
+              <input type="email" name="email" required autocomplete="email" placeholder="you@brand.com">
+            </label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Brand / company</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Your brand name">
+            </label>
+            <label class="field">
+              <span class="field__label">Phone (optional)</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+91 99999 99999">
+            </label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Which package interests you?</span>
+              <select name="package" id="pkgSelect">
+                <option value="">Pick one — or "Not sure"</option>
+                <option value="Basic — ₹20K/mo">Basic — ₹20,000 / mo</option>
+                <option value="Starter — ₹35K/mo">Starter — ₹35,000 / mo</option>
+                <option value="Growth — ₹60K/mo">Growth — ₹60,000 / mo</option>
+                <option value="Scale — ₹80K/mo">Scale — ₹80,000 / mo</option>
+                <option value="One-time project (brand / web / reels)">One-time project (brand / web / reels)</option>
+                <option value="Custom / not sure">Custom / not sure yet</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">What do you need most?</span>
+              <select name="service">
+                <option value="">Pick one</option>
+                <option value="Branding / identity">Branding / identity</option>
+                <option value="Social media management">Social media management</option>
+                <option value="Meta + Google Ads">Meta + Google Ads</option>
+                <option value="SEO / content">SEO / content</option>
+                <option value="Website design + build">Website design + build</option>
+                <option value="UGC / video / reels">UGC / video / reels</option>
+                <option value="Full retainer (everything)">Full retainer (everything)</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Monthly budget</span>
+              <select name="budget">
+                <option value="">Pick a range</option>
+                <option value="Under ₹20K / mo">Under ₹20K / mo</option>
+                <option value="₹20K – ₹50K / mo">₹20K – ₹50K / mo</option>
+                <option value="₹50K – ₹2L / mo">₹50K – ₹2L / mo</option>
+                <option value="₹2L – ₹5L / mo">₹2L – ₹5L / mo</option>
+                <option value="₹5L+ / mo">₹5L+ / mo</option>
+                <option value="One-time project — share scope below">One-time project — share scope below</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Timeline</span>
+              <select name="timeline">
+                <option value="">Pick one</option>
+                <option value="ASAP — this week">ASAP — this week</option>
+                <option value="Within 2 weeks">Within 2 weeks</option>
+                <option value="Within a month">Within a month</option>
+                <option value="Next quarter">Next quarter</option>
+                <option value="Just exploring">Just exploring</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Tell us about your project <i>*</i></span>
+            <textarea name="message" rows="6" required placeholder="What are you building, what's the audience, what does success look like, and what's the one thing that's blocking you right now?"></textarea>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Where did you hear about us? (optional)</span>
+            <select name="source">
+              <option value="">Pick one</option>
+              <option value="Instagram">Instagram</option>
+              <option value="Referral / word of mouth">Referral / word of mouth</option>
+              <option value="Google search">Google search</option>
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="YouTube">YouTube</option>
+              <option value="Saw your work somewhere">Saw your work somewhere</option>
+              <option value="Other">Other</option>
+            </select>
+          </label>
+
+          <div class="brief__submit">
+            <button type="submit" class="btn btn--primary magnetic" data-cursor="link">Send brief <span class="arrow">→</span></button>
+            <span class="brief__hint">We reply within 6 hours · Mon–Sat</span>
+          </div>
+
+          <div class="brief__status" id="briefStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- RIGHT — DIRECT -->
+      <aside class="cg__direct" data-reveal>
+        <span class="cg__col-label">/ The fast way</span>
+        <h2 class="cg__col-title">Skip the form.<br><em>Text us.</em></h2>
+        <p class="cg__col-sub">Faster — usually a reply in under an hour. Best for quick questions or if you'd rather just talk.</p>
+
+        <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20project" class="direct-card direct-card--wa magnetic" data-cursor="link" target="_blank" rel="noopener">
+          <span class="direct-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.057 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.473-8.413z"/></svg>
+          </span>
+          <div>
+            <span class="direct-card__h">Message on WhatsApp</span>
+            <span class="direct-card__p">+91 78168 16963 · usually replies in &lt; 1hr</span>
+          </div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <a href="tel:+917816816963" class="direct-card magnetic" data-cursor="link">
+          <span class="direct-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div>
+            <span class="direct-card__h">Call directly</span>
+            <span class="direct-card__p">+91 78168 16963 · Mon–Sat, 10am–7pm IST</span>
+          </div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <a href="mailto:hello@vexelmedia.in?subject=Project%20enquiry" class="direct-card magnetic" data-cursor="link">
+          <span class="direct-card__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </span>
+          <div>
+            <span class="direct-card__h">Old-school email</span>
+            <span class="direct-card__p">hello@vexelmedia.in</span>
+          </div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <div class="direct-meta">
+          <div class="direct-meta__row">
+            <span class="muted">Studio</span>
+            <span>Bengaluru, India</span>
+          </div>
+          <div class="direct-meta__row">
+            <span class="muted">Hours</span>
+            <span>Mon–Sat · 10:00 — 19:00 IST</span>
+          </div>
+          <div class="direct-meta__row">
+            <span class="muted">Avg. reply</span>
+            <span>under 6 hours</span>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Navigate</span>
+      <a href="index.html#top" data-cursor="link">Home</a>
+      <a href="index.html#services" data-cursor="link">Services</a>
+      <a href="index.html#packages" data-cursor="link">Packages</a>
+      <a href="index.html#studio" data-cursor="link">About</a>
+      <a href="contact.html" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="index.html#services" data-cursor="link">Branding</a>
+      <a href="index.html#services" data-cursor="link">Social Media</a>
+      <a href="index.html#services" data-cursor="link">Meta Ads</a>
+      <a href="index.html#services" data-cursor="link">Google Ads</a>
+      <a href="index.html#services" data-cursor="link">SEO</a>
+      <a href="index.html#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <a href="#" data-cursor="link">Instagram</a>
+      <a href="#" data-cursor="link">LinkedIn</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js"></script>
+<script>
+/* ---- Brief form: pre-fill from ?package=, then mailto on submit ---- */
+(function () {
+  // Pre-fill package dropdown from URL ?package=basic|starter|growth|scale
+  const params = new URLSearchParams(location.search);
+  const pkg = (params.get('package') || '').toLowerCase();
+  const map = {
+    basic:    'Basic — ₹20K/mo',
+    starter:  'Starter — ₹35K/mo',
+    growth:   'Growth — ₹60K/mo',
+    scale:    'Scale — ₹80K/mo',
+    project:  'One-time project (brand / web / reels)',
+  };
+  const sel = document.getElementById('pkgSelect');
+  if (sel && map[pkg]) {
+    [...sel.options].forEach(o => { if (o.value === map[pkg]) { o.selected = true; } });
+  }
+
+  // Submit handler — builds a clean mailto: with all fields
+  const form = document.getElementById('briefForm');
+  const status = document.getElementById('briefStatus');
+  if (!form) return;
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    // Honeypot — if filled, silently drop (likely a bot)
+    if ((form.website?.value || '').trim() !== '') {
+      status.textContent = 'Thanks! We\'ll be in touch.';
+      form.reset();
+      return;
+    }
+
+    const fd = new FormData(form);
+    const get = k => (fd.get(k) || '').toString().trim();
+
+    const subject = `New project brief — ${get('name')}${get('company') ? ' · ' + get('company') : ''}`;
+
+    const body = [
+      `Name: ${get('name')}`,
+      `Email: ${get('email')}`,
+      `Company: ${get('company') || '—'}`,
+      `Phone: ${get('phone') || '—'}`,
+      ``,
+      `Package: ${get('package') || '—'}`,
+      `Primary need: ${get('service') || '—'}`,
+      `Budget: ${get('budget') || '—'}`,
+      `Timeline: ${get('timeline') || '—'}`,
+      `Heard via: ${get('source') || '—'}`,
+      ``,
+      `--- Project ---`,
+      get('message') || '—',
+      ``,
+      `--- Submitted from vexelmedia.in/contact ---`,
+    ].join('\n');
+
+    const mailto = `mailto:hello@vexelmedia.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    status.textContent = 'Opening your email app… if it doesn\'t open, tap WhatsApp on the right.';
+    window.location.href = mailto;
+  });
+})();
+</script>
+</body>
+</html>
