@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 
@@ -23,11 +23,13 @@
 
 <!-- LOADER -->
 <div class="loader" id="loader" aria-hidden="true">
-  <div class="loader__row">
+  <div class="loader__inner">
+    <span class="loader__welcome">Welcome to</span>
     <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__tag">cinematic websites that <em>convert</em></span>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
     <span class="loader__count" id="loaderCount">0</span>
   </div>
-  <div class="loader__bar"><i id="loaderBar"></i></div>
   <div class="loader__curtain"></div>
 </div>
 
@@ -395,7 +397,7 @@
 </main>
 
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js?v=4"></script>
+<script src="script.js?v=6"></script>
 <script>
 (function(){
   const form = document.getElementById('briefForm');
