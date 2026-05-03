@@ -44,7 +44,35 @@
     <a href="contact.html" class="is-active" data-cursor="link">/contact</a>
   </nav>
   <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20project" class="nav__cta magnetic" data-cursor="link" target="_blank" rel="noopener">WhatsApp <span class="arrow">→</span></a>
+  <button class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
 </header>
+
+<!-- MOBILE MENU -->
+<div class="mobi" id="mobileMenu" aria-hidden="true">
+  <div class="mobi__head">
+    <a href="index.html#top" class="mobi__logo">vexel<i>.media</i></a>
+    <button class="mobi__close" id="mobileMenuClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobi__nav" aria-label="Mobile primary">
+    <a href="index.html#services" data-mobi-link><span class="mobi__num">01</span><span>/services</span></a>
+    <a href="index.html#packages" data-mobi-link><span class="mobi__num">02</span><span>/packages</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">03</span><span>/studio</span></a>
+    <a href="contact.html" class="is-active" data-mobi-link><span class="mobi__num">04</span><span>/contact</span></a>
+  </nav>
+  <div class="mobi__cta">
+    <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20project" class="btn btn--primary" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp <span class="arrow">→</span></a>
+    <a href="tel:+917816816963" class="btn btn--ghost" data-mobi-link>Call +91 78168 16963</a>
+  </div>
+  <div class="mobi__meta">
+    <a href="mailto:hello@vexelmedia.in" data-mobi-link>hello@vexelmedia.in</a>
+    <span class="muted">Mon–Sat · 10:00 — 19:00 IST</span>
+    <span class="muted">Bengaluru, India</span>
+  </div>
+</div>
 
 <main id="top">
 

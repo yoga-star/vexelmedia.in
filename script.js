@@ -45,6 +45,51 @@ function kickOff(){
   initRevealOnScroll();
   initCounters();
   initNavScroll();
+  initMobileMenu();
+}
+
+/* ---------- MOBILE MENU ---------- */
+function initMobileMenu(){
+  const burger = document.getElementById('navBurger');
+  const menu   = document.getElementById('mobileMenu');
+  const close  = document.getElementById('mobileMenuClose');
+  if (!burger || !menu) return;
+
+  const open = () => {
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('is-mobi-open');
+    if (lenis) lenis.stop();
+  };
+  const shut = () => {
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('is-mobi-open');
+    if (lenis) lenis.start();
+  };
+
+  burger.addEventListener('click', e => { e.stopPropagation(); open(); });
+  close?.addEventListener('click', shut);
+
+  // Auto-close when any internal link is tapped
+  menu.querySelectorAll('[data-mobi-link]').forEach(a => {
+    a.addEventListener('click', () => {
+      // Let same-page anchors scroll naturally — close after a brief tick
+      setTimeout(shut, 50);
+    });
+  });
+
+  // ESC key closes
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) shut();
+  });
+
+  // Close when crossing back to desktop width
+  matchMedia('(min-width:781px)').addEventListener('change', e => {
+    if (e.matches) shut();
+  });
 }
 
 /* ---------- HERO CHARACTER REVEAL ---------- */
