@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Single project brief — Vexel Media</title>
+<meta name="description" content="Got a single piece in mind? Posters, brochures, identity, reels, decks — fixed scope, fixed price, fast turnaround. Tell us about your project.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Single project brief — Vexel Media">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="index.html#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#services" data-cursor="link">/services</a>
+    <a href="index.html#packages" data-cursor="link">/packages</a>
+    <a href="index.html#studio" data-cursor="link">/studio</a>
+    <a href="contact.html" data-cursor="link">/contact</a>
+  </nav>
+  <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20a%20single%20project%20done" class="nav__cta magnetic" data-cursor="link" target="_blank" rel="noopener">WhatsApp <span class="arrow">→</span></a>
+  <button type="button" class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobi" id="mobileMenu" aria-hidden="true">
+  <div class="mobi__head">
+    <a href="index.html#top" class="mobi__logo">vexel<i>.media</i></a>
+    <button type="button" class="mobi__close" id="mobileMenuClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobi__nav" aria-label="Mobile primary">
+    <a href="index.html#services" data-mobi-link><span class="mobi__num">01</span><span>/services</span></a>
+    <a href="index.html#packages" data-mobi-link><span class="mobi__num">02</span><span>/packages</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">03</span><span>/studio</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">04</span><span>/contact</span></a>
+  </nav>
+  <div class="mobi__cta">
+    <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20a%20single%20project%20done" class="btn btn--primary" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp <span class="arrow">→</span></a>
+    <a href="tel:+917816816963" class="btn btn--ghost" data-mobi-link>Call +91 78168 16963</a>
+  </div>
+  <div class="mobi__meta">
+    <a href="mailto:hello@vexelmedia.in" data-mobi-link>hello@vexelmedia.in</a>
+    <span class="muted">Mon–Sat · 10:00 — 19:00 IST</span>
+    <span class="muted">Bengaluru, India</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="brief-hero">
+  <div class="container">
+    <div class="brief-hero__layout">
+      <div class="brief-hero__left">
+        <span class="section-label" data-reveal>/ Single-project brief · 01 / 02</span>
+        <h1 class="brief-hero__title" data-reveal>Got <em>one</em> sharp piece in mind?</h1>
+        <p class="brief-hero__sub" data-reveal>Posters, brochures, identity sprints, reels, packaging, decks. Fixed scope, fixed price, fast turnaround. No retainer, no commitment — just one beautiful thing, done right.</p>
+        <div class="brief-hero__metrics" data-reveal>
+          <div><span class="metric__num">2–4</span><span class="metric__label">weeks · typical turnaround</span></div>
+          <div><span class="metric__num">₹10K+</span><span class="metric__label">starting · scope-dependent</span></div>
+          <div><span class="metric__num">3</span><span class="metric__label">design rounds · always</span></div>
+        </div>
+      </div>
+      <aside class="brief-hero__art" aria-hidden="true">
+        <div class="paper paper--1"></div>
+        <div class="paper paper--2"></div>
+        <div class="paper paper--3"></div>
+      </aside>
+    </div>
+  </div>
+  <div class="brief-hero__glow" aria-hidden="true"></div>
+</section>
+
+<!-- DELIVERABLES STRIP -->
+<section class="deliv">
+  <div class="container">
+    <span class="section-label" data-reveal>/ What we ship</span>
+    <h2 class="section-title section-title--sm" data-reveal>Pick a format. <em>Pick a vibe.</em> We'll handle the rest.</h2>
+    <div class="deliv__grid">
+      <article class="deliv__card" data-reveal><span class="deliv__num">01</span><h3>Posters &amp; print</h3><p>A4 to billboard. Editorial, event, campaign, festival.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">02</span><h3>Brochures &amp; decks</h3><p>Bi-fold, tri-fold, multi-page, pitch decks, sales kits.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">03</span><h3>Identity sprints</h3><p>Logo, type, color, mini guideline. 5–10 day turnaround.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">04</span><h3>Social &amp; reels</h3><p>Carousels, reel scripts, shot + edit, motion templates.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">05</span><h3>Packaging</h3><p>Boxes, labels, dielines, mockups for print-ready files.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">06</span><h3>Stationery</h3><p>Cards, letterheads, invites, certificates, menus.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- FORM + DIRECT -->
+<section class="contact-grid">
+  <div class="container">
+    <div class="cg__layout">
+
+      <!-- FORM -->
+      <div class="cg__form-wrap" data-reveal>
+        <span class="cg__col-label">/ The brief</span>
+        <h2 class="cg__col-title">Tell us what you need.</h2>
+        <p class="cg__col-sub">Takes about 90 seconds. The more specific, the faster (and cheaper) we can quote.</p>
+
+        <form id="briefForm" class="brief" novalidate>
+          <div class="brief__hp" aria-hidden="true">
+            <label>Don't fill <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Your name <i>*</i></span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Yoga MN">
+            </label>
+            <label class="field">
+              <span class="field__label">Email <i>*</i></span>
+              <input type="email" name="email" required autocomplete="email" placeholder="you@brand.com">
+            </label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Brand / company</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Your brand">
+            </label>
+            <label class="field">
+              <span class="field__label">Phone (optional)</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+91 99999 99999">
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">What are you making? <i>*</i></span>
+            <select name="deliverable" required>
+              <option value="">Pick one</option>
+              <optgroup label="Print">
+                <option>Poster — single</option>
+                <option>Poster series (3–5)</option>
+                <option>Brochure — bi-fold</option>
+                <option>Brochure — tri-fold</option>
+                <option>Brochure — multi-page (8+)</option>
+                <option>Menu / certificate / invite</option>
+                <option>Business cards / stationery</option>
+                <option>Packaging design</option>
+              </optgroup>
+              <optgroup label="Digital">
+                <option>Instagram post (single)</option>
+                <option>Instagram carousel (5–10 slides)</option>
+                <option>Reel — script + edit</option>
+                <option>Pitch deck / presentation</option>
+                <option>Email / newsletter design</option>
+              </optgroup>
+              <optgroup label="Identity">
+                <option>Logo design</option>
+                <option>Identity sprint (logo + system)</option>
+                <option>Brand refresh</option>
+              </optgroup>
+              <option>Other — describe in brief</option>
+            </select>
+          </label>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">How many pieces?</span>
+              <input type="text" name="count" placeholder="1, 5, 10…">
+            </label>
+            <label class="field">
+              <span class="field__label">Size / format</span>
+              <input type="text" name="format" placeholder="A4, 1080×1080, 9:16…">
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Concept / theme <i>*</i></span>
+            <textarea name="concept" rows="4" required placeholder="What is this for? What's the message? Who's the audience? Any context that helps us nail the brief on round one."></textarea>
+          </label>
+
+          <fieldset class="field">
+            <legend class="field__label">Style mood — pick a few</legend>
+            <div class="chips">
+              <input type="checkbox" id="m1" name="mood" value="Minimal &amp; clean"><label for="m1">Minimal &amp; clean</label>
+              <input type="checkbox" id="m2" name="mood" value="Bold &amp; loud"><label for="m2">Bold &amp; loud</label>
+              <input type="checkbox" id="m3" name="mood" value="Editorial"><label for="m3">Editorial</label>
+              <input type="checkbox" id="m4" name="mood" value="Playful"><label for="m4">Playful</label>
+              <input type="checkbox" id="m5" name="mood" value="Premium / luxury"><label for="m5">Premium / luxury</label>
+              <input type="checkbox" id="m6" name="mood" value="Corporate"><label for="m6">Corporate</label>
+              <input type="checkbox" id="m7" name="mood" value="Retro / vintage"><label for="m7">Retro / vintage</label>
+              <input type="checkbox" id="m8" name="mood" value="Modern"><label for="m8">Modern</label>
+              <input type="checkbox" id="m9" name="mood" value="Hand-drawn / illustrated"><label for="m9">Hand-drawn</label>
+              <input type="checkbox" id="m10" name="mood" value="Photo-driven"><label for="m10">Photo-driven</label>
+              <input type="checkbox" id="m11" name="mood" value="Maximalist"><label for="m11">Maximalist</label>
+              <input type="checkbox" id="m12" name="mood" value="Help me decide"><label for="m12">Help me decide</label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span class="field__label">Reference / inspiration links</span>
+            <textarea name="refs" rows="2" placeholder="Pinterest boards, IG accounts, brands you love, websites, screenshots — drop links here."></textarea>
+          </label>
+
+          <fieldset class="field">
+            <legend class="field__label">Brand assets ready?</legend>
+            <div class="radios">
+              <input type="radio" name="assets" id="a1" value="Yes — logo, colors, fonts ready"><label for="a1">Yes — logo, colors, fonts ready</label>
+              <input type="radio" name="assets" id="a2" value="Partial — need polish"><label for="a2">Partial — need polish</label>
+              <input type="radio" name="assets" id="a3" value="No — start from scratch"><label for="a3">No — start from scratch</label>
+            </div>
+          </fieldset>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Deadline</span>
+              <select name="timeline">
+                <option value="">Pick one</option>
+                <option>Within 48 hours (rush — extra fee)</option>
+                <option>This week</option>
+                <option>Within 2 weeks</option>
+                <option>Within a month</option>
+                <option>Flexible</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Budget</span>
+              <select name="budget">
+                <option value="">Pick a range</option>
+                <option>Under ₹10K</option>
+                <option>₹10K – ₹25K</option>
+                <option>₹25K – ₹50K</option>
+                <option>₹50K – ₹1L</option>
+                <option>₹1L+</option>
+                <option>Need recommendation</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Anything else? (optional)</span>
+            <textarea name="message" rows="3" placeholder="File formats needed, print specs, locked text, deal-breakers, anything that should be on the radar."></textarea>
+          </label>
+
+          <div class="brief__submit">
+            <button type="submit" class="btn btn--primary magnetic" data-cursor="link">Send brief <span class="arrow">→</span></button>
+            <span class="brief__hint">Reply within 6 hours · Mon–Sat</span>
+          </div>
+          <div class="brief__status" id="briefStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- DIRECT -->
+      <aside class="cg__direct" data-reveal>
+        <span class="cg__col-label">/ Or skip the form</span>
+        <h2 class="cg__col-title">Just <em>text us</em>.</h2>
+        <p class="cg__col-sub">Faster — usually under an hour. Best if you'd rather just chat through what you need.</p>
+
+        <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20a%20single%20project%20done" class="direct-card direct-card--wa magnetic" data-cursor="link" target="_blank" rel="noopener">
+          <span class="direct-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.057 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.473-8.413z"/></svg></span>
+          <div><span class="direct-card__h">Message on WhatsApp</span><span class="direct-card__p">+91 78168 16963 · usually replies in &lt; 1hr</span></div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <a href="tel:+917816816963" class="direct-card magnetic" data-cursor="link">
+          <span class="direct-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><span class="direct-card__h">Call directly</span><span class="direct-card__p">+91 78168 16963 · Mon–Sat 10–19 IST</span></div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <a href="mailto:hello@vexelmedia.in?subject=Single%20project%20enquiry" class="direct-card magnetic" data-cursor="link">
+          <span class="direct-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <div><span class="direct-card__h">Email</span><span class="direct-card__p">hello@vexelmedia.in</span></div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <div class="proc">
+          <span class="proc__h">/ How it works</span>
+          <ol class="proc__list">
+            <li><span>01</span><div><strong>You send the brief</strong> — form, WhatsApp, or call.</div></li>
+            <li><span>02</span><div><strong>We reply in 6hrs</strong> — quote, timeline, scope locked.</div></li>
+            <li><span>03</span><div><strong>50% advance</strong> — we start; you get round 1 in 3–5 days.</div></li>
+            <li><span>04</span><div><strong>3 rounds of revisions</strong> — until it's right.</div></li>
+            <li><span>05</span><div><strong>Final files + 50% balance</strong> — done.</div></li>
+          </ol>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Navigate</span>
+      <a href="index.html#top" data-cursor="link">Home</a>
+      <a href="index.html#services" data-cursor="link">Services</a>
+      <a href="index.html#packages" data-cursor="link">Packages</a>
+      <a href="project.html" data-cursor="link">Single project</a>
+      <a href="website.html" data-cursor="link">Website build</a>
+      <a href="contact.html" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="index.html#services" data-cursor="link">Branding</a>
+      <a href="index.html#services" data-cursor="link">Social Media</a>
+      <a href="index.html#services" data-cursor="link">Meta Ads</a>
+      <a href="index.html#services" data-cursor="link">Google Ads</a>
+      <a href="index.html#services" data-cursor="link">SEO</a>
+      <a href="index.html#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js?v=4"></script>
+<script>
+(function(){
+  const form = document.getElementById('briefForm');
+  const status = document.getElementById('briefStatus');
+  if (!form) return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    if ((form.website?.value || '').trim() !== '') { status.textContent = 'Thanks!'; form.reset(); return; }
+    const fd = new FormData(form);
+    const get = k => (fd.get(k) || '—');
+    const moods = fd.getAll('mood').join(', ') || '—';
+    const subject = `Single project — ${get('deliverable')} · ${get('name')}`;
+    const body = [
+      `Name: ${get('name')}`,
+      `Email: ${get('email')}`,
+      `Company: ${get('company')}`,
+      `Phone: ${get('phone')}`,
+      ``,
+      `=== PROJECT ===`,
+      `Deliverable: ${get('deliverable')}`,
+      `Quantity: ${get('count')}`,
+      `Size / format: ${get('format')}`,
+      `Style mood: ${moods}`,
+      `Brand assets: ${get('assets')}`,
+      `Deadline: ${get('timeline')}`,
+      `Budget: ${get('budget')}`,
+      ``,
+      `--- Concept ---`,
+      get('concept'),
+      ``,
+      `--- References ---`,
+      get('refs'),
+      ``,
+      `--- Notes ---`,
+      get('message'),
+      ``,
+      `--- Submitted from vexelmedia.in/project ---`
+    ].join('\n');
+    status.textContent = 'Opening your email app… if it doesn\'t open, tap WhatsApp on the right.';
+    window.location.href = `mailto:hello@vexelmedia.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+})();
+</script>
+</body>
+</html>

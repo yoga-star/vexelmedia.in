@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Website design & build — Vexel Media</title>
+<meta name="description" content="Need a website that actually converts? Landing pages to full marketing sites — designed to load fast, look premium, and turn visitors into customers.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Website design & build — Vexel Media">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__row">
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="index.html#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="index.html#services" data-cursor="link">/services</a>
+    <a href="index.html#packages" data-cursor="link">/packages</a>
+    <a href="index.html#studio" data-cursor="link">/studio</a>
+    <a href="contact.html" data-cursor="link">/contact</a>
+  </nav>
+  <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20build%20a%20website" class="nav__cta magnetic" data-cursor="link" target="_blank" rel="noopener">WhatsApp <span class="arrow">→</span></a>
+  <button type="button" class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobi" id="mobileMenu" aria-hidden="true">
+  <div class="mobi__head">
+    <a href="index.html#top" class="mobi__logo">vexel<i>.media</i></a>
+    <button type="button" class="mobi__close" id="mobileMenuClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobi__nav" aria-label="Mobile primary">
+    <a href="index.html#services" data-mobi-link><span class="mobi__num">01</span><span>/services</span></a>
+    <a href="index.html#packages" data-mobi-link><span class="mobi__num">02</span><span>/packages</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">03</span><span>/studio</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">04</span><span>/contact</span></a>
+  </nav>
+  <div class="mobi__cta">
+    <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20build%20a%20website" class="btn btn--primary" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp <span class="arrow">→</span></a>
+    <a href="tel:+917816816963" class="btn btn--ghost" data-mobi-link>Call +91 78168 16963</a>
+  </div>
+  <div class="mobi__meta">
+    <a href="mailto:hello@vexelmedia.in" data-mobi-link>hello@vexelmedia.in</a>
+    <span class="muted">Mon–Sat · 10:00 — 19:00 IST</span>
+    <span class="muted">Bengaluru, India</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="brief-hero brief-hero--web">
+  <div class="container">
+    <div class="brief-hero__layout">
+      <div class="brief-hero__left">
+        <span class="section-label" data-reveal>/ Website brief · 02 / 02</span>
+        <h1 class="brief-hero__title" data-reveal>Need a site that <em>actually</em> converts?</h1>
+        <p class="brief-hero__sub" data-reveal>Landing pages to full marketing sites. Designed for speed, built for conversion, polished to a level that makes visitors trust you in the first 2 seconds.</p>
+        <div class="brief-hero__metrics" data-reveal>
+          <div><span class="metric__num">95+</span><span class="metric__label">Lighthouse score · always</span></div>
+          <div><span class="metric__num">2–8</span><span class="metric__label">weeks · landing → full site</span></div>
+          <div><span class="metric__num">100%</span><span class="metric__label">responsive · mobile-first</span></div>
+        </div>
+      </div>
+      <aside class="brief-hero__art brief-hero__art--web" aria-hidden="true">
+        <div class="window">
+          <div class="window__bar"><span></span><span></span><span></span></div>
+          <div class="window__body">
+            <div class="window__row window__row--lg"></div>
+            <div class="window__row"></div>
+            <div class="window__row window__row--md"></div>
+            <div class="window__cta"></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+  <div class="brief-hero__glow brief-hero__glow--web" aria-hidden="true"></div>
+</section>
+
+<!-- WHAT'S INCLUDED STRIP -->
+<section class="deliv">
+  <div class="container">
+    <span class="section-label" data-reveal>/ What we ship</span>
+    <h2 class="section-title section-title--sm" data-reveal>Every site we build, <em>top to bottom.</em></h2>
+    <div class="deliv__grid">
+      <article class="deliv__card" data-reveal><span class="deliv__num">01</span><h3>Strategy first</h3><p>Conversion goals, audience, IA, sitemap, copy direction — before any pixels.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">02</span><h3>Design in Figma</h3><p>Hi-fi mockups, design system, every state, every breakpoint. You sign off.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">03</span><h3>Build that flies</h3><p>Next.js, WordPress, or Webflow — your call. 95+ Lighthouse, &lt;1s LCP.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">04</span><h3>SEO baked in</h3><p>Schema, sitemap, meta, OG, alt text, performance — not bolted on.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">05</span><h3>Animations &amp; motion</h3><p>Smooth scroll, scroll-triggered reveals, magnetic CTAs, custom cursors.</p></article>
+      <article class="deliv__card" data-reveal><span class="deliv__num">06</span><h3>You own everything</h3><p>Files, domain, hosting, code, all credentials. No vendor lock-in.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- FORM + DIRECT -->
+<section class="contact-grid">
+  <div class="container">
+    <div class="cg__layout">
+
+      <!-- FORM -->
+      <div class="cg__form-wrap" data-reveal>
+        <span class="cg__col-label">/ The brief</span>
+        <h2 class="cg__col-title">Tell us about the site.</h2>
+        <p class="cg__col-sub">Takes about 2 minutes. The clearer the brief, the sharper the proposal.</p>
+
+        <form id="briefForm" class="brief" novalidate>
+          <div class="brief__hp" aria-hidden="true">
+            <label>Don't fill <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Your name <i>*</i></span>
+              <input type="text" name="name" required autocomplete="name" placeholder="Yoga MN">
+            </label>
+            <label class="field">
+              <span class="field__label">Email <i>*</i></span>
+              <input type="email" name="email" required autocomplete="email" placeholder="you@brand.com">
+            </label>
+          </div>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Brand / company</span>
+              <input type="text" name="company" autocomplete="organization" placeholder="Your brand">
+            </label>
+            <label class="field">
+              <span class="field__label">Phone (optional)</span>
+              <input type="tel" name="phone" autocomplete="tel" placeholder="+91 99999 99999">
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">What kind of site? <i>*</i></span>
+            <select name="kind" required>
+              <option value="">Pick one</option>
+              <option>Landing page (single, conversion-focused)</option>
+              <option>Marketing website (3–5 pages)</option>
+              <option>Full website (8+ pages)</option>
+              <option>E-commerce / online store</option>
+              <option>Portfolio</option>
+              <option>Blog / content site</option>
+              <option>SaaS / web app</option>
+              <option>Redesign of existing site</option>
+              <option>Custom — describe in brief</option>
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Current website (optional)</span>
+            <input type="url" name="currentSite" placeholder="https://yoursite.com — if you have one">
+          </label>
+
+          <fieldset class="field">
+            <legend class="field__label">Pages / sections needed</legend>
+            <div class="chips">
+              <input type="checkbox" id="p1" name="pages" value="Home"><label for="p1">Home</label>
+              <input type="checkbox" id="p2" name="pages" value="About"><label for="p2">About</label>
+              <input type="checkbox" id="p3" name="pages" value="Services"><label for="p3">Services</label>
+              <input type="checkbox" id="p4" name="pages" value="Pricing"><label for="p4">Pricing</label>
+              <input type="checkbox" id="p5" name="pages" value="Portfolio / case studies"><label for="p5">Portfolio</label>
+              <input type="checkbox" id="p6" name="pages" value="Blog"><label for="p6">Blog</label>
+              <input type="checkbox" id="p7" name="pages" value="Team"><label for="p7">Team</label>
+              <input type="checkbox" id="p8" name="pages" value="Contact"><label for="p8">Contact</label>
+              <input type="checkbox" id="p9" name="pages" value="FAQ"><label for="p9">FAQ</label>
+              <input type="checkbox" id="p10" name="pages" value="Shop / products"><label for="p10">Shop</label>
+              <input type="checkbox" id="p11" name="pages" value="Login / dashboard"><label for="p11">Login</label>
+              <input type="checkbox" id="p12" name="pages" value="Custom landing pages"><label for="p12">Custom landings</label>
+            </div>
+          </fieldset>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Tech preference</span>
+              <select name="tech">
+                <option value="">Pick one</option>
+                <option>Recommend the best for me</option>
+                <option>Next.js / modern React (premium, fastest)</option>
+                <option>WordPress (easy in-house edits)</option>
+                <option>Webflow / no-code (visual edits)</option>
+                <option>Shopify (e-commerce)</option>
+                <option>Framer (designer-friendly)</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Animations &amp; interactions</span>
+              <select name="motion">
+                <option value="">Pick one</option>
+                <option>Clean &amp; static (zero motion, fastest)</option>
+                <option>Subtle motion (fades, hovers)</option>
+                <option>Premium animations (smooth scroll, reveals)</option>
+                <option>Cinematic / experimental (custom motion)</option>
+              </select>
+            </label>
+          </div>
+
+          <fieldset class="field">
+            <legend class="field__label">Style direction — pick a few</legend>
+            <div class="chips">
+              <input type="checkbox" id="s1" name="style" value="Minimal &amp; editorial"><label for="s1">Minimal &amp; editorial</label>
+              <input type="checkbox" id="s2" name="style" value="Bold &amp; expressive"><label for="s2">Bold &amp; expressive</label>
+              <input type="checkbox" id="s3" name="style" value="Premium &amp; luxury"><label for="s3">Premium &amp; luxury</label>
+              <input type="checkbox" id="s4" name="style" value="Tech / startup"><label for="s4">Tech / startup</label>
+              <input type="checkbox" id="s5" name="style" value="Playful &amp; vibrant"><label for="s5">Playful &amp; vibrant</label>
+              <input type="checkbox" id="s6" name="style" value="Dark mode"><label for="s6">Dark mode</label>
+              <input type="checkbox" id="s7" name="style" value="3D &amp; immersive"><label for="s7">3D &amp; immersive</label>
+              <input type="checkbox" id="s8" name="style" value="Brutalist"><label for="s8">Brutalist</label>
+              <input type="checkbox" id="s9" name="style" value="Help me decide"><label for="s9">Help me decide</label>
+            </div>
+          </fieldset>
+
+          <label class="field">
+            <span class="field__label">Reference websites you love</span>
+            <textarea name="refs" rows="2" placeholder="Drop 2–5 site URLs you'd like the look/feel to take from. Also tell us what specifically you like."></textarea>
+          </label>
+
+          <fieldset class="field">
+            <legend class="field__label">Brand assets ready?</legend>
+            <div class="radios">
+              <input type="radio" name="assets" id="a1" value="Yes — logo, colors, fonts ready"><label for="a1">Yes — logo, colors, fonts ready</label>
+              <input type="radio" name="assets" id="a2" value="Partial — need polish"><label for="a2">Partial — need polish</label>
+              <input type="radio" name="assets" id="a3" value="No — let's create them too"><label for="a3">No — let's create them too</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="field">
+            <legend class="field__label">Domain &amp; hosting</legend>
+            <div class="radios">
+              <input type="radio" name="hosting" id="h1" value="Have both — domain + hosting"><label for="h1">Have both already</label>
+              <input type="radio" name="hosting" id="h2" value="Domain yes, need hosting"><label for="h2">Have domain, need hosting</label>
+              <input type="radio" name="hosting" id="h3" value="Need help with both"><label for="h3">Need help with both</label>
+            </div>
+          </fieldset>
+
+          <div class="brief__row brief__row--2">
+            <label class="field">
+              <span class="field__label">Timeline</span>
+              <select name="timeline">
+                <option value="">Pick one</option>
+                <option>2 weeks (landing only)</option>
+                <option>1 month</option>
+                <option>2 months</option>
+                <option>3 months+</option>
+                <option>Flexible</option>
+              </select>
+            </label>
+            <label class="field">
+              <span class="field__label">Budget</span>
+              <select name="budget">
+                <option value="">Pick a range</option>
+                <option>Under ₹50K (landing page only)</option>
+                <option>₹50K – ₹1.5L (small marketing site)</option>
+                <option>₹1.5L – ₹4L (full marketing site)</option>
+                <option>₹4L – ₹10L (premium custom build)</option>
+                <option>₹10L+ (enterprise / e-commerce)</option>
+                <option>Need recommendation</option>
+              </select>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">What's the site for? <i>*</i></span>
+            <textarea name="goal" rows="4" required placeholder="What does success look like in 6 months — leads, signups, sales, audience? Who's the audience? What do you sell? What's the one thing the site has to do better than your current setup?"></textarea>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Anything else? (optional)</span>
+            <textarea name="message" rows="3" placeholder="Integrations needed (CRM, analytics, payment), languages, accessibility, deal-breakers."></textarea>
+          </label>
+
+          <div class="brief__submit">
+            <button type="submit" class="btn btn--primary magnetic" data-cursor="link">Send brief <span class="arrow">→</span></button>
+            <span class="brief__hint">Reply within 6 hours · Mon–Sat</span>
+          </div>
+          <div class="brief__status" id="briefStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+
+      <!-- DIRECT -->
+      <aside class="cg__direct" data-reveal>
+        <span class="cg__col-label">/ Or skip the form</span>
+        <h2 class="cg__col-title">Just <em>text us</em>.</h2>
+        <p class="cg__col-sub">Faster — usually under an hour. Best if you'd rather just chat through what you need.</p>
+
+        <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20build%20a%20website" class="direct-card direct-card--wa magnetic" data-cursor="link" target="_blank" rel="noopener">
+          <span class="direct-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.077 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.057 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.002-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.304-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.473-8.413z"/></svg></span>
+          <div><span class="direct-card__h">Message on WhatsApp</span><span class="direct-card__p">+91 78168 16963 · usually replies in &lt; 1hr</span></div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <a href="tel:+917816816963" class="direct-card magnetic" data-cursor="link">
+          <span class="direct-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div><span class="direct-card__h">Call directly</span><span class="direct-card__p">+91 78168 16963 · Mon–Sat 10–19 IST</span></div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <a href="mailto:hello@vexelmedia.in?subject=Website%20enquiry" class="direct-card magnetic" data-cursor="link">
+          <span class="direct-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <div><span class="direct-card__h">Email</span><span class="direct-card__p">hello@vexelmedia.in</span></div>
+          <span class="direct-card__arrow">→</span>
+        </a>
+
+        <div class="proc">
+          <span class="proc__h">/ The build process</span>
+          <ol class="proc__list">
+            <li><span>01</span><div><strong>Discovery call</strong> — goals, audience, scope locked.</div></li>
+            <li><span>02</span><div><strong>Strategy + IA</strong> — sitemap, wireframes, copy direction.</div></li>
+            <li><span>03</span><div><strong>Design in Figma</strong> — hi-fi mockups, you sign off.</div></li>
+            <li><span>04</span><div><strong>Build + QA</strong> — code, test on every device, optimize.</div></li>
+            <li><span>05</span><div><strong>Launch + handover</strong> — domain, hosting, training, files.</div></li>
+            <li><span>06</span><div><strong>30-day support</strong> — bugs &amp; tweaks on us.</div></li>
+          </ol>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Navigate</span>
+      <a href="index.html#top" data-cursor="link">Home</a>
+      <a href="index.html#services" data-cursor="link">Services</a>
+      <a href="index.html#packages" data-cursor="link">Packages</a>
+      <a href="project.html" data-cursor="link">Single project</a>
+      <a href="website.html" data-cursor="link">Website build</a>
+      <a href="contact.html" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="index.html#services" data-cursor="link">Branding</a>
+      <a href="index.html#services" data-cursor="link">Social Media</a>
+      <a href="index.html#services" data-cursor="link">Meta Ads</a>
+      <a href="index.html#services" data-cursor="link">Google Ads</a>
+      <a href="index.html#services" data-cursor="link">SEO</a>
+      <a href="index.html#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js?v=4"></script>
+<script>
+(function(){
+  const form = document.getElementById('briefForm');
+  const status = document.getElementById('briefStatus');
+  if (!form) return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    if ((form.website?.value || '').trim() !== '') { status.textContent = 'Thanks!'; form.reset(); return; }
+    const fd = new FormData(form);
+    const get = k => (fd.get(k) || '—');
+    const pages = fd.getAll('pages').join(', ') || '—';
+    const styles = fd.getAll('style').join(', ') || '—';
+    const subject = `Website brief — ${get('kind')} · ${get('name')}`;
+    const body = [
+      `Name: ${get('name')}`,
+      `Email: ${get('email')}`,
+      `Company: ${get('company')}`,
+      `Phone: ${get('phone')}`,
+      ``,
+      `=== WEBSITE ===`,
+      `Type: ${get('kind')}`,
+      `Current site: ${get('currentSite')}`,
+      `Pages needed: ${pages}`,
+      `Tech preference: ${get('tech')}`,
+      `Animations: ${get('motion')}`,
+      `Style direction: ${styles}`,
+      `Brand assets: ${get('assets')}`,
+      `Domain & hosting: ${get('hosting')}`,
+      `Timeline: ${get('timeline')}`,
+      `Budget: ${get('budget')}`,
+      ``,
+      `--- Goals ---`,
+      get('goal'),
+      ``,
+      `--- References ---`,
+      get('refs'),
+      ``,
+      `--- Notes ---`,
+      get('message'),
+      ``,
+      `--- Submitted from vexelmedia.in/website ---`
+    ].join('\n');
+    status.textContent = 'Opening your email app… if it doesn\'t open, tap WhatsApp on the right.';
+    window.location.href = `mailto:hello@vexelmedia.in?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
+})();
+</script>
+</body>
+</html>
