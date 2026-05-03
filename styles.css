@@ -1153,6 +1153,113 @@ body.is-mobi-open{overflow:hidden}
   .brief-hero__metrics{gap:24px 32px}
 }
 
+/* QUICK ORDERS / À LA CARTE -------------------------------- */
+.quick{
+  padding:120px 0 100px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+.quick__head{margin-bottom:64px;max-width:780px}
+.quick__sub{
+  color:var(--muted);font-size:clamp(15px,1.2vw,17px);line-height:1.6;
+  margin-top:24px;max-width:54ch;
+}
+
+.quick__grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:stretch;
+}
+
+.quick-item{
+  --qi-text:var(--text);
+  --qi-muted:var(--muted);
+  --qi-line:var(--line);
+  position:relative;
+  display:flex;flex-direction:column;
+  padding:28px 26px 26px;
+  background:var(--surface);color:var(--qi-text);
+  border:1px solid var(--qi-line);border-radius:18px;
+  transition:border-color .35s, transform .4s cubic-bezier(.2,.8,.2,1), background .3s;
+}
+.quick-item:hover{border-color:var(--text);transform:translateY(-3px)}
+
+.quick-item--featured{
+  background:linear-gradient(180deg, rgba(212,255,62,.06) 0%, rgba(212,255,62,.02) 50%, transparent 100%), var(--surface);
+  border-color:rgba(212,255,62,.32);
+  box-shadow:0 30px 80px -40px rgba(212,255,62,.25), inset 0 1px 0 rgba(212,255,62,.10);
+}
+.quick-item--featured:hover{border-color:rgba(212,255,62,.55)}
+
+.quick-item__badge{
+  position:absolute;top:-12px;left:24px;
+  font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;
+  background:var(--accent);color:#0a0907;
+  padding:6px 12px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:5px;
+  box-shadow:0 8px 24px -10px rgba(212,255,62,.5);
+}
+
+.quick-item__top{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:12px;
+  padding-bottom:18px;border-bottom:1px solid var(--qi-line);margin-bottom:18px;
+}
+.quick-item__name{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(22px, 2vw, 28px);line-height:1;letter-spacing:-.02em;
+  margin:0;flex:1;
+}
+.quick-item__price{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(34px, 3.4vw, 44px);line-height:.9;letter-spacing:-.04em;
+  color:var(--accent);
+  display:inline-flex;align-items:baseline;gap:1px;flex-shrink:0;
+}
+.quick-item__price i{
+  font-style:normal;font-size:.55em;color:var(--accent);font-weight:400;
+}
+.quick-item--featured .quick-item__price{color:var(--accent)}
+
+.quick-item__desc{
+  font-size:14px;line-height:1.5;color:var(--qi-text);margin:0 0 18px;
+}
+
+.quick-item__specs{
+  list-style:none;padding:0;margin:0 0 22px;
+  display:flex;flex-direction:column;gap:8px;flex:1;
+}
+.quick-item__specs li{
+  display:flex;align-items:flex-start;gap:8px;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.02em;
+  color:var(--qi-muted);line-height:1.4;
+}
+.quick-item__specs li span{color:var(--accent);font-weight:600;flex-shrink:0}
+
+.quick-item__cta{
+  margin-top:auto;
+  display:inline-flex;justify-content:center;align-items:center;gap:8px;
+  padding:13px 18px;border-radius:999px;
+  font-family:var(--body);font-weight:500;font-size:13.5px;
+  background:#25d366;color:#fff;border:1px solid #25d366;
+  transition:background .25s, transform .25s, box-shadow .25s;
+}
+.quick-item__cta:hover{background:#1eb955;border-color:#1eb955;box-shadow:0 12px 30px -10px rgba(37,211,102,.5)}
+.quick-item__cta .arrow{transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.quick-item__cta:hover .arrow{transform:translate(4px,-2px)}
+
+.quick-item--featured .quick-item__cta{
+  background:var(--accent);color:#0a0907;border-color:var(--accent);
+}
+.quick-item--featured .quick-item__cta:hover{background:#bfe834;border-color:#bfe834;box-shadow:0 12px 30px -10px rgba(212,255,62,.5)}
+
+.quick__note{
+  text-align:center;margin:48px auto 0;max-width:560px;
+  font-size:14px;color:var(--muted);line-height:1.6;
+}
+.quick__note a{color:var(--text);border-bottom:1px solid var(--accent);padding-bottom:1px;transition:color .25s}
+.quick__note a:hover{color:var(--accent)}
+
+@media (max-width:980px){.quick__grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.quick__grid{grid-template-columns:1fr}}
+
 /* DELIVERABLES STRIP --------------------------------------- */
 .deliv{padding:100px 0;border-bottom:1px solid var(--line);background:var(--bg-alt)}
 .section-title--sm{
