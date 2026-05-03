@@ -223,7 +223,21 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
   font-family:var(--mono);font-size:12px;color:var(--muted);
 }
 .hero__meta i{color:var(--text);font-style:normal}
-@media (max-width:780px){.hero__meta{position:static;flex-direction:row;flex-wrap:wrap;text-align:left;margin-bottom:24px;font-size:11px;gap:14px}}
+
+@media (max-width:780px){
+  /* Mobile hero — content flows from top, no forced full-viewport empty space */
+  .hero{
+    min-height:auto;
+    padding:96px var(--pad-x) 56px;
+    justify-content:flex-start;
+  }
+  .hero__meta{
+    position:static;flex-direction:row;flex-wrap:wrap;
+    text-align:left;margin-bottom:20px;font-size:11px;gap:12px 16px;
+  }
+  .hero__eyebrow{margin-bottom:24px}
+  .hero__sub{margin:24px 0 28px}
+}
 
 .hero__inner{max-width:var(--container);margin:0 auto;width:100%;position:relative;z-index:2}
 
