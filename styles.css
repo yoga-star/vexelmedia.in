@@ -162,6 +162,8 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
   border:1px solid var(--line-strong);background:transparent;
   position:relative;flex-shrink:0;
   cursor:pointer;transition:border-color .25s, background .25s;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+  z-index:910;
 }
 .nav__burger:hover{border-color:var(--text);background:rgba(244,240,225,.04)}
 .nav__burger span{
@@ -724,6 +726,7 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
   transition:transform .55s cubic-bezier(.85,0,.15,1);
   visibility:hidden;
   overflow-y:auto;
+  -webkit-overflow-scrolling:touch;
 }
 .mobi.is-open{transform:translateX(0);visibility:visible}
 .mobi::before{
@@ -731,6 +734,8 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
   background:radial-gradient(80vw 60vw at 80% 0%, rgba(212,255,62,.08), transparent 60%);
   pointer-events:none;
 }
+/* Prevent flex children from shrinking & overlapping on short viewports */
+.mobi > *{flex-shrink:0}
 
 .mobi__head{
   display:flex;justify-content:space-between;align-items:center;
@@ -745,6 +750,7 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
   border:1px solid var(--line-strong);background:transparent;
   position:relative;cursor:pointer;
   transition:border-color .25s, background .25s, transform .3s;
+  touch-action:manipulation;-webkit-tap-highlight-color:transparent;
 }
 .mobi__close:hover{border-color:var(--text);background:rgba(244,240,225,.04);transform:rotate(90deg)}
 .mobi__close span{
@@ -807,6 +813,16 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
 body.is-mobi-open{overflow:hidden}
 
 @media (min-width:781px){.mobi{display:none}}
+
+/* Compact mode for short / landscape viewports */
+@media (max-height:560px) and (max-width:780px){
+  .mobi{padding:16px var(--pad-x) 20px}
+  .mobi__head{padding-bottom:14px;margin-bottom:18px}
+  .mobi__nav a{padding:14px 0;font-size:24px}
+  .mobi__cta{margin-top:18px;flex-direction:row;flex-wrap:wrap}
+  .mobi__cta .btn{flex:1 1 auto;padding:12px 18px;font-size:13px}
+  .mobi__meta{padding-top:18px;font-size:11px;flex-direction:row;flex-wrap:wrap;gap:8px 18px;align-items:center}
+}
 
 /* CONTACT PAGE --------------------------------------------- */
 .nav__links a.is-active{color:var(--text)}
