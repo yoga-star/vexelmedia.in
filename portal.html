@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project portal — Vexel Media</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0907">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body class="portal-body">
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- HEADER -->
+<header class="ph">
+  <a href="index.html" class="ph__logo">vexel<i>.media</i></a>
+  <div class="ph__role" id="phRole"></div>
+  <div class="ph__user">
+    <span class="ph__name" id="phName">…</span>
+    <button type="button" id="logoutBtn" class="ph__logout">Sign out</button>
+  </div>
+</header>
+
+<!-- LOADING STATE -->
+<div class="portal-loading" id="portalLoading">
+  <div class="portal-loading__spin"></div>
+  <span>Loading your projects…</span>
+</div>
+
+<main class="portal" id="portalRoot" hidden>
+
+  <!-- ====== CLIENT VIEW ====== -->
+  <section class="portal-client" id="clientView" hidden>
+    <div class="container">
+      <div class="portal-head">
+        <span class="section-label">/ Your projects</span>
+        <h1 class="portal-title" id="clientWelcome">Hello.</h1>
+        <p class="portal-sub">Submit briefs, drop references, and pick up final files — all in one place.</p>
+      </div>
+
+      <button type="button" id="newProjectBtn" class="btn btn--primary portal-cta">
+        + New project / brief <span class="arrow">→</span>
+      </button>
+
+      <div class="projects-list" id="projectsList">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== ADMIN VIEW ====== -->
+  <section class="portal-admin" id="adminView" hidden>
+    <div class="container">
+      <div class="portal-head">
+        <span class="section-label">/ Admin · vexel.media</span>
+        <h1 class="portal-title">All clients, <em>all tasks.</em></h1>
+        <p class="portal-sub">Manage every brief, status, and deliverable across every client.</p>
+      </div>
+
+      <div class="admin-stats" id="adminStats">
+        <div class="adm-stat"><span class="adm-stat__num" id="statClients">·</span><span class="adm-stat__label">Active clients</span></div>
+        <div class="adm-stat"><span class="adm-stat__num" id="statProjects">·</span><span class="adm-stat__label">Active projects</span></div>
+        <div class="adm-stat"><span class="adm-stat__num" id="statTasks">·</span><span class="adm-stat__label">Open tasks</span></div>
+        <div class="adm-stat"><span class="adm-stat__num" id="statReview">·</span><span class="adm-stat__label">Awaiting review</span></div>
+      </div>
+
+      <div class="adm-actions">
+        <button type="button" id="addClientBtn" class="btn btn--ghost">+ Invite client</button>
+        <button type="button" id="addProjectBtnAdmin" class="btn btn--ghost">+ New project</button>
+      </div>
+
+      <div class="adm-filter">
+        <label>
+          <span class="muted">Filter by client:</span>
+          <select id="adminClientFilter">
+            <option value="">All clients</option>
+          </select>
+        </label>
+        <label>
+          <span class="muted">Status:</span>
+          <select id="adminStatusFilter">
+            <option value="">All statuses</option>
+            <option value="submitted">Submitted</option>
+            <option value="in_progress">In progress</option>
+            <option value="review">Ready for review</option>
+            <option value="revisions">Revisions</option>
+            <option value="delivered">Delivered</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="projects-list" id="adminProjectsList">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============== TASK MODAL (shared by both views) ============== -->
+<div class="modal" id="taskModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button type="button" class="modal__close" data-modal-close aria-label="Close">×</button>
+    <div class="modal__head">
+      <span class="status-pill" id="modalStatus">Submitted</span>
+      <h2 id="modalTitle" class="modal__title">Task</h2>
+      <p id="modalDesc" class="modal__desc"></p>
+      <span id="modalMeta" class="modal__meta"></span>
+    </div>
+
+    <!-- Admin-only status changer -->
+    <div class="modal__status-changer" id="modalStatusChanger" hidden>
+      <span class="muted">Update status:</span>
+      <div class="status-buttons">
+        <button data-status="submitted" type="button">Submitted</button>
+        <button data-status="in_progress" type="button">In progress</button>
+        <button data-status="review" type="button">Ready for review</button>
+        <button data-status="revisions" type="button">Revisions</button>
+        <button data-status="delivered" type="button">Delivered</button>
+      </div>
+    </div>
+
+    <!-- Files: references + deliverables -->
+    <div class="modal__section">
+      <div class="modal__section-head">
+        <h3>References <span class="muted" id="refCount">0</span></h3>
+        <label class="file-add">
+          <input type="file" id="addRefFile" multiple hidden>
+          <span class="file-add__btn">+ Upload reference</span>
+        </label>
+      </div>
+      <div class="files-grid" id="refFiles">
+        <span class="muted empty">No references yet.</span>
+      </div>
+    </div>
+
+    <div class="modal__section">
+      <div class="modal__section-head">
+        <h3>Deliverables <span class="muted" id="delivCount">0</span></h3>
+        <label class="file-add" id="addDelivWrap" hidden>
+          <input type="file" id="addDelivFile" multiple hidden>
+          <span class="file-add__btn file-add__btn--accent">+ Upload deliverable</span>
+        </label>
+      </div>
+      <div class="files-grid" id="delivFiles">
+        <span class="muted empty">Nothing delivered yet — when ready, your final files appear here.</span>
+      </div>
+    </div>
+
+    <!-- Comment thread -->
+    <div class="modal__section">
+      <div class="modal__section-head">
+        <h3>Conversation</h3>
+      </div>
+      <div class="thread" id="thread">
+        <!-- messages populated by JS -->
+      </div>
+      <form class="thread-form" id="threadForm">
+        <textarea id="threadInput" placeholder="Type a comment, request, or update…" rows="2" required></textarea>
+        <button type="submit" class="btn btn--primary">Send</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ============== NEW PROJECT MODAL ============== -->
+<div class="modal" id="projectModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel modal__panel--sm" role="dialog" aria-modal="true">
+    <button type="button" class="modal__close" data-modal-close aria-label="Close">×</button>
+    <h2 class="modal__title">New project</h2>
+    <p class="modal__desc">Containers for related tasks. Group all tasks for one campaign or month under one project.</p>
+    <form id="projectForm" class="brief">
+      <label class="field" id="projectClientWrap" hidden>
+        <span class="field__label">Client <i>*</i></span>
+        <select id="projectClient" name="clientId"></select>
+      </label>
+      <label class="field">
+        <span class="field__label">Project name <i>*</i></span>
+        <input type="text" id="projectName" name="name" required placeholder='e.g. "Brand identity 2026" or "August content"'>
+      </label>
+      <label class="field">
+        <span class="field__label">Brief / description</span>
+        <textarea id="projectDesc" name="description" rows="3" placeholder="Optional — what's this project for?"></textarea>
+      </label>
+      <div class="brief__submit">
+        <button type="submit" class="btn btn--primary">Create project</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============== NEW TASK MODAL ============== -->
+<div class="modal" id="taskNewModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel modal__panel--sm" role="dialog" aria-modal="true">
+    <button type="button" class="modal__close" data-modal-close aria-label="Close">×</button>
+    <h2 class="modal__title">New task / brief</h2>
+    <form id="taskForm" class="brief">
+      <input type="hidden" id="taskProjectId">
+      <label class="field">
+        <span class="field__label">Title <i>*</i></span>
+        <input type="text" id="taskTitle" required placeholder='e.g. "Diwali poster" or "Logo concepts"'>
+      </label>
+      <label class="field">
+        <span class="field__label">Brief <i>*</i></span>
+        <textarea id="taskDesc" rows="5" required placeholder="What do you need? Specs, audience, deadline, anything that helps."></textarea>
+      </label>
+      <label class="field">
+        <span class="field__label">Due date (optional)</span>
+        <input type="date" id="taskDue">
+      </label>
+      <div class="brief__submit">
+        <button type="submit" class="btn btn--primary">Submit task</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============== INVITE CLIENT MODAL (admin) ============== -->
+<div class="modal" id="inviteModal" hidden aria-hidden="true">
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__panel modal__panel--sm" role="dialog" aria-modal="true">
+    <button type="button" class="modal__close" data-modal-close aria-label="Close">×</button>
+    <h2 class="modal__title">Invite client</h2>
+    <p class="modal__desc">They'll get a magic-link email and land straight in their portal. They show up in this dashboard once they sign in for the first time.</p>
+    <form id="inviteForm" class="brief">
+      <label class="field">
+        <span class="field__label">Their email <i>*</i></span>
+        <input type="email" id="inviteEmail" required placeholder="client@brand.com">
+      </label>
+      <p class="muted" style="font-size:12px;margin:0">After they sign in once, you can fill in their name, company, and package from this dashboard.</p>
+      <div class="brief__submit">
+        <button type="submit" class="btn btn--primary">Send invite</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" hidden></div>
+
+<script type="module" src="portal/app.js?v=9"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Client login — Vexel Media</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0a0907">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=9">
+</head>
+<body class="auth-body">
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<a href="index.html" class="auth-back">← back to vexel.media</a>
+
+<main class="auth-wrap">
+  <div class="auth-card">
+    <span class="auth-eyebrow">/ Client portal · vexel.media</span>
+    <h1 class="auth-title">Welcome <em>back.</em></h1>
+    <p class="auth-sub">Sign in to your project dashboard.<br>Magic link only — no password to remember.</p>
+
+    <form id="loginForm" class="auth-form" novalidate>
+      <label class="field">
+        <span class="field__label">Your email <i>*</i></span>
+        <input type="email" id="loginEmail" name="email" required autocomplete="email" placeholder="you@brand.com">
+      </label>
+      <button type="submit" class="btn btn--primary" id="loginBtn">
+        <span class="btn-label">Send magic link</span>
+        <span class="arrow">→</span>
+      </button>
+      <p class="auth-status" id="authStatus" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="auth-divider"><span>new to Vexel?</span></div>
+
+    <p class="auth-foot">
+      Don't have an account yet? <a href="contact.html">Tell us about your project</a> — we'll set you up with a portal login the moment we kick off.
+    </p>
+  </div>
+
+  <aside class="auth-side">
+    <span class="auth-side__label">/ What's inside</span>
+    <ul class="auth-side__list">
+      <li><span class="dot"></span><div><strong>Live project tracker</strong><p>See every task and where it is — submitted, in progress, ready for review, delivered.</p></div></li>
+      <li><span class="dot"></span><div><strong>Drop your references</strong><p>Upload moodboards, screenshots, brand assets — straight into the right task.</p></div></li>
+      <li><span class="dot"></span><div><strong>Download deliverables</strong><p>Final files appear the moment we ship — PNG, PDF, MP4, source files, all there.</p></div></li>
+      <li><span class="dot"></span><div><strong>Comment + approve</strong><p>One thread per task. Skip the WhatsApp scroll.</p></div></li>
+    </ul>
+    <div class="auth-side__foot">
+      <span class="muted">Need help?</span>
+      <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%20need%20help%20logging%20into%20my%20portal" target="_blank" rel="noopener">WhatsApp +91 78168 16963</a>
+    </div>
+  </aside>
+</main>
+
+<script type="module">
+  import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.0';
+  import { SUPABASE_URL, SUPABASE_ANON_KEY } from './portal/config.js';
+
+  const sb = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+  // If already logged in, redirect to portal
+  const { data: { session } } = await sb.auth.getSession();
+  if (session) location.replace('portal.html');
+
+  const form = document.getElementById('loginForm');
+  const btn = document.getElementById('loginBtn');
+  const status = document.getElementById('authStatus');
+  const emailInput = document.getElementById('loginEmail');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const email = emailInput.value.trim();
+    btn.disabled = true;
+    btn.querySelector('.btn-label').textContent = 'Sending…';
+    status.textContent = '';
+    status.className = 'auth-status';
+
+    const { error } = await sb.auth.signInWithOtp({
+      email,
+      options: { emailRedirectTo: location.origin + '/portal.html' }
+    });
+
+    btn.disabled = false;
+    btn.querySelector('.btn-label').textContent = 'Send magic link';
+
+    if (error) {
+      status.textContent = error.message;
+      status.classList.add('is-err');
+    } else {
+      status.textContent = `✓ Magic link sent to ${email} — check your inbox (and spam).`;
+      status.classList.add('is-ok');
+      form.reset();
+    }
+  });
+</script>
+</body>
+</html>
