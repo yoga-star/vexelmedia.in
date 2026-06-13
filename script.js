@@ -371,7 +371,7 @@ function initMarqueeVelocity(){
   raf();
 }
 
-/* ---------- MANIFESTO STICKY SCRUBBER ---------- */
+/* ---------- MANIFESTO STICKY SCRUBBER (scroll-driven, smooth) ---------- */
 function initManifesto(){
   const section = document.querySelector('.manifesto');
   if (!section) return;
@@ -379,26 +379,65 @@ function initManifesto(){
   const numEl = document.getElementById('stageNum');
   const progEl = document.getElementById('manifestoProgress');
   const total = stages.length;
+  if (!total) return;
+
   let activeIdx = -1;
+  let ticking = false;
+
+  // Easing for fade in/out segments — soft start, soft end
+  const ease = t => t < .5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2)/2;
 
   const update = () => {
+    ticking = false;
     const r = section.getBoundingClientRect();
     const totalScrollable = section.offsetHeight - window.innerHeight;
-    const scrolled = -r.top;
-    const k = Math.max(0, Math.min(1, scrolled / totalScrollable));
-    const idx = Math.min(total - 1, Math.floor(k * total));
+    if (totalScrollable <= 0) return;
+    const scrolled = Math.max(0, Math.min(totalScrollable, -r.top));
+    const k = scrolled / totalScrollable;     // overall progress 0..1
+    const slot = 1 / total;                    // size of each stage's slot
+    const FADE = 0.18;                         // % of each slot used to fade in/out
+
+    stages.forEach((s, i) => {
+      const local = (k - i * slot) / slot;     // this stage's local progress
+      let opacity, ty;
+      if (local <= -FADE){
+        opacity = 0; ty = 28;
+      } else if (local >= 1 + FADE){
+        opacity = 0; ty = -28;
+      } else if (local < FADE){
+        const t = ease((local + FADE) / (2*FADE));
+        opacity = t;
+        ty = 28 * (1 - t);
+      } else if (local > 1 - FADE){
+        const t = ease((local - (1 - FADE)) / (2*FADE));
+        opacity = 1 - t;
+        ty = -28 * t;
+      } else {
+        opacity = 1; ty = 0;
+      }
+      s.style.opacity = opacity.toFixed(3);
+      s.style.transform = 'translate3d(0,' + ty.toFixed(1) + 'px,0)';
+    });
+
+    // Snap the integer counter at slot midpoint (feels stable)
+    const idx = Math.min(total - 1, Math.max(0, Math.floor(k * total + 0.0001)));
     if (idx !== activeIdx){
       activeIdx = idx;
-      stages.forEach((s,i) => s.classList.toggle('is-active', i === idx));
       numEl.textContent = String(idx + 1).padStart(2, '0');
     }
-    progEl.style.width = ((idx + 1) / total * 100) + '%';
+    progEl.style.width = (k * 100).toFixed(2) + '%';
   };
-  // initial
-  stages[0].classList.add('is-active');
+
+  const onScroll = () => {
+    if (!ticking){
+      requestAnimationFrame(update);
+      ticking = true;
+    }
+  };
+
   update();
-  window.addEventListener('scroll', update, { passive:true });
-  window.addEventListener('resize', update);
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll);
 }
 
 /* ---------- HORIZONTAL DRAG RAIL ---------- */
