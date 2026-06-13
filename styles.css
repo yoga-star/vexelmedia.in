@@ -2138,3 +2138,204 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
   background:var(--accent);filter:blur(160px);opacity:.08;z-index:1;
   pointer-events:none;
 }
+
+/* =========================================================
+   SHOWCASE LAYOUTS — generic, slot-ready
+   (used by /design and /video)
+   ========================================================= */
+
+/* SHOW SECTION SHELL ------------------------------------- */
+.show{padding:120px 0;border-bottom:1px solid var(--line);position:relative}
+.show--alt{background:var(--bg-alt)}
+.show__head{
+  display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:end;margin-bottom:64px;
+}
+.show__head h2{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(40px,5.4vw,84px);line-height:.98;letter-spacing:-.025em;margin:14px 0 0;
+}
+.show__head h2 em{font-style:italic;color:var(--accent);font-weight:inherit}
+.show__copy{color:var(--muted);font-size:15.5px;line-height:1.65;margin:0;max-width:46ch}
+.show__copy strong{color:var(--text);font-weight:600}
+.show__index{
+  font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);
+  text-transform:uppercase;padding:6px 12px;border:1px solid var(--line);border-radius:999px;
+  display:inline-block;margin-bottom:0;
+}
+@media (max-width:980px){.show__head{grid-template-columns:1fr;gap:18px}}
+
+/* SLOT — universal media container -----------------------
+   Use .slot for any image or video card. Aspect ratios are
+   handled by modifier classes. Drop your file into the inner
+   <img src="..."> or <video src="...">. Done.                */
+.slot{
+  position:relative;overflow:hidden;border-radius:14px;
+  background:linear-gradient(135deg,#1a1815 0%,#0e0d0b 100%);
+  border:1px solid var(--line);
+  transition:border-color .25s, transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s;
+}
+.slot:hover{
+  border-color:var(--line-strong);transform:translateY(-4px);
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.55);
+}
+.slot img, .slot video{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .8s cubic-bezier(.2,.8,.2,1);
+}
+.slot:hover img{transform:scale(1.04)}
+
+/* Aspect-ratio modifiers */
+.slot--a4{aspect-ratio:1/1.414}        /* A4 portrait — brochures, posters */
+.slot--landscape{aspect-ratio:16/10}   /* 16:10 — laptop / desktop crops */
+.slot--16x9{aspect-ratio:16/9}         /* widescreen video / film */
+.slot--square{aspect-ratio:1}          /* Instagram square */
+.slot--portrait{aspect-ratio:4/5}      /* Instagram portrait */
+.slot--reel{aspect-ratio:9/16}         /* vertical reel / story */
+.slot--wide{aspect-ratio:21/9}         /* cinematic banner */
+
+/* Slot meta plate overlay */
+.slot__plate{
+  position:absolute;left:18px;bottom:18px;z-index:2;
+  display:flex;flex-direction:column;gap:4px;
+  padding:12px 16px;background:rgba(10,9,7,.72);border:1px solid rgba(244,240,225,.08);
+  border-radius:10px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  max-width:78%;
+}
+.slot__plate span{
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  color:var(--accent);text-transform:uppercase;
+}
+.slot__plate h4{
+  font-family:var(--display);font-weight:500;font-size:18px;letter-spacing:-.01em;margin:0;
+  line-height:1.15;color:var(--text);
+}
+.slot__plate p{margin:0;font-size:12px;color:var(--muted)}
+
+/* Slot tag (top-left badge) */
+.slot__tag{
+  position:absolute;top:14px;left:14px;z-index:2;
+  padding:5px 11px;border-radius:6px;background:var(--accent);color:#0a0907;
+  font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  font-weight:700;text-transform:uppercase;
+}
+
+/* SPREAD — magazine-style featured project --------------- */
+.spread{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:24px;
+}
+.spread__main{grid-row:span 2}
+.spread__main .slot{height:100%}
+.spread__side{display:grid;gap:24px}
+@media (max-width:900px){
+  .spread{grid-template-columns:1fr}
+  .spread__main{grid-row:auto}
+  .spread__main .slot{aspect-ratio:4/3}
+  .spread__side{grid-template-columns:1fr 1fr}
+}
+
+/* CASE — featured project header (used inside spread) ---- */
+.case-feat{
+  display:grid;grid-template-columns:1fr 380px;gap:40px;align-items:end;
+  margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid var(--line);
+}
+.case-feat__num{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;display:block;margin-bottom:14px}
+.case-feat__title{
+  font-family:var(--display);font-weight:500;font-size:clamp(36px,4.6vw,68px);
+  line-height:.98;letter-spacing:-.02em;margin:0;max-width:18ch;
+}
+.case-feat__title em{font-style:italic;color:var(--accent);font-weight:inherit}
+.case-feat__copy{color:var(--muted);font-size:15px;line-height:1.65;margin:0}
+.case-feat__copy strong{color:var(--text);font-weight:600}
+.case-feat__meta{display:grid;grid-template-columns:1fr 1fr;gap:16px;border-top:1px solid var(--line);padding-top:18px;margin-top:18px}
+.case-feat__meta dt{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--muted);margin:0 0 4px;text-transform:uppercase}
+.case-feat__meta dd{margin:0;font-size:14px;color:var(--text)}
+@media (max-width:900px){.case-feat{grid-template-columns:1fr;gap:20px}}
+
+/* GRIDS — drop-in patterns ------------------------------- */
+
+/* Even N-up grid */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.grid-5{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.grid-6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+
+@media (max-width:1100px){
+  .grid-5{grid-template-columns:repeat(4,1fr)}
+  .grid-6{grid-template-columns:repeat(4,1fr)}
+  .grid-4{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:780px){
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-5{grid-template-columns:repeat(3,1fr)}
+  .grid-6{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:520px){
+  .grid-3, .grid-4, .grid-5, .grid-6, .grid-2{grid-template-columns:repeat(2,1fr);gap:12px}
+  .spread{gap:14px}
+  .spread__side{gap:14px}
+}
+
+/* BENTO — irregular feature grid */
+.bento{
+  display:grid;grid-template-columns:repeat(12,1fr);gap:20px;grid-auto-rows:minmax(160px,auto);
+}
+.bento__lg{grid-column:span 8;grid-row:span 2}
+.bento__md{grid-column:span 4;grid-row:span 2}
+.bento__wide{grid-column:span 8}
+.bento__sm{grid-column:span 4}
+.bento__half{grid-column:span 6}
+.bento .slot{height:100%}
+@media (max-width:980px){
+  .bento{grid-template-columns:repeat(6,1fr)}
+  .bento__lg{grid-column:span 6;grid-row:span 2}
+  .bento__md{grid-column:span 6;grid-row:span 1}
+  .bento__wide{grid-column:span 6}
+  .bento__sm, .bento__half{grid-column:span 3}
+}
+@media (max-width:600px){
+  .bento{grid-template-columns:repeat(2,1fr);gap:12px}
+  .bento__lg, .bento__md, .bento__wide, .bento__sm, .bento__half{grid-column:span 2}
+  .bento__sm{grid-column:span 1}
+}
+
+/* VIDEO CARD — universal */
+.vid{position:relative;overflow:hidden;border-radius:14px;border:1px solid var(--line);background:#000}
+.vid--feat{border-radius:18px;border-color:var(--line-strong);box-shadow:0 60px 120px -50px rgba(0,0,0,.65)}
+.vid video{width:100%;height:100%;display:block;object-fit:cover}
+.vid__overlay{
+  position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.7) 100%);
+  pointer-events:none;z-index:1;
+}
+.vid__plate{
+  position:absolute;left:24px;bottom:24px;z-index:2;display:flex;flex-direction:column;gap:6px;
+  max-width:80%;
+}
+.vid__plate span{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+.vid__plate h3{font-family:var(--display);font-weight:500;font-size:22px;line-height:1.15;letter-spacing:-.015em;margin:0;color:#fff}
+.vid__plate p{margin:0;font-size:13px;color:rgba(255,255,255,.7)}
+.vid__play{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:72px;height:72px;border-radius:50%;background:rgba(10,9,7,.65);
+  border:1px solid rgba(244,240,225,.18);backdrop-filter:blur(8px);
+  display:flex;align-items:center;justify-content:center;color:var(--text);
+  font-size:24px;z-index:2;pointer-events:none;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1), background .25s;
+}
+.vid:hover .vid__play{transform:translate(-50%,-50%) scale(1.08);background:var(--accent);color:#0a0907}
+.vid--feat .vid__play{width:96px;height:96px;font-size:32px}
+
+.vid__meta{
+  display:flex;justify-content:space-between;align-items:center;gap:18px;
+  padding:18px 22px;background:var(--surface);border-top:1px solid var(--line);
+}
+.vid__meta h4{font-family:var(--display);font-weight:500;font-size:18px;letter-spacing:-.015em;margin:0}
+.vid__meta span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
+
+/* HELP NOTE (subtle "drop your files" hint) -------------- */
+.slotnote{
+  margin-top:18px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;
+  color:var(--muted);
+}
+.slotnote em{font-style:italic;color:var(--accent)}
