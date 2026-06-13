@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Websites — Vexel Media</title>
+<meta name="description" content="A selection of custom websites built by Vexel Media — eight live, fully designed builds across e-commerce, hospitality, fitness, real estate, SaaS, healthcare, creative and interior design.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Websites — Vexel Media">
+<meta property="og:description" content="Custom website builds from a Bengaluru creative & marketing studio.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=15">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__welcome">Selected work</span>
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__tag">websites that <em>earn their pixels</em></span>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="index.html#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="websites.html" class="is-active" data-cursor="link">/websites</a>
+    <a href="design.html" data-cursor="link">/design</a>
+    <a href="video.html" data-cursor="link">/video</a>
+    <a href="index.html#studio" data-cursor="link">/studio</a>
+    <a href="contact.html" data-cursor="link">/contact</a>
+  </nav>
+  <a href="contact.html" class="nav__cta magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+  <button type="button" class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobi" id="mobileMenu" aria-hidden="true">
+  <div class="mobi__head">
+    <a href="index.html#top" class="mobi__logo">vexel<i>.media</i></a>
+    <button type="button" class="mobi__close" id="mobileMenuClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobi__nav" aria-label="Mobile primary">
+    <a href="websites.html" class="is-active" data-mobi-link><span class="mobi__num">01</span><span>/websites</span></a>
+    <a href="design.html" data-mobi-link><span class="mobi__num">02</span><span>/design</span></a>
+    <a href="video.html" data-mobi-link><span class="mobi__num">03</span><span>/video</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">04</span><span>/studio</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">05</span><span>/contact</span></a>
+  </nav>
+  <div class="mobi__cta">
+    <a href="contact.html" class="btn btn--primary" data-mobi-link>Start a project <span class="arrow">→</span></a>
+    <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20website" class="btn btn--ghost" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp</a>
+  </div>
+  <div class="mobi__meta">
+    <a href="tel:+917816816963" data-mobi-link>+91 78168 16963</a>
+    <a href="mailto:hello@vexelmedia.in" data-mobi-link>hello@vexelmedia.in</a>
+    <span class="muted">Bengaluru, India</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="page-hero__glow page-hero__glow--alt"></div>
+  <div class="page-hero__inner">
+    <div class="page-hero__eyebrow"><span class="dot"></span>Selected websites · 2025—26</div>
+    <h1 class="page-hero__title" data-reveal>Websites that <em>earn</em> their pixels.</h1>
+    <p class="page-hero__sub" data-reveal>Eight recent builds — across e-commerce, hospitality, fitness, real estate, SaaS, healthcare, creative and interior design. <strong>Every preview below is the actual site rendering live in a frame.</strong></p>
+    <div class="page-hero__meta" data-reveal>
+      <span><i>Builds</i> 8 selected</span>
+      <span><i>Range</i> D2C → SaaS → Hospitality → Service</span>
+      <span><i>Average build</i> 2—5 weeks</span>
+      <span><i>Open slots</i> 2 / month</span>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STACK -->
+<section class="case-stack">
+  <div class="container">
+    <div class="case-stack__head">
+      <div>
+        <span class="section-label" data-reveal>/ Receipts</span>
+        <h2 data-reveal>Scroll the shelf. <em>Each preview is the real, live site.</em></h2>
+      </div>
+      <p data-reveal>Each card below shows a desktop frame and a phone frame loading the same build — no screenshots, no fakes. Hover to highlight, scroll to keep going.</p>
+    </div>
+
+    <!-- 01 AERIE -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 01 — D2C skincare</span>
+        <h3 class="case-row__client">Aerie <em>Skin Co.</em></h3>
+        <p class="case-row__desc">A slow, science-led skincare brand from Pondicherry. Editorial-leaning hero, three-step ritual story, and a cream-on-cream product grid that lets the bottles do the talking.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>D2C · Beauty</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Shopify + Custom</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Brand + Design + Build</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>Tier-1 India + diaspora</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Add-to-cart rate</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Editorial · Quiet</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">aerie.skin</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-aerie/" loading="eager" title="Aerie Skin Co. preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-aerie/" loading="eager" title="Aerie mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02 SMOKE+SALT -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 02 — Restaurant</span>
+        <h3 class="case-row__client">Smoke + Salt <em>Kitchen</em></h3>
+        <p class="case-row__desc">A 32-seat modern Indian dining room on Vittal Mallya Road. Cinematic full-bleed hero, a weekly-changing tasting menu, and one job: turn the scroll into a reservation.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>Hospitality · F&B</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Static + Resy embed</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Brand + Build + Copy</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>Bengaluru food crowd</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Reservations / week</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Warm · Confident</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">smokesalt.in</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-smokesalt/" loading="lazy" title="Smoke + Salt preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-smokesalt/" loading="lazy" title="Smoke + Salt mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03 PRIMAL -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 03 — Fitness · Gym</span>
+        <h3 class="case-row__client">PRIMAL <em>Strength Co.</em></h3>
+        <p class="case-row__desc">A capped-membership strength gym in Indiranagar. Heavy Archivo Black, neon-acid CTAs, and a four-up program grid that reads like a manifesto.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>Fitness · Wellness</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Webflow + Custom CSS</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Brand + Design + Build</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>25—45 · Bengaluru lifters</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Free-trial sign-ups</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Bold · No-nonsense</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">primal.fit</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-primal/" loading="lazy" title="PRIMAL gym preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-primal/" loading="lazy" title="PRIMAL mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04 BAILEY+ROHE -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 04 — Real estate</span>
+        <h3 class="case-row__client">Bailey + Rohe <em>Realty</em></h3>
+        <p class="case-row__desc">A boutique Bengaluru brokerage for heritage and mid-century homes. Editorial serif, gold accents, listing cards that feel like a print magazine.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>Real estate · Boutique</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Next.js + CMS</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Brand + Build + Listings CMS</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>HNI buyers, sellers</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Viewing bookings</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Quiet · Established</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">baileyrohe.in</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-baileyrohe/" loading="lazy" title="Bailey + Rohe preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-baileyrohe/" loading="lazy" title="Bailey + Rohe mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05 DRIFT -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 05 — SaaS · B2B</span>
+        <h3 class="case-row__client">Drift <em>Labs</em></h3>
+        <p class="case-row__desc">A design-ops SaaS for Series A-to-C product teams. Dark gradient landing, a live-feel product dashboard mock, and a pricing page tuned for paid-trial conversion.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>SaaS · Developer tools</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Next.js + MDX</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Marketing site + product mocks</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>Design leads + PMs</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Self-serve sign-ups</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Modern · Confident</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">drift.app</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-drift/" loading="lazy" title="Drift Labs preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-drift/" loading="lazy" title="Drift Labs mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06 LUMIN -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 06 — Healthcare clinic</span>
+        <h3 class="case-row__client">Lumin <em>Dental</em></h3>
+        <p class="case-row__desc">A calm, single-chair clinic that books one patient at a time. Mint + bone palette, trust-first hero, and pricing that lives on the same page as the services.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>Healthcare · Clinic</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Static + Calendly</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Brand + Design + Build + SEO</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>Indiranagar households</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Appointment bookings</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Calm · Trustworthy</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">lumindental.in</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-lumin/" loading="lazy" title="Lumin Dental preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-lumin/" loading="lazy" title="Lumin Dental mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07 QUIET HOUR -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 07 — Wedding photography</span>
+        <h3 class="case-row__client">Quiet Hour <em>Studio</em></h3>
+        <p class="case-row__desc">A two-person documentary wedding studio. Editorial serif, dusty-rose accents, a portrait-led gallery, and a single, generous "Tell us your date" CTA.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>Creative · Photography</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Static + CDN gallery</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Brand + Build + Editorial</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>HNI couples · India + diaspora</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Enquiry form fills</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Cinematic · Unrushed</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">quiethour.in</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-quiethour/" loading="lazy" title="Quiet Hour Studio preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-quiethour/" loading="lazy" title="Quiet Hour mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- 08 SOANE -->
+    <article class="case-row" data-reveal>
+      <div class="case-row__meta">
+        <span class="case-row__num">/ Case 08 — Interior design</span>
+        <h3 class="case-row__client">Soane <em>Studio</em></h3>
+        <p class="case-row__desc">A four-person Bangalore-Nilgiris interior practice. Terra-cotta, olive and cream — a project grid that reads like an editorial, and a philosophy that fits in one breath.</p>
+        <dl class="case-row__facts">
+          <div class="case-row__fact"><dt>Sector</dt><dd>Architecture · Interiors</dd></div>
+          <div class="case-row__fact"><dt>Stack</dt><dd>Static + Headless CMS</dd></div>
+          <div class="case-row__fact"><dt>Role</dt><dd>Brand + Build + Project CMS</dd></div>
+          <div class="case-row__fact"><dt>Audience</dt><dd>HNI homeowners · Hospitality</dd></div>
+          <div class="case-row__fact"><dt>Primary KPI</dt><dd>Project briefs</dd></div>
+          <div class="case-row__fact"><dt>Tone</dt><dd>Editorial · Material-led</dd></div>
+        </dl>
+        <div class="case-row__ctas">
+          <a href="contact.html" class="case-row__cta case-row__cta--ghost" data-cursor="link">Brief a build like this</a>
+        </div>
+      </div>
+      <div class="case-row__viz">
+        <div class="case-row__pair">
+          <div class="browser" data-cursor="link">
+            <div class="browser__chrome">
+              <span class="browser__dots"><span class="browser__dot browser__dot--r"></span><span class="browser__dot browser__dot--y"></span><span class="browser__dot browser__dot--g"></span></span>
+              <span class="browser__url">soane.studio</span>
+              <span class="browser__live">Live</span>
+            </div>
+            <div class="browser__frame">
+              <iframe src="clients/demo-soane/" loading="lazy" title="Soane Studio preview"></iframe>
+            </div>
+          </div>
+          <div class="phone">
+            <iframe src="clients/demo-soane/" loading="lazy" title="Soane Studio mobile preview"></iframe>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- TAIL CTA -->
+<section class="tail">
+  <div class="tail__glow"></div>
+  <div class="container tail__inner">
+    <span class="tail__eyebrow" data-reveal>/ Next slot opens · 2 a month</span>
+    <h2 class="tail__title" data-reveal>Want one that <em>does the same</em> for you?</h2>
+    <p class="tail__sub" data-reveal>From a focused one-page landing to a 100-page consulting site — we scope, design, write and ship in 2 to 5 weeks. Tell us what you're shipping.</p>
+    <div class="tail__ctas" data-reveal>
+      <a href="contact.html" class="btn btn--primary magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+      <a href="design.html" class="btn btn--ghost magnetic" data-cursor="link">See our design work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Work</span>
+      <a href="websites.html" data-cursor="link">Websites</a>
+      <a href="design.html" data-cursor="link">Design</a>
+      <a href="video.html" data-cursor="link">Video</a>
+      <a href="index.html#studio" data-cursor="link">Studio</a>
+      <a href="contact.html" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="index.html#services" data-cursor="link">Branding</a>
+      <a href="index.html#services" data-cursor="link">Social Media</a>
+      <a href="index.html#services" data-cursor="link">Meta Ads</a>
+      <a href="index.html#services" data-cursor="link">SEO</a>
+      <a href="index.html#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js?v=15"></script>
+</body>
+</html>

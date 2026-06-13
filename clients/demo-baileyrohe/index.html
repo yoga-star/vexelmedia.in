@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bailey + Rohe — Homes with a personality.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ivory:#f7f3eb; --ink:#0e1a2c; --navy:#0e1a2c; --gold:#b88a3d; --line:rgba(14,26,44,.12);
+  --muted:#5e6976;
+  --serif:'Playfair Display',serif; --sans:'Inter',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--ivory);color:var(--ink);font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.cap{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--gold)}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:28px 56px;border-bottom:1px solid var(--line);position:relative;z-index:5}
+.nav__logo{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.02em}
+.nav__logo i{font-style:italic;color:var(--gold);margin:0 4px}
+.nav__menu{display:flex;gap:36px}
+.nav__menu a{font-size:13px;letter-spacing:.06em;color:var(--ink)}
+.nav__cta{padding:11px 22px;background:var(--navy);color:var(--ivory);border-radius:0;font-size:12px;letter-spacing:.14em;font-weight:500;text-transform:uppercase;border:1px solid var(--navy);transition:.2s}
+.nav__cta:hover{background:transparent;color:var(--navy)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;min-height:88vh;align-items:stretch;position:relative}
+.hero__left{padding:80px 64px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--line)}
+.hero__eyebrow{display:flex;align-items:center;gap:14px;color:var(--gold)}
+.hero__eyebrow span:first-child{width:32px;height:1px;background:var(--gold)}
+.hero__title{font-family:var(--serif);font-weight:500;font-size:clamp(56px,7.6vw,128px);line-height:.98;letter-spacing:-.015em;margin:48px 0 32px;max-width:13ch}
+.hero__title em{font-style:italic;color:var(--gold)}
+.hero__sub{font-family:var(--serif);font-size:22px;line-height:1.5;color:#3a4554;max-width:42ch;margin:0 0 36px}
+.hero__row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:48px}
+.btn{padding:14px 28px;font-size:12px;letter-spacing:.14em;font-weight:600;text-transform:uppercase;display:inline-flex;gap:12px;align-items:center;transition:.25s}
+.btn--primary{background:var(--navy);color:var(--ivory);border:1px solid var(--navy)}
+.btn--primary:hover{background:transparent;color:var(--navy)}
+.btn--ghost{border:1px solid var(--ink)}
+.hero__meta{display:flex;gap:32px;border-top:1px solid var(--line);padding-top:24px}
+.hero__meta div span{display:block;font-family:var(--serif);font-style:italic;font-size:32px;color:var(--gold);margin-bottom:2px}
+.hero__meta div p{margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#5e6976}
+
+.hero__right{position:relative;background:#e9e0d0;overflow:hidden}
+.hero__img{width:100%;height:100%;object-fit:cover}
+.hero__plate{position:absolute;left:32px;bottom:32px;background:var(--ivory);padding:20px 24px;max-width:260px;box-shadow:0 18px 40px -18px rgba(14,26,44,.3)}
+.hero__plate .cap{display:block;margin-bottom:10px}
+.hero__plate h4{font-family:var(--serif);font-weight:500;font-size:22px;margin:0 0 6px;letter-spacing:-.015em}
+.hero__plate p{margin:0 0 12px;color:#5e6976;font-size:13px;line-height:1.5}
+.hero__plate strong{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--gold);font-weight:500}
+
+/* MARQUEE */
+.mq{padding:18px 56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:center;font-family:var(--serif);font-style:italic;font-size:17px;color:#5e6976}
+
+/* LISTINGS */
+.list{padding:140px 56px}
+.list__head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:64px;border-bottom:1px solid var(--line);padding-bottom:32px;flex-wrap:wrap}
+.list__head h2{font-family:var(--serif);font-weight:500;font-size:clamp(40px,5.6vw,84px);line-height:1;letter-spacing:-.02em;margin:14px 0 0;max-width:14ch}
+.list__head h2 em{font-style:italic;color:var(--gold)}
+.list__head p{max-width:38ch;color:#5e6976;line-height:1.6;font-size:15px;margin:0}
+.list__filter{display:flex;gap:20px;font-family:var(--sans);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#5e6976;font-weight:500}
+.list__filter span.is-active{color:var(--ink);border-bottom:1px solid var(--gold);padding-bottom:4px}
+
+.list__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.prop{background:transparent;display:flex;flex-direction:column}
+.prop__img{aspect-ratio:5/4;overflow:hidden;background:#e9e0d0;position:relative}
+.prop__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.prop:hover .prop__img img{transform:scale(1.05)}
+.prop__tag{position:absolute;top:14px;left:14px;background:var(--ivory);padding:5px 11px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.prop__tag--sold{background:var(--navy);color:var(--ivory)}
+.prop__body{padding:22px 0 0}
+.prop__loc{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;display:block}
+.prop__name{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:-.01em;margin:0 0 6px}
+.prop__line{display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+.prop__price{font-family:var(--serif);font-weight:500;font-size:22px;color:var(--gold)}
+.prop__price em{font-style:italic;font-size:14px;color:#5e6976}
+.prop__specs{display:flex;gap:18px;font-size:12px;letter-spacing:.04em;color:#5e6976}
+.prop__specs i{font-style:normal;color:var(--ink);font-weight:600;margin-right:4px}
+
+/* AGENT BANNER */
+.agent{display:grid;grid-template-columns:1fr 1.2fr;background:var(--navy);color:var(--ivory)}
+.agent__img{position:relative;overflow:hidden}
+.agent__img img{width:100%;height:100%;object-fit:cover;min-height:560px}
+.agent__right{padding:100px 64px;display:flex;flex-direction:column;justify-content:center}
+.agent__right h2{font-family:var(--serif);font-weight:500;font-size:clamp(36px,4.6vw,68px);line-height:1.04;letter-spacing:-.02em;margin:18px 0 24px;max-width:18ch;color:var(--ivory)}
+.agent__right h2 em{font-style:italic;color:var(--gold)}
+.agent__right p{font-family:var(--serif);font-size:20px;line-height:1.5;color:#cdd4dd;margin:0 0 32px;max-width:44ch}
+.agent__sign{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--gold);margin-bottom:6px}
+.agent__role{font-size:12px;letter-spacing:.14em;color:#9caab8;text-transform:uppercase}
+
+/* FOOT */
+.foot{padding:80px 56px 40px;border-top:1px solid var(--line);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.foot__brand h3{font-family:var(--serif);font-size:36px;font-weight:500;margin:0 0 14px;letter-spacing:.02em}
+.foot__brand h3 i{font-style:italic;color:var(--gold);margin:0 4px}
+.foot__brand p{font-family:var(--serif);font-size:18px;color:#5e6976;line-height:1.5;max-width:30ch;margin:0}
+.foot__col h4{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin:0 0 18px;color:var(--gold);font-weight:600}
+.foot__col a, .foot__col span{display:block;padding:6px 0;font-size:14px;color:var(--ink)}
+.foot__bar{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:32px;border-top:1px solid var(--line);font-size:12px;color:#5e6976;margin-top:24px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="nav__logo">Bailey<i>+</i>Rohe</a>
+  <nav class="nav__menu">
+    <a href="#">Listings</a>
+    <a href="#">Sold</a>
+    <a href="#">Story</a>
+    <a href="#">Press</a>
+  </nav>
+  <a href="#" class="nav__cta">Book a viewing</a>
+</header>
+
+<section class="hero">
+  <div class="hero__left">
+    <div>
+      <div class="hero__eyebrow cap"><span></span>Boutique real estate · est. 2014</div>
+      <h1 class="hero__title">Homes with a <em>personality.</em></h1>
+      <p class="hero__sub">A 9-person brokerage placing characterful homes — heritage flats, mid-century houses, and quiet land — with people who plan to actually live in them.</p>
+      <div class="hero__row">
+        <a class="btn btn--primary" href="#">View listings <span>→</span></a>
+        <a class="btn btn--ghost" href="#">Sell with us</a>
+      </div>
+    </div>
+    <div class="hero__meta">
+      <div><span>₹1,240Cr</span><p>Placed · last 4 yrs</p></div>
+      <div><span>96%</span><p>Repeat or referral</p></div>
+      <div><span>42 days</span><p>Avg. on market</p></div>
+    </div>
+  </div>
+  <div class="hero__right">
+    <img class="hero__img" src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1500&q=85&auto=format&fit=crop" alt="">
+    <div class="hero__plate">
+      <span class="cap">/ Just listed</span>
+      <h4>The Glasshouse, Cooke Town</h4>
+      <p>4 bed villa · 4,200 sq ft · garden · circa 1962</p>
+      <strong>₹14.8 Cr · viewing this week</strong>
+    </div>
+  </div>
+</section>
+
+<div class="mq">
+  <span>Featured in <em>Architectural Digest India</em></span>
+  <span>Wallpaper* heritage list, 2025</span>
+  <span>5 — RERA registered agents</span>
+  <span><em>Independent · referral-led</em></span>
+</div>
+
+<section class="list">
+  <div class="list__head">
+    <div>
+      <span class="cap">/ On the books · this month</span>
+      <h2>Twelve homes. <em>Quietly placed.</em></h2>
+    </div>
+    <p>We don't list everything. These twelve are running viewings this month — most go to people on the waiting list before they reach the public site.</p>
+  </div>
+  <div class="list__filter">
+    <span class="is-active">All</span>
+    <span>Heritage</span>
+    <span>Mid-century</span>
+    <span>Modern</span>
+    <span>Land</span>
+  </div>
+  <div class="list__grid" style="margin-top:32px">
+    <article class="prop">
+      <div class="prop__img"><img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=900&q=80&auto=format&fit=crop" alt=""><span class="prop__tag">New</span></div>
+      <div class="prop__body">
+        <span class="prop__loc">Cooke Town · Bengaluru</span>
+        <h3 class="prop__name">The Glasshouse</h3>
+        <div class="prop__line"><span class="prop__price">₹14.8 Cr <em>· asking</em></span><span class="prop__specs"><span><i>4</i>Bed</span><span><i>4,200</i>sqft</span></span></div>
+      </div>
+    </article>
+    <article class="prop">
+      <div class="prop__img"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80&auto=format&fit=crop" alt=""><span class="prop__tag">Heritage</span></div>
+      <div class="prop__body">
+        <span class="prop__loc">Frazer Town · Bengaluru</span>
+        <h3 class="prop__name">Number Twelve</h3>
+        <div class="prop__line"><span class="prop__price">₹8.4 Cr</span><span class="prop__specs"><span><i>3</i>Bed</span><span><i>2,860</i>sqft</span></span></div>
+      </div>
+    </article>
+    <article class="prop">
+      <div class="prop__img"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=900&q=80&auto=format&fit=crop" alt=""><span class="prop__tag prop__tag--sold">Sold</span></div>
+      <div class="prop__body">
+        <span class="prop__loc">Sadashivanagar</span>
+        <h3 class="prop__name">House on the Bend</h3>
+        <div class="prop__line"><span class="prop__price">₹21.2 Cr</span><span class="prop__specs"><span><i>5</i>Bed</span><span><i>6,800</i>sqft</span></span></div>
+      </div>
+    </article>
+    <article class="prop">
+      <div class="prop__img"><img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=900&q=80&auto=format&fit=crop" alt=""><span class="prop__tag">Mid-century</span></div>
+      <div class="prop__body">
+        <span class="prop__loc">Banashankari · 1968</span>
+        <h3 class="prop__name">Casita Solace</h3>
+        <div class="prop__line"><span class="prop__price">₹6.2 Cr</span><span class="prop__specs"><span><i>3</i>Bed</span><span><i>2,400</i>sqft</span></span></div>
+      </div>
+    </article>
+    <article class="prop">
+      <div class="prop__img"><img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=900&q=80&auto=format&fit=crop" alt=""><span class="prop__tag">Quiet</span></div>
+      <div class="prop__body">
+        <span class="prop__loc">Whitefield · gated</span>
+        <h3 class="prop__name">The Long Light</h3>
+        <div class="prop__line"><span class="prop__price">₹9.6 Cr</span><span class="prop__specs"><span><i>4</i>Bed</span><span><i>3,400</i>sqft</span></span></div>
+      </div>
+    </article>
+    <article class="prop">
+      <div class="prop__img"><img src="https://images.unsplash.com/photo-1592595896616-c37162298647?w=900&q=80&auto=format&fit=crop" alt=""><span class="prop__tag">Land</span></div>
+      <div class="prop__body">
+        <span class="prop__loc">Yelahanka outskirts</span>
+        <h3 class="prop__name">The Almond Plot</h3>
+        <div class="prop__line"><span class="prop__price">₹2.4 Cr</span><span class="prop__specs"><span><i>—</i></span><span><i>10,200</i>sqft</span></span></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="agent">
+  <div class="agent__img"><img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&q=85&auto=format&fit=crop" alt=""></div>
+  <div class="agent__right">
+    <span class="cap" style="color:var(--gold)">/ Founder</span>
+    <h2>We don't <em>chase listings</em> — we curate them.</h2>
+    <p>I started Bailey + Rohe after fifteen years inside a big agency that treated heritage homes like spreadsheets. We're nine of us now, all senior, all paid only when our buyers actually move in.</p>
+    <span class="agent__sign">~ Anaita Bailey</span>
+    <span class="agent__role">Founder · Principal Agent</span>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__brand">
+    <h3>Bailey<i>+</i>Rohe</h3>
+    <p>A nine-person, independent brokerage. Bengaluru, India. Boutique by design.</p>
+  </div>
+  <div class="foot__col">
+    <h4>Buy</h4>
+    <a href="#">Heritage</a>
+    <a href="#">Mid-century</a>
+    <a href="#">Modern</a>
+    <a href="#">Land</a>
+  </div>
+  <div class="foot__col">
+    <h4>Studio</h4>
+    <a href="#">Our story</a>
+    <a href="#">Press</a>
+    <a href="#">Journal</a>
+    <a href="#">Joining us</a>
+  </div>
+  <div class="foot__col">
+    <h4>Contact</h4>
+    <a href="#">hello@baileyrohe.in</a>
+    <a href="#">+91 99861 12340</a>
+    <a href="#">Book a viewing</a>
+    <a href="#">List a home</a>
+  </div>
+  <div class="foot__bar">
+    <span>© 2026 Bailey + Rohe Realty LLP · RERA registered</span>
+    <span>Bengaluru, India</span>
+  </div>
+</footer>
+
+</body>
+</html>

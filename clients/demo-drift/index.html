@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drift — Design ops, finally calm.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c10; --ink:#f4f4f6; --grey:#16161c; --grey-2:#1d1d26;
+  --violet:#a78bfa; --violet-2:#7c3aed; --mint:#5eead4;
+  --line:rgba(244,244,246,.08); --line-strong:rgba(244,244,246,.14);
+  --muted:#a1a1aa;
+  --serif:'Instrument Serif',serif; --sans:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--violet);text-transform:uppercase}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:20px 56px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(12,12,16,.85);backdrop-filter:blur(12px);z-index:10}
+.nav__logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;letter-spacing:-.01em}
+.nav__logo span{width:24px;height:24px;background:linear-gradient(135deg,var(--violet) 0%,var(--violet-2) 100%);border-radius:7px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800}
+.nav__menu{display:flex;gap:30px}
+.nav__menu a{font-size:14px;color:var(--muted);font-weight:500;transition:color .2s}
+.nav__menu a:hover{color:var(--ink)}
+.nav__row{display:flex;gap:14px;align-items:center}
+.nav__row a:first-child{font-size:14px;color:var(--muted);font-weight:500}
+.nav__cta{padding:9px 18px;background:var(--ink);color:#0c0c10;border-radius:8px;font-size:13px;font-weight:600;border:1px solid var(--ink)}
+
+/* HERO */
+.hero{padding:120px 56px 80px;position:relative;overflow:hidden;text-align:center}
+.hero__bg{position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:1200px;height:1200px;border-radius:50%;background:radial-gradient(circle,rgba(167,139,250,.18) 0%,rgba(167,139,250,0) 60%);z-index:0;pointer-events:none}
+.hero__inner{position:relative;z-index:1;max-width:1080px;margin:0 auto}
+.hero__pill{display:inline-flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border:1px solid var(--line-strong);border-radius:999px;font-size:12px;color:var(--muted);margin-bottom:28px;background:rgba(244,244,246,.03)}
+.hero__pill i{font-style:normal;background:linear-gradient(135deg,var(--violet) 0%,var(--violet-2) 100%);color:#fff;padding:3px 10px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.06em}
+.hero__title{font-family:var(--sans);font-weight:600;font-size:clamp(56px,8vw,108px);line-height:1.02;letter-spacing:-.035em;margin:0 0 24px;background:linear-gradient(180deg,#fff 0%,#888 100%);background-clip:text;-webkit-background-clip:text;color:transparent}
+.hero__title em{font-family:var(--serif);font-style:italic;font-weight:400;background:linear-gradient(135deg,var(--violet) 0%,var(--mint) 100%);background-clip:text;-webkit-background-clip:text;color:transparent;font-size:1.05em;letter-spacing:-.02em}
+.hero__sub{font-size:19px;line-height:1.55;color:var(--muted);max-width:48ch;margin:0 auto 36px}
+.hero__sub strong{color:var(--ink);font-weight:500}
+.hero__row{display:inline-flex;gap:12px;align-items:center}
+.btn{padding:14px 24px;border-radius:10px;font-size:14px;font-weight:500;display:inline-flex;gap:10px;align-items:center;transition:.25s}
+.btn--primary{background:var(--ink);color:#0c0c10}
+.btn--primary:hover{transform:translateY(-1px)}
+.btn--ghost{border:1px solid var(--line-strong);color:var(--ink);background:transparent}
+.btn--ghost:hover{border-color:var(--ink)}
+
+.hero__dash{margin:80px auto 0;max-width:1080px;border-radius:18px;border:1px solid var(--line-strong);overflow:hidden;background:var(--grey);box-shadow:0 60px 120px -40px rgba(167,139,250,.2)}
+.hero__dash-chrome{padding:14px 18px;background:var(--grey-2);border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.hero__dash-chrome i{width:11px;height:11px;border-radius:50%;background:#3a3a45;display:inline-block;font-style:normal}
+.hero__dash-chrome i.r{background:#ff5f57}.hero__dash-chrome i.y{background:#febc2e}.hero__dash-chrome i.g{background:#28c840}
+.hero__dash-chrome span{flex:1;text-align:center;font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em}
+.hero__dash-body{padding:0;display:grid;grid-template-columns:200px 1fr;min-height:380px}
+.hero__dash-side{background:#101016;border-right:1px solid var(--line);padding:18px}
+.hero__dash-side h5{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin:0 0 12px}
+.hero__dash-side ul{list-style:none;padding:0;margin:0 0 18px}
+.hero__dash-side li{padding:7px 9px;font-size:13px;color:var(--muted);border-radius:6px;display:flex;align-items:center;gap:9px}
+.hero__dash-side li.is-active{background:rgba(167,139,250,.14);color:var(--ink)}
+.hero__dash-side li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--muted);opacity:.5}
+.hero__dash-side li.is-active::before{background:var(--violet);opacity:1}
+
+.hero__dash-main{padding:24px;background:#0e0e14}
+.dash-row{display:flex;gap:16px;margin-bottom:16px}
+.dash-stat{flex:1;padding:18px;background:var(--grey-2);border-radius:10px;border:1px solid var(--line)}
+.dash-stat span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-transform:uppercase;margin-bottom:6px}
+.dash-stat h3{margin:0;font-size:28px;font-weight:600;letter-spacing:-.02em;color:var(--ink)}
+.dash-stat h3 i{font-size:13px;color:var(--mint);font-style:normal;font-weight:500;margin-left:6px}
+.dash-chart{height:160px;background:var(--grey-2);border:1px solid var(--line);border-radius:10px;padding:18px;display:flex;align-items:flex-end;gap:8px}
+.dash-chart i{flex:1;background:linear-gradient(180deg,var(--violet) 0%,rgba(167,139,250,.15) 100%);border-radius:4px 4px 0 0;font-style:normal;display:inline-block}
+
+/* LOGOS */
+.logos{padding:60px 56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap;font-family:var(--mono);font-size:13px;color:var(--muted);letter-spacing:.06em}
+.logos span:first-child{color:var(--muted);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.logos b{font-family:var(--sans);font-weight:700;font-size:18px;color:#dcdce0;letter-spacing:-.02em}
+.logos b i{font-style:normal;color:var(--violet)}
+
+/* FEATURES */
+.feat{padding:140px 56px}
+.feat__head{text-align:center;max-width:680px;margin:0 auto 80px}
+.feat__head h2{font-family:var(--sans);font-weight:600;font-size:clamp(40px,5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 18px}
+.feat__head h2 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--violet)}
+.feat__head p{color:var(--muted);line-height:1.65;font-size:17px}
+.feat__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.feat__card{padding:36px;border:1px solid var(--line);border-radius:18px;background:var(--grey);position:relative;overflow:hidden;transition:border-color .25s, transform .35s cubic-bezier(.2,.8,.2,1)}
+.feat__card:hover{border-color:var(--line-strong);transform:translateY(-4px)}
+.feat__icon{width:42px;height:42px;border-radius:12px;background:rgba(167,139,250,.15);color:var(--violet);display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;margin-bottom:24px}
+.feat__card h3{font-size:21px;font-weight:600;letter-spacing:-.02em;margin:0 0 10px}
+.feat__card p{margin:0;color:var(--muted);line-height:1.6;font-size:14.5px}
+.feat__card a{display:inline-block;margin-top:18px;font-size:13px;font-weight:500;color:var(--violet)}
+
+/* PRICING */
+.price{padding:140px 56px;background:#08080c;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.price__head{text-align:center;max-width:600px;margin:0 auto 60px}
+.price__head h2{font-family:var(--sans);font-weight:600;font-size:clamp(40px,5vw,72px);line-height:1.05;letter-spacing:-.025em;margin:14px 0 16px}
+.price__head h2 em{font-family:var(--serif);font-style:italic;color:var(--violet);font-weight:400}
+.price__head p{color:var(--muted);line-height:1.6;font-size:16px}
+.price__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1080px;margin:0 auto}
+.tier{padding:36px;border-radius:18px;border:1px solid var(--line-strong);background:var(--grey);display:flex;flex-direction:column}
+.tier--pop{background:linear-gradient(180deg,rgba(167,139,250,.16) 0%,var(--grey) 60%);border:1px solid var(--violet);position:relative}
+.tier__badge{position:absolute;top:-12px;right:24px;padding:5px 12px;background:var(--violet);color:#0c0c10;border-radius:999px;font-size:11px;letter-spacing:.06em;font-weight:700}
+.tier__name{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--ink);margin-bottom:8px}
+.tier__sub{color:var(--muted);font-size:13px;line-height:1.5;margin-bottom:22px;min-height:38px}
+.tier__price{font-size:48px;font-weight:600;letter-spacing:-.03em;margin:0 0 4px}
+.tier__price i{font-style:normal;font-size:15px;color:var(--muted);font-weight:400;margin-left:4px}
+.tier__cents{font-size:14px;color:var(--muted);margin-bottom:24px}
+.tier__btn{padding:11px 18px;border-radius:9px;border:1px solid var(--line-strong);text-align:center;font-size:13px;font-weight:500;margin-bottom:24px;color:var(--ink);background:transparent}
+.tier--pop .tier__btn{background:var(--violet);color:#0c0c10;border-color:var(--violet);font-weight:600}
+.tier ul{list-style:none;padding:0;margin:0}
+.tier li{padding:8px 0;font-size:13.5px;color:#cdcdd2;display:flex;gap:10px;align-items:flex-start}
+.tier li::before{content:'✓';color:var(--violet);font-weight:700}
+
+/* FOOT */
+.foot{padding:80px 56px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.foot__brand .nav__logo{margin-bottom:14px}
+.foot__brand p{color:var(--muted);max-width:32ch;font-size:14px;line-height:1.6;margin:0}
+.foot__col h4{font-size:13px;font-weight:600;margin:0 0 16px}
+.foot__col a, .foot__col span{display:block;padding:6px 0;font-size:13.5px;color:var(--muted)}
+.foot__bar{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:32px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);margin-top:24px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="nav__logo"><span>D</span>Drift</a>
+  <nav class="nav__menu">
+    <a href="#features">Product</a>
+    <a href="#">Customers</a>
+    <a href="#price">Pricing</a>
+    <a href="#">Changelog</a>
+    <a href="#">Docs</a>
+  </nav>
+  <div class="nav__row">
+    <a href="#">Sign in</a>
+    <a href="#" class="nav__cta">Start free</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__inner">
+    <span class="hero__pill"><i>NEW</i>Drift 4.0 · live preview & faster handoff</span>
+    <h1 class="hero__title">Design ops, <em>finally calm.</em></h1>
+    <p class="hero__sub">Drift is the source-of-truth layer for product teams. <strong>One place</strong> for components, docs, decisions and reviews — synced to Figma, GitHub and Linear.</p>
+    <div class="hero__row">
+      <a class="btn btn--primary" href="#">Start free <span>→</span></a>
+      <a class="btn btn--ghost" href="#">Book a demo</a>
+    </div>
+
+    <div class="hero__dash">
+      <div class="hero__dash-chrome"><i class="r"></i><i class="y"></i><i class="g"></i><span>drift.app / spaces / commerce-team / overview</span></div>
+      <div class="hero__dash-body">
+        <div class="hero__dash-side">
+          <h5>WORKSPACE</h5>
+          <ul>
+            <li>Home</li>
+            <li class="is-active">Overview</li>
+            <li>Library</li>
+            <li>Decisions</li>
+            <li>Reviews</li>
+          </ul>
+          <h5>SPACES</h5>
+          <ul>
+            <li>Commerce</li>
+            <li>Identity</li>
+            <li>Marketing</li>
+            <li>Mobile</li>
+          </ul>
+        </div>
+        <div class="hero__dash-main">
+          <div class="dash-row">
+            <div class="dash-stat"><span>Components in use</span><h3>284 <i>+12 wk</i></h3></div>
+            <div class="dash-stat"><span>Pending reviews</span><h3>9 <i>−4 wk</i></h3></div>
+            <div class="dash-stat"><span>Decisions shipped</span><h3>47 <i>+5 wk</i></h3></div>
+          </div>
+          <div class="dash-chart">
+            <i style="height:30%"></i><i style="height:55%"></i><i style="height:42%"></i><i style="height:70%"></i>
+            <i style="height:58%"></i><i style="height:80%"></i><i style="height:65%"></i><i style="height:90%"></i>
+            <i style="height:74%"></i><i style="height:96%"></i><i style="height:82%"></i><i style="height:100%"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="logos">
+  <span>Used by product teams at</span>
+  <b>Linear<i>★</i></b>
+  <b>Vercel</b>
+  <b>Notion</b>
+  <b>Cred<i>·</i></b>
+  <b>Razorpay</b>
+  <b>Loom</b>
+  <b>Plaid</b>
+</div>
+
+<section class="feat" id="features">
+  <div class="feat__head">
+    <span class="cap">/ The product</span>
+    <h2>One layer for everything <em>that ships.</em></h2>
+    <p>Components, decisions, reviews, status — surfaced where your team already works. Plug it in once, stop chasing Figma threads forever.</p>
+  </div>
+  <div class="feat__grid">
+    <div class="feat__card">
+      <div class="feat__icon">◐</div>
+      <h3>Live component library</h3>
+      <p>Pull every Figma component, code variant, and decision history into one searchable, source-truth library.</p>
+      <a href="#">See how →</a>
+    </div>
+    <div class="feat__card">
+      <div class="feat__icon">◇</div>
+      <h3>Async design reviews</h3>
+      <p>Loom-style comments, version diff, and structured sign-off. Your weekly review meeting becomes optional.</p>
+      <a href="#">See how →</a>
+    </div>
+    <div class="feat__card">
+      <div class="feat__icon">⟶</div>
+      <h3>Linear + GitHub sync</h3>
+      <p>Every component change automatically files PRs to the right repos and updates the right Linear projects.</p>
+      <a href="#">See how →</a>
+    </div>
+    <div class="feat__card">
+      <div class="feat__icon">⊙</div>
+      <h3>Decision log</h3>
+      <p>Capture the "why" once. Replace the 12-message Slack thread with a single canonical decision doc.</p>
+      <a href="#">See how →</a>
+    </div>
+    <div class="feat__card">
+      <div class="feat__icon">★</div>
+      <h3>Status overview</h3>
+      <p>One dashboard for the entire design org — what shipped, what's blocked, what's stale. Built for design leads.</p>
+      <a href="#">See how →</a>
+    </div>
+    <div class="feat__card">
+      <div class="feat__icon">⌘</div>
+      <h3>Drift CLI</h3>
+      <p>Pull components into any local repo with one command. CI/CD integrations for Vercel, Netlify and AWS.</p>
+      <a href="#">See how →</a>
+    </div>
+  </div>
+</section>
+
+<section class="price" id="price">
+  <div class="price__head">
+    <span class="cap">/ Pricing</span>
+    <h2>Honest, <em>per seat.</em></h2>
+    <p>Free until your team hits 5 active editors. Then it's $12/editor — viewers are always free.</p>
+  </div>
+  <div class="price__grid">
+    <div class="tier">
+      <span class="tier__name">Starter</span>
+      <p class="tier__sub">Solo designers and brand-new teams.</p>
+      <h3 class="tier__price">$0<i>/forever</i></h3>
+      <p class="tier__cents">Up to 5 editors</p>
+      <a class="tier__btn" href="#">Start free</a>
+      <ul>
+        <li>5 editors, ∞ viewers</li>
+        <li>Component library</li>
+        <li>Figma + GitHub sync</li>
+        <li>Drift CLI</li>
+      </ul>
+    </div>
+    <div class="tier tier--pop">
+      <span class="tier__badge">Most teams</span>
+      <span class="tier__name">Team</span>
+      <p class="tier__sub">Series A → Series C product orgs.</p>
+      <h3 class="tier__price">$12<i>/ed/mo</i></h3>
+      <p class="tier__cents">Billed yearly · $14 monthly</p>
+      <a class="tier__btn" href="#">Start free</a>
+      <ul>
+        <li>Everything in Starter</li>
+        <li>Async reviews + sign-off</li>
+        <li>Decision log + history</li>
+        <li>SSO + audit log</li>
+        <li>Priority support</li>
+      </ul>
+    </div>
+    <div class="tier">
+      <span class="tier__name">Enterprise</span>
+      <p class="tier__sub">Multi-org, regulated, large.</p>
+      <h3 class="tier__price">Talk<i>to sales</i></h3>
+      <p class="tier__cents">SOC2 · custom DPA</p>
+      <a class="tier__btn" href="#">Contact sales</a>
+      <ul>
+        <li>Everything in Team</li>
+        <li>Self-host + air-gapped</li>
+        <li>Custom integrations</li>
+        <li>Dedicated CSM</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__brand">
+    <a href="#" class="nav__logo"><span>D</span>Drift</a>
+    <p>The source-of-truth layer for product teams. Built remotely between Bangalore, Berlin and SF.</p>
+  </div>
+  <div class="foot__col">
+    <h4>Product</h4>
+    <a href="#">Library</a>
+    <a href="#">Reviews</a>
+    <a href="#">Decisions</a>
+    <a href="#">CLI</a>
+  </div>
+  <div class="foot__col">
+    <h4>Company</h4>
+    <a href="#">About</a>
+    <a href="#">Customers</a>
+    <a href="#">Blog</a>
+    <a href="#">Careers · 4 open</a>
+  </div>
+  <div class="foot__col">
+    <h4>Resources</h4>
+    <a href="#">Docs</a>
+    <a href="#">Changelog</a>
+    <a href="#">Status</a>
+    <a href="#">Security</a>
+  </div>
+  <div class="foot__bar">
+    <span>© 2026 Drift Labs, Inc · SOC2 Type II</span>
+    <span>Built remotely · Bangalore · Berlin · San Francisco</span>
+  </div>
+</footer>
+
+</body>
+</html>

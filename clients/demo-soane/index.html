@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soane Studio — Rooms that hold a feeling.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#ede7dc; --bone:#f8f3e8; --terra:#b8533a; --terra-2:#d68263; --olive:#5d6346; --ink:#1f1c18; --line:rgba(31,28,24,.1);
+  --muted:#605a52;
+  --display:'Tenor Sans',serif; --sans:'Manrope',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.cap{font-family:var(--sans);font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;color:var(--terra)}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:28px 56px;border-bottom:1px solid var(--line)}
+.nav__logo{font-family:var(--display);font-size:24px;letter-spacing:.08em;text-transform:uppercase}
+.nav__logo i{font-style:normal;color:var(--terra);margin:0 6px}
+.nav__menu{display:flex;gap:36px}
+.nav__menu a{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:500}
+.nav__cta{font-family:var(--sans);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--terra);padding-bottom:3px}
+
+/* HERO */
+.hero{position:relative;padding:80px 56px 0;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:end;min-height:88vh}
+.hero__left{padding-bottom:80px}
+.hero__num{font-family:var(--display);font-size:22px;letter-spacing:.16em;color:var(--terra);margin-bottom:32px;display:block}
+.hero__title{font-family:var(--display);font-weight:400;font-size:clamp(60px,8vw,140px);line-height:.94;letter-spacing:-.005em;margin:0 0 32px;max-width:13ch;text-transform:none}
+.hero__title em{font-style:normal;color:var(--terra)}
+.hero__sub{font-size:18px;line-height:1.7;color:var(--muted);max-width:42ch;margin:0 0 40px;font-weight:400}
+.hero__sub strong{color:var(--ink);font-weight:600}
+.btn{padding:16px 32px;font-size:12px;letter-spacing:.18em;font-weight:500;text-transform:uppercase;display:inline-flex;gap:14px;align-items:center;transition:.25s}
+.btn--primary{background:var(--ink);color:var(--cream);border:1px solid var(--ink)}
+.btn--primary:hover{background:var(--terra);border-color:var(--terra)}
+.btn--ghost{border:1px solid var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--cream)}
+.hero__row{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:40px}
+.hero__meta{display:flex;gap:32px;border-top:1px solid var(--line);padding-top:24px}
+.hero__meta div span{display:block;font-family:var(--display);font-size:28px;color:var(--terra);margin-bottom:2px;letter-spacing:.02em}
+.hero__meta div p{margin:0;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+.hero__viz{position:relative;align-self:stretch}
+.hero__img{height:88vh;width:100%;overflow:hidden}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+.hero__label{position:absolute;left:24px;bottom:32px;background:var(--bone);padding:14px 20px;display:flex;flex-direction:column;gap:4px;max-width:260px;border-left:3px solid var(--terra)}
+.hero__label span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.hero__label h5{font-family:var(--display);font-size:18px;letter-spacing:.02em;margin:0;line-height:1.2}
+.hero__label p{margin:0;font-size:12px;color:var(--muted)}
+
+/* PROJECTS */
+.proj{padding:140px 56px;background:var(--bone)}
+.proj__head{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:end;margin-bottom:64px}
+.proj__head h2{font-family:var(--display);font-weight:400;font-size:clamp(48px,6.4vw,108px);line-height:.96;letter-spacing:.005em;margin:14px 0 0;max-width:14ch}
+.proj__head h2 em{font-style:normal;color:var(--terra)}
+.proj__head p{font-size:17px;color:var(--muted);line-height:1.65;max-width:44ch;margin:0}
+
+.proj__grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;grid-auto-rows:1fr}
+.proj__card{position:relative;overflow:hidden}
+.proj__card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.proj__card:hover img{transform:scale(1.04)}
+.proj__card--lg{grid-column:span 7;aspect-ratio:5/4}
+.proj__card--sm{grid-column:span 5;aspect-ratio:1}
+.proj__card--wide{grid-column:span 8;aspect-ratio:7/4}
+.proj__card--mini{grid-column:span 4;aspect-ratio:4/5}
+.proj__plate{position:absolute;left:24px;bottom:24px;background:var(--bone);padding:14px 20px;display:flex;flex-direction:column;gap:4px;max-width:280px;border-left:3px solid var(--terra)}
+.proj__plate span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);font-weight:600}
+.proj__plate h4{font-family:var(--display);font-size:18px;letter-spacing:.02em;margin:0}
+.proj__plate p{margin:0;font-size:12px;color:var(--muted)}
+
+/* SERVICE */
+.serv{padding:140px 56px;background:var(--cream);display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+.serv__left h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,5vw,80px);line-height:1.02;margin:14px 0 28px;max-width:14ch}
+.serv__left h2 em{font-style:normal;color:var(--terra)}
+.serv__left p{font-size:17px;line-height:1.65;color:var(--muted);max-width:38ch;margin:0 0 24px}
+.serv__items{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.serv__item{padding:32px 0;border-bottom:1px solid var(--line);padding-right:32px}
+.serv__item:nth-child(odd){border-right:1px solid var(--line);padding-right:32px}
+.serv__item:nth-child(even){padding-left:32px}
+.serv__item span{font-family:var(--display);font-size:14px;letter-spacing:.16em;color:var(--terra);display:block;margin-bottom:10px}
+.serv__item h4{font-family:var(--display);font-size:24px;font-weight:400;letter-spacing:.01em;margin:0 0 8px}
+.serv__item p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+
+/* PHILOSOPHY */
+.phil{padding:140px 56px;background:var(--olive);color:var(--bone);text-align:center;position:relative}
+.phil h2{font-family:var(--display);font-weight:400;font-size:clamp(40px,5vw,80px);line-height:1.15;margin:24px auto 0;max-width:24ch}
+.phil h2 em{font-style:italic;color:#e3c8aa}
+.phil__sign{font-family:var(--display);font-style:italic;font-size:22px;color:#e3c8aa;margin-top:36px;letter-spacing:.04em}
+.phil__role{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#bcae9c;margin-top:6px;display:block}
+
+/* FOOT */
+.foot{padding:80px 56px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;background:var(--cream)}
+.foot__brand h3{font-family:var(--display);font-size:32px;font-weight:400;margin:0 0 14px;letter-spacing:.08em;text-transform:uppercase}
+.foot__brand h3 i{font-style:normal;color:var(--terra);margin:0 4px}
+.foot__brand p{color:var(--muted);font-size:15px;line-height:1.6;max-width:30ch;margin:0}
+.foot__col h4{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 18px;color:var(--terra);font-weight:600}
+.foot__col a, .foot__col span{display:block;padding:6px 0;font-size:14px;color:var(--ink)}
+.foot__bar{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:32px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);margin-top:24px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="nav__logo">SOANE<i>·</i>STUDIO</a>
+  <nav class="nav__menu">
+    <a href="#">Projects</a>
+    <a href="#">Services</a>
+    <a href="#">Studio</a>
+    <a href="#">Press</a>
+  </nav>
+  <a href="#" class="nav__cta">Start a project →</a>
+</header>
+
+<section class="hero">
+  <div class="hero__left">
+    <span class="hero__num">— 01 / SS26</span>
+    <h1 class="hero__title">Rooms that hold a <em>feeling.</em></h1>
+    <p class="hero__sub">Soane is a four-person interior practice working between Bangalore and the Nilgiris. We design <strong>residences and small hospitality</strong> the slow way — with materials, with restraint, and with a long brief.</p>
+    <div class="hero__row">
+      <a class="btn btn--primary" href="#">Start a project <span>→</span></a>
+      <a class="btn btn--ghost" href="#">See our work</a>
+    </div>
+    <div class="hero__meta">
+      <div><span>18</span><p>Homes completed</p></div>
+      <div><span>9 mo</span><p>Avg. residence</p></div>
+      <div><span>2014</span><p>Studio est.</p></div>
+    </div>
+  </div>
+  <div class="hero__viz">
+    <div class="hero__img">
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1500&q=85&auto=format&fit=crop" alt="">
+    </div>
+    <div class="hero__label">
+      <span>/ Selected · 2025</span>
+      <h5>The Lemon House</h5>
+      <p>Cooke Town · 4,200 sqft · residence</p>
+    </div>
+  </div>
+</section>
+
+<section class="proj">
+  <div class="proj__head">
+    <div>
+      <span class="cap">/ Projects</span>
+      <h2>Eight rooms <em>from the last year.</em></h2>
+    </div>
+    <p>Each project below was at least nine months of work — drawn slowly, made by hand, and finished with the client in the room. Click any image to step inside the brief.</p>
+  </div>
+  <div class="proj__grid">
+    <div class="proj__card proj__card--lg">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1300&q=85&auto=format&fit=crop" alt="">
+      <div class="proj__plate"><span>Residence</span><h4>The Lemon House</h4><p>Cooke Town · 4,200 sq ft · 2025</p></div>
+    </div>
+    <div class="proj__card proj__card--sm">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=85&auto=format&fit=crop" alt="">
+      <div class="proj__plate"><span>Apartment</span><h4>Twelve Frazer</h4><p>Bangalore · 2,400 sq ft</p></div>
+    </div>
+    <div class="proj__card proj__card--mini">
+      <img src="https://images.unsplash.com/photo-1616593871468-2cf4ac90bbef?w=900&q=85&auto=format&fit=crop" alt="">
+      <div class="proj__plate"><span>Cabin</span><h4>The Hill Quiet</h4><p>Nilgiris · 1,400 sq ft</p></div>
+    </div>
+    <div class="proj__card proj__card--wide">
+      <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1300&q=85&auto=format&fit=crop" alt="">
+      <div class="proj__plate"><span>Hospitality</span><h4>Drift Cafe</h4><p>Indiranagar · 1,800 sq ft · 2024</p></div>
+    </div>
+    <div class="proj__card proj__card--sm">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=85&auto=format&fit=crop" alt="">
+      <div class="proj__plate"><span>Residence</span><h4>House of Three Salts</h4><p>Pondicherry · 5,800 sq ft</p></div>
+    </div>
+    <div class="proj__card proj__card--lg">
+      <img src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?w=1300&q=85&auto=format&fit=crop" alt="">
+      <div class="proj__plate"><span>Studio</span><h4>The Long Studio</h4><p>Sadashivanagar · 800 sq ft</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="serv">
+  <div class="serv__left">
+    <span class="cap">/ Services</span>
+    <h2>Four ways to <em>work with us.</em></h2>
+    <p>We take three private residences a year. Beyond that, we consult on small hospitality and one heritage restoration project per year.</p>
+  </div>
+  <div class="serv__items">
+    <div class="serv__item">
+      <span>— 01</span>
+      <h4>Full residence</h4>
+      <p>Concept, layout, interior architecture, FFE — through to opening day. 9—14 month build.</p>
+    </div>
+    <div class="serv__item">
+      <span>— 02</span>
+      <h4>Hospitality</h4>
+      <p>Cafes, boutique stays and small restaurants. We co-design with your brand & ops.</p>
+    </div>
+    <div class="serv__item">
+      <span>— 03</span>
+      <h4>Heritage restoration</h4>
+      <p>Pre-1970 homes only. We work with the original drawings where they survive — and the building, where they don't.</p>
+    </div>
+    <div class="serv__item">
+      <span>— 04</span>
+      <h4>Consult / advisory</h4>
+      <p>For owners working with another architect who'd like an independent eye on the interiors brief.</p>
+    </div>
+  </div>
+</section>
+
+<section class="phil">
+  <span class="cap" style="color:#e3c8aa">/ Our philosophy</span>
+  <h2>A good room asks little of you,<br>and gives back <em>for years.</em></h2>
+  <div class="phil__sign">~ Aanya Soane</div>
+  <span class="phil__role">Founder · Soane Studio</span>
+</section>
+
+<footer class="foot">
+  <div class="foot__brand">
+    <h3>SOANE<i>·</i>STUDIO</h3>
+    <p>A four-person interior practice between Bangalore and the Nilgiris. Residential, hospitality, and one heritage restoration a year.</p>
+  </div>
+  <div class="foot__col">
+    <h4>Work</h4>
+    <a href="#">Residential</a>
+    <a href="#">Hospitality</a>
+    <a href="#">Heritage</a>
+    <a href="#">Consult</a>
+  </div>
+  <div class="foot__col">
+    <h4>Studio</h4>
+    <a href="#">Our story</a>
+    <a href="#">Process</a>
+    <a href="#">Press</a>
+    <a href="#">Hiring</a>
+  </div>
+  <div class="foot__col">
+    <h4>Contact</h4>
+    <a href="#">hello@soane.studio</a>
+    <a href="#">+91 99861 04412</a>
+    <a href="#">Brief a project</a>
+    <a href="#">Bangalore + Nilgiris</a>
+  </div>
+  <div class="foot__bar">
+    <span>© 2026 Soane Studio LLP · Reg. Bangalore</span>
+    <span>Made slowly</span>
+  </div>
+</footer>
+
+</body>
+</html>

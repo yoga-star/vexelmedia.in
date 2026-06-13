@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRIMAL — Train like it isn't a hobby.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0a; --ink:#ffffff; --grey:#1a1a1a; --grey-2:#262626;
+  --acid:#daff00; --steel:#9aa0a6; --line:rgba(255,255,255,.1);
+  --display:'Archivo Black',sans-serif; --sans:'Archivo',sans-serif; --mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:500;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.cap{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--acid)}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 56px;border-bottom:1px solid var(--line);background:var(--bg);position:relative;z-index:5}
+.nav__logo{font-family:var(--display);font-size:24px;letter-spacing:.04em}
+.nav__logo i{font-style:normal;color:var(--acid)}
+.nav__menu{display:flex;gap:30px}
+.nav__menu a{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.nav__cta{padding:12px 24px;background:var(--acid);color:#0a0a0a;border-radius:0;font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border:2px solid var(--acid);transition:background .2s, color .2s}
+.nav__cta:hover{background:#0a0a0a;color:var(--acid)}
+
+/* HERO */
+.hero{position:relative;min-height:90vh;display:flex;align-items:end;overflow:hidden}
+.hero__bg{position:absolute;inset:0;z-index:0}
+.hero__bg img{width:100%;height:100%;object-fit:cover;filter:grayscale(.6) contrast(1.1)}
+.hero__bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.3) 0%,rgba(10,10,10,.8) 70%,var(--bg) 100%)}
+.hero__inner{position:relative;z-index:2;padding:80px 56px;width:100%}
+.hero__top{display:flex;gap:48px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--steel);margin-bottom:32px}
+.hero__top span{display:flex;gap:10px}
+.hero__top span i{color:var(--acid);font-style:normal}
+.hero__title{font-family:var(--display);font-size:clamp(72px,12vw,220px);line-height:.85;letter-spacing:-.02em;margin:0 0 32px;text-transform:uppercase}
+.hero__title em{font-style:normal;color:var(--acid)}
+.hero__row{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.hero__sub{font-size:18px;line-height:1.4;color:#ccc;max-width:42ch;margin:0;font-weight:500}
+.hero__sub strong{color:#fff;font-weight:800;background:var(--acid);color:#0a0a0a;padding:2px 8px}
+.hero__cta{padding:20px 36px;background:var(--acid);color:#0a0a0a;font-family:var(--sans);font-size:14px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;display:inline-flex;gap:14px;align-items:center;border:2px solid var(--acid);transition:background .2s, color .2s}
+.hero__cta:hover{background:#0a0a0a;color:var(--acid)}
+
+/* TICKER */
+.ticker{background:var(--acid);color:#0a0a0a;overflow:hidden;padding:18px 0;border-top:2px solid #0a0a0a;border-bottom:2px solid #0a0a0a;display:flex;gap:48px;white-space:nowrap;font-family:var(--display);font-size:22px;letter-spacing:.04em;text-transform:uppercase}
+.ticker span{padding-left:48px;position:relative}
+.ticker span::before{content:'■';position:absolute;left:0;top:0}
+
+/* PROGRAMS */
+.prog{padding:140px 56px;background:var(--bg)}
+.prog__head{display:flex;justify-content:space-between;align-items:end;gap:48px;margin-bottom:64px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:32px}
+.prog__head h2{font-family:var(--display);font-size:clamp(48px,7vw,120px);line-height:.9;letter-spacing:-.02em;text-transform:uppercase;margin:14px 0 0;max-width:14ch}
+.prog__head h2 em{font-style:normal;color:var(--acid)}
+.prog__head p{max-width:38ch;color:#ccc;line-height:1.6;font-size:15px;font-weight:500;margin:0}
+.prog__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.prog__card{padding:36px 28px;border:1px solid var(--line);margin-right:-1px;margin-bottom:-1px;transition:background .25s, transform .35s cubic-bezier(.2,.8,.2,1);position:relative;overflow:hidden}
+.prog__card:hover{background:var(--grey);transform:translateY(-4px)}
+.prog__num{font-family:var(--mono);font-size:11px;color:var(--acid);letter-spacing:.12em;margin-bottom:24px;display:block}
+.prog__card h3{font-family:var(--display);font-size:32px;text-transform:uppercase;letter-spacing:-.01em;line-height:1;margin:0 0 14px}
+.prog__card p{color:#9aa0a6;line-height:1.5;font-size:13px;margin:0 0 24px}
+.prog__card ul{list-style:none;padding:0;margin:0;font-family:var(--mono);font-size:11px;color:#ccc;letter-spacing:.04em;text-transform:uppercase}
+.prog__card li{padding:8px 0;border-bottom:1px solid var(--line)}
+.prog__card li::before{content:'+';color:var(--acid);margin-right:8px;font-weight:700}
+
+/* COACHES */
+.coach{padding:140px 56px;background:var(--grey)}
+.coach__head{margin-bottom:64px}
+.coach__head h2{font-family:var(--display);font-size:clamp(48px,7vw,120px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em;margin:14px 0 0;max-width:18ch}
+.coach__head h2 em{font-style:normal;color:var(--acid)}
+.coach__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.coach__card{background:#0a0a0a;border:1px solid var(--line)}
+.coach__card img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(.5)}
+.coach__body{padding:24px 24px 28px}
+.coach__name{font-family:var(--display);font-size:26px;text-transform:uppercase;letter-spacing:-.01em;margin:0 0 4px}
+.coach__role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--acid);text-transform:uppercase;margin-bottom:14px;display:block}
+.coach__stats{display:flex;gap:20px;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+.coach__stats div span{font-family:var(--display);font-size:24px;color:var(--acid);display:block}
+.coach__stats div p{margin:0;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#888}
+
+/* CTA */
+.cta{padding:160px 56px;background:#0a0a0a;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'PRIMAL';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--display);font-size:30vw;color:rgba(218,255,0,.04);letter-spacing:-.05em;pointer-events:none;line-height:1}
+.cta h2{position:relative;font-family:var(--display);font-size:clamp(56px,8vw,140px);line-height:.9;text-transform:uppercase;letter-spacing:-.02em;margin:0 auto 32px;max-width:20ch}
+.cta h2 em{font-style:normal;color:var(--acid)}
+.cta p{position:relative;color:#ccc;line-height:1.6;font-size:16px;max-width:46ch;margin:0 auto 40px}
+.cta__btn{position:relative;padding:24px 48px;background:var(--acid);color:#0a0a0a;font-family:var(--sans);font-size:14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;gap:14px;align-items:center;border:2px solid var(--acid)}
+
+/* FOOT */
+.foot{padding:60px 56px 40px;background:#0a0a0a;border-top:1px solid var(--line);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.foot__brand h3{font-family:var(--display);font-size:36px;text-transform:uppercase;margin:0 0 14px;letter-spacing:.02em}
+.foot__brand h3 i{font-style:normal;color:var(--acid)}
+.foot__brand p{color:#9aa0a6;font-size:14px;max-width:32ch;margin:0;line-height:1.5}
+.foot__col h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--acid);margin:0 0 18px}
+.foot__col a, .foot__col span{display:block;padding:5px 0;color:#ccc;font-size:13px;font-weight:500}
+.foot__bar{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:32px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:#666;margin-top:32px;text-transform:uppercase;letter-spacing:.06em}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="nav__logo">PRIMAL<i>■</i></a>
+  <nav class="nav__menu">
+    <a href="#">Programs</a>
+    <a href="#">Coaches</a>
+    <a href="#">Schedule</a>
+    <a href="#">Pricing</a>
+  </nav>
+  <a href="#" class="nav__cta">Book free trial</a>
+</header>
+
+<section class="hero">
+  <div class="hero__bg"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1800&q=85&auto=format&fit=crop" alt=""></div>
+  <div class="hero__inner">
+    <div class="hero__top">
+      <span><i>/Location</i> Indiranagar · Bengaluru</span>
+      <span><i>/Floor</i> 6,200 sq ft</span>
+      <span><i>/Members</i> 320 · Capped</span>
+      <span><i>/Open</i> 5am — 11pm</span>
+    </div>
+    <h1 class="hero__title">Train like<br>it isn't a <em>hobby.</em></h1>
+    <div class="hero__row">
+      <p class="hero__sub">A capped-membership strength gym for people who lift to live longer, hit harder, and look the part. <strong>320 members. No more.</strong></p>
+      <a class="hero__cta" href="#">Claim a free week <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <span>STRENGTH OVER SIZE</span>
+  <span>CAPPED MEMBERSHIP</span>
+  <span>COACHED LIFTS DAILY</span>
+  <span>OPEN 5AM — 11PM</span>
+  <span>INDIRANAGAR · BLR</span>
+  <span>320 MEMBERS · NO MORE</span>
+</div>
+
+<section class="prog">
+  <div class="prog__head">
+    <div>
+      <span class="cap">/ Programs</span>
+      <h2>Four ways to <em>get strong.</em></h2>
+    </div>
+    <p>Every program is coached every session. No app-led nonsense, no 80-person floors, no machine circuits. Pick the door — we'll do the rest.</p>
+  </div>
+  <div class="prog__grid">
+    <div class="prog__card">
+      <span class="prog__num">/ 01 — Foundations</span>
+      <h3>Start Here</h3>
+      <p>For first-time lifters and people coming back. 6 weeks of coached technique on the big four.</p>
+      <ul><li>2 sessions / wk</li><li>Group of 6</li><li>6-week block</li></ul>
+    </div>
+    <div class="prog__card">
+      <span class="prog__num">/ 02 — Strength</span>
+      <h3>Pure Lift</h3>
+      <p>Linear and conjugate strength blocks. Squat, bench, deadlift, overhead press. Coached, programmed, tested.</p>
+      <ul><li>3—5 sessions / wk</li><li>1-on-3 coaching</li><li>12-week cycle</li></ul>
+    </div>
+    <div class="prog__card">
+      <span class="prog__num">/ 03 — Hybrid</span>
+      <h3>Build Engine</h3>
+      <p>Strength + conditioning blocks for runners, sport-players and anyone needing both. Capacity meets capacity.</p>
+      <ul><li>4 sessions / wk</li><li>Field + floor</li><li>Quarterly tests</li></ul>
+    </div>
+    <div class="prog__card">
+      <span class="prog__num">/ 04 — Private</span>
+      <h3>1-on-1</h3>
+      <p>Full programming, biometrics, video reviews and nutrition. For founders and athletes who want a project.</p>
+      <ul><li>Bespoke schedule</li><li>App + video</li><li>Quarterly review</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="coach">
+  <div class="coach__head">
+    <span class="cap">/ Coaches</span>
+    <h2>Three coaches. <em>Two decades.</em></h2>
+  </div>
+  <div class="coach__grid">
+    <div class="coach__card">
+      <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&q=80&auto=format&fit=crop" alt="">
+      <div class="coach__body">
+        <h3 class="coach__name">Arjun Verma</h3>
+        <span class="coach__role">Head Coach · Strength</span>
+        <p style="color:#9aa0a6;font-size:13px;line-height:1.5;margin:0">Ex-national powerlifter. Coaches the strength block, programs the floor.</p>
+        <div class="coach__stats"><div><span>14</span><p>Yrs coaching</p></div><div><span>235kg</span><p>3RM Squat</p></div></div>
+      </div>
+    </div>
+    <div class="coach__card">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=900&q=80&auto=format&fit=crop" alt="">
+      <div class="coach__body">
+        <h3 class="coach__name">Maya Reddy</h3>
+        <span class="coach__role">Coach · Hybrid + Engine</span>
+        <p style="color:#9aa0a6;font-size:13px;line-height:1.5;margin:0">Coached at HYROX-pro. Runs the engine block and combines field with floor.</p>
+        <div class="coach__stats"><div><span>8</span><p>Yrs coaching</p></div><div><span>34'</span><p>10k PB</p></div></div>
+      </div>
+    </div>
+    <div class="coach__card">
+      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=900&q=80&auto=format&fit=crop" alt="">
+      <div class="coach__body">
+        <h3 class="coach__name">Ishaan Kaul</h3>
+        <span class="coach__role">Coach · Foundations</span>
+        <p style="color:#9aa0a6;font-size:13px;line-height:1.5;margin:0">Movement screening, beginners, mobility. The one you start with.</p>
+        <div class="coach__stats"><div><span>6</span><p>Yrs coaching</p></div><div><span>FRC</span><p>L2 mobility</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>One floor.<br>Three coaches.<br><em>320 members.</em></h2>
+  <p>That's the whole gym. Try a week on us — programming included, no card needed, no spam after.</p>
+  <a class="cta__btn" href="#">Claim free week <span>→</span></a>
+</section>
+
+<footer class="foot">
+  <div class="foot__brand">
+    <h3>PRIMAL<i>■</i></h3>
+    <p>A capped-membership strength gym in Indiranagar, Bengaluru. Three coaches, 320 members, no app — just lifts.</p>
+  </div>
+  <div class="foot__col">
+    <h4>Train</h4>
+    <a href="#">Foundations</a>
+    <a href="#">Pure Lift</a>
+    <a href="#">Build Engine</a>
+    <a href="#">Private 1:1</a>
+  </div>
+  <div class="foot__col">
+    <h4>Visit</h4>
+    <span>2nd cross, Indiranagar</span>
+    <span>Bengaluru 560038</span>
+    <a href="#">Directions</a>
+  </div>
+  <div class="foot__col">
+    <h4>Connect</h4>
+    <a href="#">@primal.blr</a>
+    <a href="#">Coach diary</a>
+    <a href="#">Careers</a>
+    <a href="#">Press</a>
+  </div>
+  <div class="foot__bar">
+    <span>© 2026 PRIMAL Strength Co</span>
+    <span>Indiranagar · Bengaluru</span>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -499,3 +499,45 @@ function initNavScroll(){
   window.addEventListener('scroll', onScroll, { passive:true });
   onScroll();
 }
+
+/* ---------- IFRAME PREVIEW SCALER ----------
+   Scales fixed-pixel iframes inside .browser__frame and .phone
+   so they fit their responsive container at the right ratio.
+   Browser iframes render at 1400x875 → scale to container width.
+   Phone iframes render at 420x840 → scale to container width.        */
+function initPreviewScaler(){
+  const scaleOne = (frameEl, iframeWidth) => {
+    const iframe = frameEl.querySelector('iframe');
+    if (!iframe) return;
+    const w = frameEl.clientWidth;
+    if (!w) return;
+    const scale = w / iframeWidth;
+    iframe.style.transform = `scale(${scale})`;
+  };
+  const applyAll = () => {
+    document.querySelectorAll('.browser__frame').forEach(f => scaleOne(f, 1400));
+    document.querySelectorAll('.phone').forEach(f => scaleOne(f, 420));
+  };
+  // Initial run, then after iframes load, then on resize
+  applyAll();
+  document.querySelectorAll('.browser__frame iframe, .phone iframe').forEach(f => {
+    f.addEventListener('load', applyAll);
+  });
+  // ResizeObserver for container width changes
+  if (window.ResizeObserver){
+    const ro = new ResizeObserver(applyAll);
+    document.querySelectorAll('.browser__frame, .phone').forEach(el => ro.observe(el));
+  }
+  window.addEventListener('resize', applyAll);
+  // Safety: run again after a short delay (in case iframe loaded before listener attached)
+  setTimeout(applyAll, 500);
+  setTimeout(applyAll, 1500);
+  setTimeout(applyAll, 3000);
+}
+
+// Run scaler on DOM ready, regardless of loader
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initPreviewScaler);
+} else {
+  initPreviewScaler();
+}

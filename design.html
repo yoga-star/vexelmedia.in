@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Design — Vexel Media</title>
+<meta name="description" content="Brochure systems, brand moodboards, decks, and print collateral by Vexel Media — selected design work for MedAbroad, WowKids, Cubey and more.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Design — Vexel Media">
+<meta property="og:description" content="Brochure systems, brand moodboards and print collateral from a Bengaluru studio.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=15">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__welcome">Selected work</span>
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__tag">design that <em>doesn't sit pretty</em></span>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="index.html#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="websites.html" data-cursor="link">/websites</a>
+    <a href="design.html" class="is-active" data-cursor="link">/design</a>
+    <a href="video.html" data-cursor="link">/video</a>
+    <a href="index.html#studio" data-cursor="link">/studio</a>
+    <a href="contact.html" data-cursor="link">/contact</a>
+  </nav>
+  <a href="contact.html" class="nav__cta magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+  <button type="button" class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobi" id="mobileMenu" aria-hidden="true">
+  <div class="mobi__head">
+    <a href="index.html#top" class="mobi__logo">vexel<i>.media</i></a>
+    <button type="button" class="mobi__close" id="mobileMenuClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobi__nav" aria-label="Mobile primary">
+    <a href="websites.html" data-mobi-link><span class="mobi__num">01</span><span>/websites</span></a>
+    <a href="design.html" class="is-active" data-mobi-link><span class="mobi__num">02</span><span>/design</span></a>
+    <a href="video.html" data-mobi-link><span class="mobi__num">03</span><span>/video</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">04</span><span>/studio</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">05</span><span>/contact</span></a>
+  </nav>
+  <div class="mobi__cta">
+    <a href="contact.html" class="btn btn--primary" data-mobi-link>Start a project <span class="arrow">→</span></a>
+    <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20design%20project" class="btn btn--ghost" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp</a>
+  </div>
+  <div class="mobi__meta">
+    <a href="tel:+917816816963" data-mobi-link>+91 78168 16963</a>
+    <a href="mailto:hello@vexelmedia.in" data-mobi-link>hello@vexelmedia.in</a>
+    <span class="muted">Bengaluru, India</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="page-hero__glow page-hero__glow--alt"></div>
+  <div class="page-hero__inner">
+    <div class="page-hero__eyebrow"><span class="dot"></span>Brochures · Decks · Brand systems</div>
+    <h1 class="page-hero__title" data-reveal>Design that <em>doesn't</em> sit pretty.</h1>
+    <p class="page-hero__sub" data-reveal>Brochures parents actually read. Decks that close. Brand systems built from a single, sharp idea. Below, a slice of the print + identity work running across our active accounts.</p>
+    <div class="page-hero__meta" data-reveal>
+      <span><i>Disciplines</i> Print · Brand · Decks · Editorial</span>
+      <span><i>Formats</i> A4 / Letter / 16:9 / 9:16</span>
+      <span><i>Output</i> Print-ready + Web</span>
+      <span><i>Tools</i> Figma · InDesign · Code</span>
+    </div>
+  </div>
+</section>
+
+<!-- 01 — MEDABROAD BROCHURE SYSTEM -->
+<section class="design-block">
+  <div class="container">
+    <div class="design-block__head">
+      <div>
+        <span class="section-label" data-reveal>/ Series 01 — Healthcare education</span>
+        <h2 class="design-block__title" data-reveal>MedAbroad <em>brochure system</em></h2>
+      </div>
+      <p class="design-block__copy" data-reveal>A <strong>21-page A4 brochure series</strong> built around a tight visual system: red <strong>#EF4444</strong>, two-tone headlines (black + red), red CTA bar, mentor cards. Modular pages — one university, one country, one mentor — designed to be printed, WhatsApped, or pulled into PDF kits without losing the system.</p>
+    </div>
+
+    <div class="brochure-grid" data-reveal>
+      <a class="brochure" href="assets/design/medabroad/page-2-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">01</span><img src="assets/design/medabroad/page-2-1.jpg" alt="MedAbroad brochure cover" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-3-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">02</span><img src="assets/design/medabroad/page-3-1.jpg" alt="MedAbroad brochure page 2" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-4-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">03</span><img src="assets/design/medabroad/page-4-1.jpg" alt="MedAbroad brochure page 3" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-5-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">04</span><img src="assets/design/medabroad/page-5-1.jpg" alt="MedAbroad brochure page 4" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-6-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">05</span><img src="assets/design/medabroad/page-6-1.jpg" alt="MedAbroad brochure page 5" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-7-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">06</span><img src="assets/design/medabroad/page-7-1.jpg" alt="MedAbroad brochure page 6" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-8-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">07</span><img src="assets/design/medabroad/page-8-1.jpg" alt="MedAbroad brochure page 7" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-9-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">08</span><img src="assets/design/medabroad/page-9-1.jpg" alt="MedAbroad brochure page 8" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-10-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">09</span><img src="assets/design/medabroad/page-10-1.jpg" alt="MedAbroad brochure page 9" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-11-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">10</span><img src="assets/design/medabroad/page-11-1.jpg" alt="MedAbroad brochure page 10" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-12-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">11</span><img src="assets/design/medabroad/page-12-1.jpg" alt="MedAbroad brochure page 11" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-13-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">12</span><img src="assets/design/medabroad/page-13-1.jpg" alt="MedAbroad brochure page 12" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-14-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">13</span><img src="assets/design/medabroad/page-14-1.jpg" alt="MedAbroad brochure page 13" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-15-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">14</span><img src="assets/design/medabroad/page-15-1.jpg" alt="MedAbroad brochure page 14" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-16-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">15</span><img src="assets/design/medabroad/page-16-1.jpg" alt="MedAbroad brochure page 15" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-17-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">16</span><img src="assets/design/medabroad/page-17-1.jpg" alt="MedAbroad brochure page 16" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-18-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">17</span><img src="assets/design/medabroad/page-18-1.jpg" alt="MedAbroad brochure page 17" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-20-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">18</span><img src="assets/design/medabroad/page-20-1.jpg" alt="MedAbroad brochure page 18" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-21-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">19</span><img src="assets/design/medabroad/page-21-1.jpg" alt="MedAbroad brochure page 19" loading="lazy"></a>
+      <a class="brochure" href="assets/design/medabroad/page-23-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">20</span><img src="assets/design/medabroad/page-23-1.jpg" alt="MedAbroad brochure page 20" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 02 — WOWKIDS -->
+<section class="design-block">
+  <div class="container">
+    <div class="design-block__head">
+      <div>
+        <span class="section-label" data-reveal>/ Series 02 — Pre-school / Education</span>
+        <h2 class="design-block__title" data-reveal>WowKids <em>fee-structure brochure</em></h2>
+      </div>
+      <p class="design-block__copy" data-reveal>A pre-school fee booklet that's <strong>warm enough for parents</strong>, sharp enough for the management. Friendly colour, transparent pricing tables, and small visual cues that match the brand's playful identity.</p>
+    </div>
+
+    <div class="brochure-grid brochure-grid--4" data-reveal>
+      <a class="brochure" href="assets/design/wowkids/full-cover-1.jpg" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">Cover</span><img src="assets/design/wowkids/full-cover-1.jpg" alt="WowKids brochure cover" loading="lazy"></a>
+      <a class="brochure" href="assets/design/wowkids/preview_1.png" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">P. 01</span><img src="assets/design/wowkids/preview_1.png" alt="WowKids brochure page 1" loading="lazy"></a>
+      <a class="brochure" href="assets/design/wowkids/preview_2.png" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">P. 02</span><img src="assets/design/wowkids/preview_2.png" alt="WowKids brochure page 2" loading="lazy"></a>
+      <a class="brochure" href="assets/design/wowkids/preview_3.png" target="_blank" rel="noopener" data-cursor="link"><span class="brochure__tag">P. 03</span><img src="assets/design/wowkids/preview_3.png" alt="WowKids brochure page 3" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 — CUBEY MOODBOARDS -->
+<section class="design-block">
+  <div class="container">
+    <div class="design-block__head">
+      <div>
+        <span class="section-label" data-reveal>/ Series 03 — D2C brand identity</span>
+        <h2 class="design-block__title" data-reveal>Cubey — <em>brand moodboards</em></h2>
+      </div>
+      <p class="design-block__copy" data-reveal>The visual foundation for India's first egg block. <strong>DM Sans on cream and yolk</strong>, a logo system shaped from cubes, and a brand world that feels equal parts breakfast counter and Bengaluru pantry — built to scale from sample box to retail shelf.</p>
+    </div>
+
+    <div class="mood-grid" data-reveal>
+      <div class="mood-card">
+        <span class="mood-card__tag">/ Brand moodboard</span>
+        <img src="assets/design/cubey/moodboard-01.jpg" alt="Cubey brand moodboard" loading="lazy">
+      </div>
+      <div class="mood-card">
+        <span class="mood-card__tag">/ Logo system</span>
+        <img src="assets/design/cubey/logo-moodboard-1.jpg" alt="Cubey logo moodboard" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAIL CTA -->
+<section class="tail">
+  <div class="tail__glow"></div>
+  <div class="container tail__inner">
+    <span class="tail__eyebrow" data-reveal>/ Brochures · Decks · Brand · Print</span>
+    <h2 class="tail__title" data-reveal>Need work that <em>does this</em> for your brand?</h2>
+    <p class="tail__sub" data-reveal>Full brand systems, single-brief brochures, sales decks, social-ready templates — we scope tightly and turn things around in days, not months.</p>
+    <div class="tail__ctas" data-reveal>
+      <a href="contact.html" class="btn btn--primary magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+      <a href="video.html" class="btn btn--ghost magnetic" data-cursor="link">See video work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Work</span>
+      <a href="websites.html" data-cursor="link">Websites</a>
+      <a href="design.html" data-cursor="link">Design</a>
+      <a href="video.html" data-cursor="link">Video</a>
+      <a href="index.html#studio" data-cursor="link">Studio</a>
+      <a href="contact.html" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="index.html#services" data-cursor="link">Branding</a>
+      <a href="index.html#services" data-cursor="link">Social Media</a>
+      <a href="index.html#services" data-cursor="link">Meta Ads</a>
+      <a href="index.html#services" data-cursor="link">SEO</a>
+      <a href="index.html#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js?v=15"></script>
+</body>
+</html>

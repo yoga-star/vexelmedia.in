@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Video — Vexel Media</title>
+<meta name="description" content="Reels, AI ads, product films and short-form video from Vexel Media. Selected video work that converts attention into clicks.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Video — Vexel Media">
+<meta property="og:description" content="Reels, AI ads and product video from a Bengaluru creative studio.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=15">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__welcome">Selected work</span>
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__tag">video that <em>sells, not lulls</em></span>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="index.html#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="websites.html" data-cursor="link">/websites</a>
+    <a href="design.html" data-cursor="link">/design</a>
+    <a href="video.html" class="is-active" data-cursor="link">/video</a>
+    <a href="index.html#studio" data-cursor="link">/studio</a>
+    <a href="contact.html" data-cursor="link">/contact</a>
+  </nav>
+  <a href="contact.html" class="nav__cta magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+  <button type="button" class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobi" id="mobileMenu" aria-hidden="true">
+  <div class="mobi__head">
+    <a href="index.html#top" class="mobi__logo">vexel<i>.media</i></a>
+    <button type="button" class="mobi__close" id="mobileMenuClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobi__nav" aria-label="Mobile primary">
+    <a href="websites.html" data-mobi-link><span class="mobi__num">01</span><span>/websites</span></a>
+    <a href="design.html" data-mobi-link><span class="mobi__num">02</span><span>/design</span></a>
+    <a href="video.html" class="is-active" data-mobi-link><span class="mobi__num">03</span><span>/video</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">04</span><span>/studio</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">05</span><span>/contact</span></a>
+  </nav>
+  <div class="mobi__cta">
+    <a href="contact.html" class="btn btn--primary" data-mobi-link>Start a project <span class="arrow">→</span></a>
+    <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20video%20project" class="btn btn--ghost" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp</a>
+  </div>
+  <div class="mobi__meta">
+    <a href="tel:+917816816963" data-mobi-link>+91 78168 16963</a>
+    <a href="mailto:hello@vexelmedia.in" data-mobi-link>hello@vexelmedia.in</a>
+    <span class="muted">Bengaluru, India</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero__glow"></div>
+  <div class="page-hero__glow page-hero__glow--alt"></div>
+  <div class="page-hero__inner">
+    <div class="page-hero__eyebrow"><span class="dot"></span>AI ads · Reels · Product film</div>
+    <h1 class="page-hero__title" data-reveal>Video that <em>sells</em>, not lulls.</h1>
+    <p class="page-hero__sub" data-reveal>Short acted hook → quick solution → clean CTA. We produce <strong>conversion-first reels</strong>, AI-driven ad formats and product films built for the scroll. Below, a selection from the active reel.</p>
+    <div class="page-hero__meta" data-reveal>
+      <span><i>Formats</i> 9:16 · 1:1 · 16:9</span>
+      <span><i>Durations</i> 6—30s short / 30—60s</span>
+      <span><i>Output</i> Meta · YT Shorts · LinkedIn</span>
+      <span><i>Turnaround</i> 5—10 days per batch</span>
+    </div>
+  </div>
+</section>
+
+<!-- AI ADS -->
+<section class="reels">
+  <div class="container">
+    <div class="reels__head">
+      <span class="section-label" data-reveal>/ Series 01 — AI-generated ads</span>
+      <h2 data-reveal>AI ads, <em>made to look human.</em></h2>
+      <p data-reveal>Performance creative produced with AI video tools — actor, voice, b-roll and CTA, all engineered to ship inside a 2-day cycle without losing the hand-crafted feel.</p>
+    </div>
+
+    <div class="ad-grid" data-reveal>
+      <div class="ad-card">
+        <video src="assets/video/ai-fakead-01.mp4" controls preload="metadata" playsinline></video>
+        <div class="ad-card__meta">
+          <h3 class="ad-card__title">FakeAd · v1</h3>
+          <span class="ad-card__tag">/ AI Performance creative</span>
+        </div>
+      </div>
+      <div class="ad-card">
+        <video src="assets/video/ai-fakead-02.mp4" controls preload="metadata" playsinline></video>
+        <div class="ad-card__meta">
+          <h3 class="ad-card__title">FakeAds AI · v2</h3>
+          <span class="ad-card__tag">/ Hook + solution + CTA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REELS -->
+<section class="reels" style="background:var(--bg-alt)">
+  <div class="container">
+    <div class="reels__head">
+      <span class="section-label" data-reveal>/ Series 02 — Product reels</span>
+      <h2 data-reveal>Short, sharp, <em>shoppable.</em></h2>
+      <p data-reveal>A batch of vertical product films designed for paid social — built to stop the scroll in the first 1.5 seconds and finish with a single, clear action.</p>
+    </div>
+
+    <div class="reel-grid" data-reveal>
+      <div class="reel-card">
+        <span class="reel-card__num">/ Reel 01</span>
+        <video src="assets/video/reel-01.mp4" controls preload="metadata" playsinline muted></video>
+      </div>
+      <div class="reel-card">
+        <span class="reel-card__num">/ Reel 02</span>
+        <video src="assets/video/reel-02.mp4" controls preload="metadata" playsinline muted></video>
+      </div>
+      <div class="reel-card">
+        <span class="reel-card__num">/ Reel 03</span>
+        <video src="assets/video/reel-03.mp4" controls preload="metadata" playsinline muted></video>
+      </div>
+      <div class="reel-card">
+        <span class="reel-card__num">/ Reel 04</span>
+        <video src="assets/video/reel-04.mp4" controls preload="metadata" playsinline muted></video>
+      </div>
+      <div class="reel-card">
+        <span class="reel-card__num">/ Reel 05</span>
+        <video src="assets/video/reel-05.mp4" controls preload="metadata" playsinline muted></video>
+      </div>
+      <div class="reel-card">
+        <span class="reel-card__num">/ Reel 06</span>
+        <video src="assets/video/reel-06.mp4" controls preload="metadata" playsinline muted></video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAIL CTA -->
+<section class="tail">
+  <div class="tail__glow"></div>
+  <div class="container tail__inner">
+    <span class="tail__eyebrow" data-reveal>/ Reels · AI ads · Product film · Talking-head</span>
+    <h2 class="tail__title" data-reveal>Want a reel that <em>actually moves</em> the needle?</h2>
+    <p class="tail__sub" data-reveal>From scripted reel batches to AI-driven ad rotations — we plan, shoot/generate, cut and post-produce in tight 5-to-10 day cycles. Hooked to the next CTA.</p>
+    <div class="tail__ctas" data-reveal>
+      <a href="contact.html" class="btn btn--primary magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+      <a href="websites.html" class="btn btn--ghost magnetic" data-cursor="link">See website work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Work</span>
+      <a href="websites.html" data-cursor="link">Websites</a>
+      <a href="design.html" data-cursor="link">Design</a>
+      <a href="video.html" data-cursor="link">Video</a>
+      <a href="index.html#studio" data-cursor="link">Studio</a>
+      <a href="contact.html" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="index.html#services" data-cursor="link">Branding</a>
+      <a href="index.html#services" data-cursor="link">Social Media</a>
+      <a href="index.html#services" data-cursor="link">Meta Ads</a>
+      <a href="index.html#services" data-cursor="link">SEO</a>
+      <a href="index.html#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js?v=15"></script>
+</body>
+</html>

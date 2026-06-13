@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=15">
 </head>
 <body>
 
@@ -42,10 +42,11 @@
 <header class="nav">
   <a href="#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
   <nav class="nav__links" aria-label="Primary">
-    <a href="#services" data-cursor="link">/services</a>
-    <a href="#packages" data-cursor="link">/packages</a>
+    <a href="websites.html" data-cursor="link">/websites</a>
+    <a href="design.html" data-cursor="link">/design</a>
+    <a href="video.html" data-cursor="link">/video</a>
     <a href="#studio" data-cursor="link">/studio</a>
-    <a href="#contact" data-cursor="link">/contact</a>
+    <a href="contact.html" data-cursor="link">/contact</a>
   </nav>
   <a href="contact.html" class="nav__cta magnetic" data-cursor="link">Book a call <span class="arrow">→</span></a>
   <button type="button" class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
@@ -62,10 +63,11 @@
     </button>
   </div>
   <nav class="mobi__nav" aria-label="Mobile primary">
-    <a href="#services" data-mobi-link><span class="mobi__num">01</span><span>/services</span></a>
-    <a href="#packages" data-mobi-link><span class="mobi__num">02</span><span>/packages</span></a>
-    <a href="#studio" data-mobi-link><span class="mobi__num">03</span><span>/studio</span></a>
-    <a href="contact.html" data-mobi-link><span class="mobi__num">04</span><span>/contact</span></a>
+    <a href="websites.html" data-mobi-link><span class="mobi__num">01</span><span>/websites</span></a>
+    <a href="design.html" data-mobi-link><span class="mobi__num">02</span><span>/design</span></a>
+    <a href="video.html" data-mobi-link><span class="mobi__num">03</span><span>/video</span></a>
+    <a href="#studio" data-mobi-link><span class="mobi__num">04</span><span>/studio</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">05</span><span>/contact</span></a>
   </nav>
   <div class="mobi__cta">
     <a href="contact.html" class="btn btn--primary" data-mobi-link>Start a project <span class="arrow">→</span></a>
@@ -246,8 +248,71 @@
   </div>
 </section>
 
-<!-- WORK — TEMPORARILY DISABLED (remove `hidden` attribute on the <section> tag below to re-enable) -->
-<section class="work" id="work" hidden>
+<!-- DISCIPLINE TEASER -->
+<section class="disc" id="work">
+  <div class="container">
+    <div class="disc__head">
+      <div>
+        <span class="section-label" data-reveal>/ Selected work</span>
+        <h2 data-reveal>Receipts, <em>not promises.</em></h2>
+      </div>
+      <p data-reveal>Live websites you can click through, brochure systems built to scale, and reels engineered for the scroll. Pick a discipline — every page below is real, shipped work.</p>
+    </div>
+
+    <div class="disc__grid">
+      <a href="websites.html" class="disc__card" data-reveal data-cursor="link">
+        <div>
+          <span class="disc__num">/ 01 — Websites</span>
+          <h3 class="disc__title">Sites that <em>convert.</em></h3>
+          <p class="disc__copy">Four recent builds: MedAbroad, Vidhya Shekhar, Cubey, Fridge Repair Pro. Click any preview to open the live site in a new tab.</p>
+        </div>
+        <div>
+          <div class="disc__stats">
+            <span><i>4</i> live builds</span>
+            <span><i>~100</i> pages shipped</span>
+            <span><i>2—5</i> wk turnaround</span>
+          </div>
+          <span class="disc__arrow">See websites <span>→</span></span>
+        </div>
+      </a>
+
+      <a href="design.html" class="disc__card disc__card--accent" data-reveal data-cursor="link">
+        <div>
+          <span class="disc__num">/ 02 — Design</span>
+          <h3 class="disc__title">Print + brand, <em>not décor.</em></h3>
+          <p class="disc__copy">MedAbroad's 21-page brochure system, WowKids fee booklet, Cubey moodboards. Hover the grid — every cover opens to a full-size page.</p>
+        </div>
+        <div>
+          <div class="disc__stats">
+            <span><i>21+</i> brochure pages</span>
+            <span><i>3</i> brand systems</span>
+            <span><i>Print + Web</i></span>
+          </div>
+          <span class="disc__arrow">See design <span>→</span></span>
+        </div>
+      </a>
+
+      <a href="video.html" class="disc__card" data-reveal data-cursor="link">
+        <div>
+          <span class="disc__num">/ 03 — Video</span>
+          <h3 class="disc__title">Reels for <em>the scroll.</em></h3>
+          <p class="disc__copy">AI-driven ads and short-form product reels — hook in 1.5s, finish on a single clear CTA. A slice of the active reel.</p>
+        </div>
+        <div>
+          <div class="disc__stats">
+            <span><i>2</i> AI ads</span>
+            <span><i>6</i> product reels</span>
+            <span><i>5—10</i> day batch</span>
+          </div>
+          <span class="disc__arrow">See video <span>→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WORK RAIL — kept hidden for legacy reference -->
+<section class="work" id="work-rail" hidden>
   <div class="container work__head">
     <span class="section-label" data-reveal>/ Selected work</span>
     <h2 class="section-title" data-reveal>Receipts, <em>not promises.</em></h2>
@@ -521,12 +586,12 @@
       <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
     </div>
     <div class="foot__col">
-      <span class="foot__h">Navigate</span>
-      <a href="#top" data-cursor="link">Home</a>
+      <span class="foot__h">Work</span>
+      <a href="websites.html" data-cursor="link">Websites</a>
+      <a href="design.html" data-cursor="link">Design</a>
+      <a href="video.html" data-cursor="link">Video</a>
       <a href="#services" data-cursor="link">Services</a>
       <a href="#packages" data-cursor="link">Packages</a>
-      <a href="project.html" data-cursor="link">Single project</a>
-      <a href="website.html" data-cursor="link">Website build</a>
       <a href="contact.html" data-cursor="link">Contact</a>
       <a href="login.html" data-cursor="link">Client login</a>
     </div>
@@ -558,6 +623,6 @@
 </main>
 
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="script.js?v=9"></script>
+<script src="script.js?v=15"></script>
 </body>
 </html>

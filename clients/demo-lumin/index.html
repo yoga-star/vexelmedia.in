@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lumin Dental — Dentistry without the dread.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f3f7f6; --mint:#9bd5c8; --mint-deep:#0d6f5e; --ink:#0c2a26; --cream:#fffdf6;
+  --line:rgba(12,42,38,.08); --muted:#506068;
+  --serif:'DM Serif Display',serif; --sans:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.cap{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--mint-deep);font-weight:600}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:24px 56px;background:var(--cream)}
+.nav__logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:400;font-size:26px;letter-spacing:-.01em}
+.nav__logo i{width:30px;height:30px;background:var(--ink);border-radius:50%;color:var(--mint);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:14px;font-weight:700;font-family:var(--sans)}
+.nav__menu{display:flex;gap:36px}
+.nav__menu a{font-size:14px;color:var(--ink);font-weight:500}
+.nav__cta{padding:12px 22px;background:var(--ink);color:var(--cream);border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.02em}
+
+/* HERO */
+.hero{padding:60px 56px 0;background:var(--cream)}
+.hero__inner{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center;padding-bottom:60px}
+.hero__eyebrow{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid rgba(13,111,94,.18);border-radius:999px;background:rgba(155,213,200,.12);margin-bottom:24px;color:var(--mint-deep);font-size:12px;letter-spacing:.06em;font-weight:600}
+.hero__eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--mint-deep);font-style:normal;display:inline-block}
+.hero__title{font-family:var(--serif);font-weight:400;font-size:clamp(56px,7.6vw,124px);line-height:.96;letter-spacing:-.02em;margin:0 0 28px;max-width:13ch}
+.hero__title em{font-style:italic;color:var(--mint-deep)}
+.hero__sub{font-size:18px;line-height:1.6;color:var(--muted);max-width:42ch;margin:0 0 36px}
+.hero__sub strong{color:var(--ink);font-weight:600}
+.hero__row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:36px}
+.btn{padding:15px 28px;border-radius:999px;font-size:14px;font-weight:600;display:inline-flex;gap:10px;align-items:center;transition:.25s}
+.btn--primary{background:var(--ink);color:var(--cream)}
+.btn--primary:hover{background:var(--mint-deep)}
+.btn--ghost{border:1px solid var(--ink);color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--cream)}
+
+.hero__chips{display:flex;gap:8px;flex-wrap:wrap}
+.hero__chips span{padding:8px 14px;background:rgba(13,111,94,.06);border:1px solid rgba(13,111,94,.14);border-radius:999px;font-size:12px;color:var(--mint-deep);font-weight:500;display:inline-flex;gap:8px;align-items:center}
+.hero__chips span i{font-style:normal;color:var(--mint-deep)}
+
+.hero__viz{position:relative}
+.hero__photo{aspect-ratio:5/6;border-radius:24px;overflow:hidden;background:var(--mint)}
+.hero__photo img{width:100%;height:100%;object-fit:cover}
+.hero__plate{position:absolute;background:var(--cream);padding:18px 22px;border-radius:14px;box-shadow:0 16px 40px -16px rgba(12,42,38,.18);display:flex;gap:14px;align-items:center}
+.hero__plate--top{top:24px;left:-24px}
+.hero__plate--bot{bottom:24px;right:-24px}
+.hero__plate i{width:42px;height:42px;border-radius:50%;background:var(--mint);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:18px;font-weight:700;font-family:var(--serif)}
+.hero__plate h5{margin:0;font-family:var(--serif);font-weight:400;font-size:20px}
+.hero__plate p{margin:0;font-size:11px;color:var(--muted);letter-spacing:.06em}
+
+/* TRUST STRIP */
+.trust{background:var(--ink);color:var(--cream);padding:36px 56px;display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;align-items:center}
+.trust span{font-size:13px;display:inline-flex;gap:10px;align-items:center;color:#9cb8b2;letter-spacing:.04em}
+.trust span i{color:var(--mint);font-style:normal;font-size:16px}
+.trust b{font-family:var(--serif);font-style:italic;color:var(--cream);font-size:17px;font-weight:400}
+
+/* SERVICES */
+.serv{padding:140px 56px;background:var(--bg)}
+.serv__head{display:flex;justify-content:space-between;align-items:end;gap:48px;margin-bottom:64px;flex-wrap:wrap}
+.serv__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5.6vw,84px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 0;max-width:16ch}
+.serv__head h2 em{font-style:italic;color:var(--mint-deep)}
+.serv__head p{max-width:38ch;color:var(--muted);line-height:1.65;font-size:15px;margin:0}
+
+.serv__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.serv__card{background:var(--cream);border-radius:18px;padding:32px;border:1px solid var(--line);transition:.3s;display:flex;flex-direction:column;gap:14px;min-height:280px}
+.serv__card:hover{background:var(--ink);color:var(--cream)}
+.serv__card:hover h3, .serv__card:hover p, .serv__card:hover span{color:var(--cream)}
+.serv__card:hover .serv__icon{background:var(--mint);color:var(--ink)}
+.serv__card:hover .serv__price em{color:var(--mint)}
+.serv__icon{width:46px;height:46px;border-radius:14px;background:rgba(13,111,94,.1);color:var(--mint-deep);display:inline-flex;align-items:center;justify-content:center;font-size:22px;font-weight:700;font-family:var(--serif);transition:.3s}
+.serv__card h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1;letter-spacing:-.015em;margin:0;transition:.3s}
+.serv__card p{color:var(--muted);font-size:14px;line-height:1.55;margin:0;transition:.3s;flex:1}
+.serv__price{border-top:1px solid var(--line);padding-top:14px;margin-top:auto;font-size:13px;color:var(--muted);transition:.3s}
+.serv__price em{font-style:normal;color:var(--mint-deep);font-weight:700;margin-left:6px;font-size:15px;transition:.3s}
+
+/* DOCTOR */
+.doc{padding:120px 56px;background:var(--cream);display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
+.doc__img{aspect-ratio:5/6;border-radius:24px;overflow:hidden}
+.doc__img img{width:100%;height:100%;object-fit:cover}
+.doc__right h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1.04;letter-spacing:-.02em;margin:14px 0 22px}
+.doc__right h2 em{font-style:italic;color:var(--mint-deep)}
+.doc__right p{color:var(--muted);font-size:17px;line-height:1.6;margin:0 0 32px;max-width:44ch}
+.doc__creds{display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid var(--line);padding-top:24px}
+.doc__creds div span{display:block;font-family:var(--serif);font-style:italic;font-size:28px;color:var(--mint-deep);margin-bottom:4px}
+.doc__creds div p{margin:0;font-size:13px;color:var(--muted);line-height:1.4}
+.doc__sign{display:flex;align-items:center;gap:14px;margin-top:28px}
+.doc__sign span{font-family:var(--serif);font-style:italic;font-size:30px;color:var(--mint-deep)}
+.doc__sign p{margin:0;font-size:12px;letter-spacing:.06em;color:var(--muted)}
+
+/* BOOK */
+.book{padding:140px 56px;background:var(--ink);color:var(--cream);text-align:center;position:relative;overflow:hidden}
+.book::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:780px;height:780px;border-radius:50%;background:radial-gradient(closest-side,rgba(155,213,200,.18) 0%,transparent 70%);pointer-events:none}
+.book__inner{position:relative;z-index:2;max-width:720px;margin:0 auto}
+.book h2{font-family:var(--serif);font-weight:400;font-size:clamp(44px,6vw,96px);line-height:1.02;letter-spacing:-.02em;margin:14px 0 24px;color:var(--cream)}
+.book h2 em{font-style:italic;color:var(--mint)}
+.book p{color:#9cb8b2;font-size:18px;line-height:1.6;margin:0 0 36px}
+.book .btn--primary{background:var(--mint);color:var(--ink)}
+
+/* FOOT */
+.foot{padding:80px 56px 40px;background:var(--cream);border-top:1px solid var(--line);display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.foot__brand .nav__logo{margin-bottom:18px}
+.foot__brand p{color:var(--muted);max-width:32ch;font-size:14.5px;line-height:1.6;margin:0}
+.foot__col h4{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--mint-deep);margin:0 0 18px}
+.foot__col a, .foot__col span{display:block;padding:6px 0;font-size:14px;color:var(--ink)}
+.foot__bar{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:32px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);margin-top:24px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="nav__logo"><i>L</i>Lumin Dental</a>
+  <nav class="nav__menu">
+    <a href="#">Services</a>
+    <a href="#">Doctors</a>
+    <a href="#">Pricing</a>
+    <a href="#">Stories</a>
+  </nav>
+  <a href="#" class="nav__cta">Book a check-up</a>
+</header>
+
+<section class="hero">
+  <div class="hero__inner">
+    <div>
+      <span class="hero__eyebrow"><i></i>Now booking · new patients · Apr 2026</span>
+      <h1 class="hero__title">Dentistry <em>without</em> the dread.</h1>
+      <p class="hero__sub">A calm, single-chair clinic in Indiranagar that books one patient at a time, talks like a friend, and prices the work upfront. <strong>No upsell. No surprises.</strong></p>
+      <div class="hero__row">
+        <a class="btn btn--primary" href="#">Book a check-up <span>→</span></a>
+        <a class="btn btn--ghost" href="#">See pricing</a>
+      </div>
+      <div class="hero__chips">
+        <span><i>★</i> 4.9 · Google · 380 reviews</span>
+        <span><i>✓</i> 1 patient / hour</span>
+        <span><i>✓</i> Cashless insurance</span>
+        <span><i>✓</i> Sat hours</span>
+      </div>
+    </div>
+    <div class="hero__viz">
+      <div class="hero__photo">
+        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=1100&q=85&auto=format&fit=crop" alt="">
+      </div>
+      <div class="hero__plate hero__plate--top">
+        <i>★</i>
+        <div><h5>4.9 / 5</h5><p>380 Google reviews</p></div>
+      </div>
+      <div class="hero__plate hero__plate--bot">
+        <i>+</i>
+        <div><h5>1,200+</h5><p>Patients this year</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <b><i>"My dentist actually explained what was happening. Wild."</i></b>
+  <span><i>✓</i>Cashless · Star Health, Niva, ICICI</span>
+  <span><i>✓</i>0% EMI · 6 / 12 months</span>
+  <span><i>✓</i>Free first consult · always</span>
+</div>
+
+<section class="serv">
+  <div class="serv__head">
+    <div>
+      <span class="cap">/ What we do</span>
+      <h2>Six things, <em>done well.</em></h2>
+    </div>
+    <p>We don't do everything — but what we do, we do calmly. Every price below is the all-in cost. No "consult fee", no "X-ray fee", no surprises at billing.</p>
+  </div>
+  <div class="serv__grid">
+    <div class="serv__card">
+      <div class="serv__icon">+</div>
+      <h3>General check-up</h3>
+      <p>Full exam, cleaning, polish, and a 12-month written plan. Annual or every 6 months — your call.</p>
+      <div class="serv__price">From <em>₹1,200</em> · 45 min</div>
+    </div>
+    <div class="serv__card">
+      <div class="serv__icon">◐</div>
+      <h3>Whitening</h3>
+      <p>Two-shade in-clinic whitening with a take-home maintenance kit. Done by Dr. Aisha herself.</p>
+      <div class="serv__price">From <em>₹9,800</em> · 1 visit</div>
+    </div>
+    <div class="serv__card">
+      <div class="serv__icon">◇</div>
+      <h3>Aligners</h3>
+      <p>Invisible aligners with monthly check-ins. We do the scanning, the plan, and the follow-up in-house.</p>
+      <div class="serv__price">From <em>₹78,000</em> · 8—12 mo</div>
+    </div>
+    <div class="serv__card">
+      <div class="serv__icon">★</div>
+      <h3>Implants</h3>
+      <p>Same-day implants with Swiss-made fixtures and a 10-year written warranty. CBCT done on-site.</p>
+      <div class="serv__price">From <em>₹38,000</em> · 1 day</div>
+    </div>
+    <div class="serv__card">
+      <div class="serv__icon">○</div>
+      <h3>Kids' dentistry</h3>
+      <p>A separate child-friendly room. Sealants, cavities, gentle cleanings — 4 yrs and up.</p>
+      <div class="serv__price">From <em>₹800</em> · 30 min</div>
+    </div>
+    <div class="serv__card">
+      <div class="serv__icon">⌑</div>
+      <h3>Root canal</h3>
+      <p>Single-sitting root canals using rotary endodontics. Numbed properly, finished cleanly.</p>
+      <div class="serv__price">From <em>₹6,500</em> · 1 visit</div>
+    </div>
+  </div>
+</section>
+
+<section class="doc">
+  <div class="doc__img"><img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=1100&q=85&auto=format&fit=crop" alt=""></div>
+  <div class="doc__right">
+    <span class="cap">/ Lead dentist</span>
+    <h2>One dentist. <em>Eleven years.</em></h2>
+    <p>Dr. Aisha Kothari ran the implant department at a 12-chair clinic for seven years before opening Lumin to do it her way — calmer rooms, longer slots, and a price-list you can see before you sit down.</p>
+    <div class="doc__creds">
+      <div><span>BDS · MDS</span><p>Manipal · King's College London</p></div>
+      <div><span>11 yrs</span><p>Clinical practice · Bengaluru</p></div>
+      <div><span>320+</span><p>Implants placed · 2021—26</p></div>
+      <div><span>ICOI</span><p>Fellow · 2024</p></div>
+    </div>
+    <div class="doc__sign">
+      <span>~ Dr. Aisha Kothari</span>
+      <p>Lead dentist & founder<br>Lumin Dental</p>
+    </div>
+  </div>
+</section>
+
+<section class="book">
+  <div class="book__inner">
+    <span class="cap" style="color:var(--mint)">/ Available this week</span>
+    <h2>A calmer chair, <em>two streets away.</em></h2>
+    <p>We book one patient an hour. Pick a slot, walk in, and walk out knowing exactly what's next — for you and your wallet.</p>
+    <a class="btn btn--primary" href="#">Book my slot <span>→</span></a>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__brand">
+    <a href="#" class="nav__logo"><i>L</i>Lumin Dental</a>
+    <p>A calm, single-chair clinic on 100ft Road, Indiranagar. One patient an hour, transparent pricing, and a Saturday slot if you need it.</p>
+  </div>
+  <div class="foot__col">
+    <h4>Visit</h4>
+    <span>3rd floor, 100ft Road</span>
+    <span>Indiranagar · BLR</span>
+    <a href="#">Get directions</a>
+  </div>
+  <div class="foot__col">
+    <h4>Care</h4>
+    <a href="#">Check-up</a>
+    <a href="#">Whitening</a>
+    <a href="#">Aligners</a>
+    <a href="#">Implants</a>
+  </div>
+  <div class="foot__col">
+    <h4>Contact</h4>
+    <a href="#">+91 99861 22340</a>
+    <a href="#">hello@lumindental.in</a>
+    <a href="#">Book a slot</a>
+    <a href="#">Insurance check</a>
+  </div>
+  <div class="foot__bar">
+    <span>© 2026 Lumin Dental Care · Reg. KMC #28840</span>
+    <span>Indiranagar · Bengaluru</span>
+  </div>
+</footer>
+
+</body>
+</html>

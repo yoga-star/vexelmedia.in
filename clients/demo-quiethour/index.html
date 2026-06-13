@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Quiet Hour — Weddings, told quietly.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f4ede2; --ink:#161210; --rose:#a86a5c; --rose-2:#c4a09a; --dusk:#3e2f2a; --line:rgba(22,18,16,.1);
+  --muted:#665c54;
+  --serif:'Cormorant',serif; --sans:'Outfit',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:300;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.cap{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--rose)}
+
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:28px 64px}
+.nav__logo{font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:.06em}
+.nav__logo i{font-style:italic;color:var(--rose);margin:0 2px}
+.nav__menu{display:flex;gap:36px}
+.nav__menu a{font-size:13px;color:var(--ink);letter-spacing:.06em;font-weight:400}
+.nav__cta{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--rose);border-bottom:1px solid var(--rose);padding-bottom:2px}
+
+/* HERO */
+.hero{padding:48px 64px 0;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:end}
+.hero__left{padding-bottom:80px}
+.hero__eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:32px}
+.hero__eyebrow span:first-child{width:24px;height:1px;background:var(--rose);display:inline-block}
+.hero__title{font-family:var(--serif);font-weight:400;font-size:clamp(60px,7.6vw,130px);line-height:.96;letter-spacing:-.015em;margin:0 0 24px;max-width:11ch}
+.hero__title em{font-style:italic;color:var(--rose)}
+.hero__sub{font-family:var(--serif);font-size:22px;line-height:1.55;color:var(--dusk);max-width:36ch;margin:0 0 36px;font-weight:400;letter-spacing:.005em}
+.hero__sub em{font-style:italic;color:var(--rose)}
+.hero__row{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-bottom:48px}
+.btn{padding:14px 32px;font-size:12px;letter-spacing:.18em;font-weight:500;text-transform:uppercase;display:inline-flex;gap:12px;align-items:center;transition:.25s;border-radius:0}
+.btn--primary{background:var(--ink);color:var(--cream);border:1px solid var(--ink)}
+.btn--primary:hover{background:transparent;color:var(--ink)}
+.btn--ghost{border:1px solid var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--cream)}
+.hero__meta{display:flex;gap:32px;border-top:1px solid var(--line);padding-top:24px}
+.hero__meta div span{display:block;font-family:var(--serif);font-style:italic;font-size:32px;color:var(--rose);margin-bottom:2px;font-weight:500}
+.hero__meta div p{margin:0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:400}
+
+.hero__img{position:relative;overflow:hidden;aspect-ratio:4/5}
+.hero__img img{width:100%;height:100%;object-fit:cover}
+.hero__cite{position:absolute;left:32px;bottom:32px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--cream);background:rgba(22,18,16,.6);padding:14px 22px;backdrop-filter:blur(8px);max-width:280px;line-height:1.4}
+.hero__cite span{display:block;font-style:normal;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-2);margin-top:8px}
+
+/* TICKER */
+.mq{padding:18px 64px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:32px;flex-wrap:wrap;font-family:var(--serif);font-style:italic;font-size:17px;color:var(--dusk)}
+
+/* GALLERY */
+.gal{padding:140px 64px}
+.gal__head{display:flex;justify-content:space-between;align-items:end;gap:48px;margin-bottom:72px;flex-wrap:wrap}
+.gal__head h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6.4vw,108px);line-height:.96;letter-spacing:-.02em;margin:14px 0 0;max-width:13ch}
+.gal__head h2 em{font-style:italic;color:var(--rose)}
+.gal__head p{font-family:var(--serif);font-size:21px;color:var(--dusk);line-height:1.5;max-width:42ch;margin:0}
+
+.gal__grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+.gal__row{display:contents}
+.gal__item{position:relative;overflow:hidden}
+.gal__item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s ease}
+.gal__item:hover img{transform:scale(1.04)}
+.gal__item--portrait{aspect-ratio:4/5}
+.gal__item--landscape{aspect-ratio:5/4;grid-column:span 2}
+.gal__item--square{aspect-ratio:1}
+.gal__item--tall{aspect-ratio:3/4}
+.gal__item__cap{position:absolute;left:18px;bottom:18px;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--cream);background:rgba(22,18,16,.5);padding:8px 14px;backdrop-filter:blur(6px)}
+
+/* STORY / ABOUT */
+.story{padding:140px 64px;background:#ebe1d2;display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.story__left{position:relative}
+.story__left img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.story__left::before{content:'';position:absolute;inset:14px;border:1px solid var(--rose);pointer-events:none}
+.story__right h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,80px);line-height:.98;letter-spacing:-.02em;margin:18px 0 28px;max-width:16ch}
+.story__right h2 em{font-style:italic;color:var(--rose)}
+.story__right p{font-family:var(--serif);font-size:22px;line-height:1.55;color:var(--dusk);margin:0 0 22px;max-width:44ch}
+.story__sign{font-family:var(--serif);font-style:italic;font-size:34px;color:var(--rose);margin-top:36px}
+.story__sign + p{margin:4px 0 0;font-family:var(--sans);font-size:13px;letter-spacing:.04em;color:var(--muted)}
+
+/* PRICING NOTE */
+.note{padding:120px 64px;text-align:center;background:var(--cream)}
+.note__inner{max-width:680px;margin:0 auto}
+.note h2{font-family:var(--serif);font-weight:400;font-size:clamp(40px,5vw,80px);line-height:1.02;letter-spacing:-.02em;margin:18px 0 24px}
+.note h2 em{font-style:italic;color:var(--rose)}
+.note p{font-family:var(--serif);font-size:21px;line-height:1.55;color:var(--dusk);margin:0 0 36px}
+
+/* CTA */
+.cta{padding:140px 64px;background:var(--ink);color:var(--cream);text-align:center}
+.cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(48px,6.4vw,108px);line-height:.96;letter-spacing:-.02em;margin:14px auto 24px;max-width:18ch;color:var(--cream)}
+.cta h2 em{font-style:italic;color:var(--rose-2)}
+.cta p{font-family:var(--serif);font-size:21px;line-height:1.55;color:#d4c5b8;margin:0 auto 36px;max-width:46ch}
+.cta__btn{padding:18px 38px;background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:12px;letter-spacing:.18em;font-weight:500;text-transform:uppercase;display:inline-flex;gap:14px;align-items:center}
+
+/* FOOT */
+.foot{padding:60px 64px 40px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;background:var(--cream)}
+.foot__brand h3{font-family:var(--serif);font-size:36px;font-weight:500;margin:0 0 14px;letter-spacing:.04em}
+.foot__brand h3 i{font-style:italic;color:var(--rose)}
+.foot__brand p{font-family:var(--serif);font-size:18px;color:var(--dusk);line-height:1.5;max-width:32ch;margin:0}
+.foot__col h4{font-family:var(--sans);font-size:11px;letter-spacing:.22em;text-transform:uppercase;margin:0 0 18px;color:var(--rose);font-weight:500}
+.foot__col a, .foot__col span{display:block;padding:6px 0;font-size:14px;color:var(--ink)}
+.foot__bar{grid-column:1/-1;display:flex;justify-content:space-between;padding-top:32px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);margin-top:24px}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="#" class="nav__logo">Quiet<i>·</i>Hour</a>
+  <nav class="nav__menu">
+    <a href="#">Stories</a>
+    <a href="#">Films</a>
+    <a href="#">Studio</a>
+    <a href="#">Journal</a>
+  </nav>
+  <a href="#" class="nav__cta">Tell us your date →</a>
+</header>
+
+<section class="hero">
+  <div class="hero__left">
+    <div class="hero__eyebrow cap"><span></span>Documentary wedding film + photo</div>
+    <h1 class="hero__title">Weddings, <em>told quietly.</em></h1>
+    <p class="hero__sub">We don't chase poses, we follow the day. A two-person team — one camera each — making slow, film-leaning photographs of weddings between Pondicherry and Coorg.</p>
+    <div class="hero__row">
+      <a class="btn btn--primary" href="#">Enquire about a date <span>→</span></a>
+      <a class="btn btn--ghost" href="#">See full stories</a>
+    </div>
+    <div class="hero__meta">
+      <div><span>62</span><p>Weddings · since 2019</p></div>
+      <div><span>14 yrs</span><p>Combined practice</p></div>
+      <div><span>5★</span><p>WeddingSutra</p></div>
+    </div>
+  </div>
+  <div class="hero__img">
+    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1400&q=85&auto=format&fit=crop" alt="">
+    <span class="hero__cite">"They felt like the calmest people in the room — and made the best pictures."<span>~ Ananya & Vir · Coorg · 2025</span></span>
+  </div>
+</section>
+
+<div class="mq">
+  <span>WeddingSutra · <em>"Top 30 storytellers"</em> · 2025</span>
+  <span>Featured · <em>Vogue Wedding</em></span>
+  <span>Two-camera, two-person team</span>
+  <span>Limited to <em>10 weddings a year</em></span>
+</div>
+
+<section class="gal">
+  <div class="gal__head">
+    <div>
+      <span class="cap">/ Recent stories</span>
+      <h2>Sixteen frames, <em>one day each.</em></h2>
+    </div>
+    <p>A selection from this season. Click any story to see the full forty-frame edit — and the film that walks beside it.</p>
+  </div>
+
+  <div class="gal__grid">
+    <div class="gal__item gal__item--portrait"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=80&auto=format&fit=crop" alt=""><span class="gal__item__cap">A. & V. · Coorg</span></div>
+    <div class="gal__item gal__item--landscape"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1200&q=80&auto=format&fit=crop" alt=""><span class="gal__item__cap">R. & M. · Pondicherry</span></div>
+    <div class="gal__item gal__item--portrait"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=900&q=80&auto=format&fit=crop" alt=""></div>
+    <div class="gal__item gal__item--tall"><img src="https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=900&q=80&auto=format&fit=crop" alt=""></div>
+    <div class="gal__item gal__item--landscape"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80&auto=format&fit=crop" alt=""><span class="gal__item__cap">N. & K. · Goa</span></div>
+    <div class="gal__item gal__item--square"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80&auto=format&fit=crop" alt=""></div>
+    <div class="gal__item gal__item--landscape"><img src="https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=1200&q=80&auto=format&fit=crop" alt=""><span class="gal__item__cap">S. & A. · Udaipur</span></div>
+    <div class="gal__item gal__item--portrait"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=900&q=80&auto=format&fit=crop" alt=""></div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="story__left"><img src="https://images.unsplash.com/photo-1532453288672-3a27e9be9efd?w=1100&q=85&auto=format&fit=crop" alt=""></div>
+  <div class="story__right">
+    <span class="cap">/ The studio</span>
+    <h2>Two people. <em>Ten weddings.</em> One year.</h2>
+    <p>Quiet Hour is just us — Aanya, who shoots, and Nikhil, who films. We take ten weddings a season because that's what we can do well, edit slowly, and stay good company at.</p>
+    <p>If the date works, we'll talk to you for an hour before we even send a price. If it doesn't, we'll point you to friends who'll do it beautifully.</p>
+    <div class="story__sign">~ Aanya + Nikhil</div>
+    <p>Founders · Quiet Hour</p>
+  </div>
+</section>
+
+<section class="note">
+  <div class="note__inner">
+    <span class="cap">/ Our small note on price</span>
+    <h2>Honest, <em>and easy to read.</em></h2>
+    <p>Single-day weddings begin at <em>₹3.6 L</em> for photo + film. Multi-day stories from <em>₹6.8 L</em>. Everything we print, edit and deliver is included — no usage fees, no album add-ons, no surprise invoices a year later.</p>
+    <a class="btn btn--ghost" href="#">Tell us your date</a>
+  </div>
+</section>
+
+<section class="cta">
+  <span class="cap" style="color:var(--rose-2)">/ This season</span>
+  <h2>We have <em>three dates</em> left for 2026.</h2>
+  <p>Tell us the day, the city, and the kind of wedding you've been imagining. We'll write back inside 48 hours.</p>
+  <a class="cta__btn" href="#">Tell us your date <span>→</span></a>
+</section>
+
+<footer class="foot">
+  <div class="foot__brand">
+    <h3>Quiet<i>·</i>Hour</h3>
+    <p>A two-person studio in Bengaluru photographing weddings slowly, between Pondicherry and Coorg.</p>
+  </div>
+  <div class="foot__col">
+    <h4>Work</h4>
+    <a href="#">Stories</a>
+    <a href="#">Films</a>
+    <a href="#">Press</a>
+    <a href="#">Awards</a>
+  </div>
+  <div class="foot__col">
+    <h4>Studio</h4>
+    <a href="#">About us</a>
+    <a href="#">Our process</a>
+    <a href="#">Pricing</a>
+    <a href="#">FAQ</a>
+  </div>
+  <div class="foot__col">
+    <h4>Contact</h4>
+    <a href="#">hello@quiethour.in</a>
+    <a href="#">@quiet.hour.studio</a>
+    <a href="#">Tell us your date</a>
+    <a href="#">Bengaluru, India</a>
+  </div>
+  <div class="foot__bar">
+    <span>© 2026 Quiet Hour Studio · Bengaluru</span>
+    <span>Crafted slowly</span>
+  </div>
+</footer>
+
+</body>
+</html>
