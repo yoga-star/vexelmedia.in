@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid meet">
+  <!-- Vexel Media — wordmark logo
+       Matches the live site: Bricolage Grotesque, cream on near-black,
+       with italic ".media" in lime accent.                                -->
+  <defs>
+    <style>
+      @font-face {
+        font-family: 'Bricolage Grotesque';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Bricolage Grotesque'),
+             url('https://fonts.gstatic.com/s/bricolagegrotesque/v3/3y9U6as8bTXq_nANBjzKo3IeZx8z4w.woff2') format('woff2');
+      }
+      @font-face {
+        font-family: 'Bricolage Grotesque';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Bricolage Grotesque Italic'),
+             url('https://fonts.gstatic.com/s/bricolagegrotesque/v3/3y9U6as8bTXq_nANBjzKo3IeZx8z4w.woff2') format('woff2');
+      }
+      .bg { fill: #0a0907; }
+      .grain { fill: #ffffff; opacity: 0.04; }
+      .word {
+        font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 320px;
+        letter-spacing: -16px;
+      }
+      .vexel { fill: #f4f0e1; }
+      .dot, .media { fill: #d4ff3e; font-style: italic; }
+      .tagline {
+        font-family: 'JetBrains Mono', 'Menlo', monospace;
+        font-size: 22px;
+        fill: #8a857a;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+      }
+      .rule { stroke: #d4ff3e; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1600" height="900"/>
+
+  <!-- Soft accent glow (matches the site's hero glow) -->
+  <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+    <stop offset="0%" stop-color="#d4ff3e" stop-opacity="0.10"/>
+    <stop offset="70%" stop-color="#d4ff3e" stop-opacity="0"/>
+  </radialGradient>
+  <circle cx="800" cy="450" r="600" fill="url(#glow)"/>
+
+  <!-- Wordmark — vexel + .media (italic, lime) -->
+  <text class="word" x="800" y="500" text-anchor="middle" dominant-baseline="alphabetic">
+    <tspan class="vexel">vexel</tspan><tspan class="media">.media</tspan>
+  </text>
+
+  <!-- Hairline divider -->
+  <line class="rule" x1="700" y1="580" x2="900" y2="580"/>
+
+  <!-- Tagline -->
+  <text class="tagline" x="800" y="640" text-anchor="middle">
+    Design-first growth for modern brands
+  </text>
+
+  <!-- Bottom signature row -->
+  <text class="tagline" x="80" y="850" text-anchor="start" font-size="16">
+    /Studio · Vexel Media
+  </text>
+  <text class="tagline" x="1520" y="850" text-anchor="end" font-size="16">
+    /Bengaluru, IN · Est. 2024
+  </text>
+</svg>
