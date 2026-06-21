@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Build a quotation — Vexel Media</title>
+<meta name="description" content="Pick the work, add your details, and download a Vexel Media quotation PDF in 30 seconds.">
+<meta name="theme-color" content="#0a0907">
+<meta property="og:title" content="Build a quotation — Vexel Media">
+<meta property="og:description" content="Vexel Media instant quotation builder — pick services, generate a branded PDF in under a minute.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css?v=19">
+</head>
+<body>
+
+<svg class="grain-svg" aria-hidden="true" focusable="false">
+  <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
+  <rect width="100%" height="100%" filter="url(#grainFilter)"/>
+</svg>
+
+<!-- LOADER -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <span class="loader__welcome">Quotation builder</span>
+    <span class="loader__mark">vexel<i>.media</i></span>
+    <span class="loader__tag">your quote, <em>in thirty seconds</em></span>
+    <div class="loader__bar"><i id="loaderBar"></i></div>
+    <span class="loader__count" id="loaderCount">0</span>
+  </div>
+  <div class="loader__curtain"></div>
+</div>
+
+<!-- CURSOR -->
+<div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
+
+<!-- NAV -->
+<header class="nav">
+  <a href="index.html#top" class="nav__logo magnetic" data-cursor="link">vexel<i>.media</i></a>
+  <nav class="nav__links" aria-label="Primary">
+    <a href="websites.html" data-cursor="link">/websites</a>
+    <a href="design.html" data-cursor="link">/design</a>
+    <a href="video.html" data-cursor="link">/video</a>
+    <a href="quote.html" class="is-active" data-cursor="link">/quote</a>
+    <a href="contact.html" data-cursor="link">/contact</a>
+  </nav>
+  <a href="contact.html" class="nav__cta magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
+  <button type="button" class="nav__burger" id="navBurger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- MOBILE MENU -->
+<div class="mobi" id="mobileMenu" aria-hidden="true">
+  <div class="mobi__head">
+    <a href="index.html#top" class="mobi__logo">vexel<i>.media</i></a>
+    <button type="button" class="mobi__close" id="mobileMenuClose" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobi__nav" aria-label="Mobile primary">
+    <a href="websites.html" data-mobi-link><span class="mobi__num">01</span><span>/websites</span></a>
+    <a href="design.html" data-mobi-link><span class="mobi__num">02</span><span>/design</span></a>
+    <a href="video.html" data-mobi-link><span class="mobi__num">03</span><span>/video</span></a>
+    <a href="quote.html" class="is-active" data-mobi-link><span class="mobi__num">04</span><span>/quote</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">05</span><span>/contact</span></a>
+  </nav>
+  <div class="mobi__cta">
+    <a href="contact.html" class="btn btn--primary" data-mobi-link>Start a project <span class="arrow">→</span></a>
+    <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20a%20custom%20quote" class="btn btn--ghost" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp</a>
+  </div>
+  <div class="mobi__meta">
+    <a href="tel:+917816816963" data-mobi-link>+91 78168 16963</a>
+    <a href="mailto:hello@vexelmedia.in" data-mobi-link>hello@vexelmedia.in</a>
+    <span class="muted">Bengaluru, India</span>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="quote-hero">
+  <div class="quote-hero__glow"></div>
+  <div class="quote-hero__inner">
+    <div class="quote-hero__eyebrow"><span class="dot"></span>Live quotation builder · GST included</div>
+    <h1 class="quote-hero__title" data-reveal>Build a <em>quotation.</em></h1>
+    <p class="quote-hero__sub" data-reveal>Pick the work on the left, add your details on the right, and <strong>download a branded PDF in 30 seconds.</strong> Prices below are starting points — bigger scopes are quoted on demand.</p>
+  </div>
+</section>
+
+<!-- BUILDER -->
+<section class="builder">
+  <div class="builder__inner">
+    <div class="builder__grid">
+
+      <!-- LEFT: CATALOG -->
+      <div class="catalog">
+        <div class="catalog__head">
+          <div>
+            <span class="cap" style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase">/ Services catalog</span>
+            <h2>Pick the <em>scope.</em></h2>
+          </div>
+          <span class="catalog__count"><span id="catCount">16</span> services</span>
+        </div>
+
+        <div class="catalog__tabs" role="tablist">
+          <button class="catalog__tab is-active" data-cat="all">All</button>
+          <button class="catalog__tab" data-cat="brand">Branding</button>
+          <button class="catalog__tab" data-cat="web">Web</button>
+          <button class="catalog__tab" data-cat="social">Social</button>
+          <button class="catalog__tab" data-cat="ads">Ads</button>
+          <button class="catalog__tab" data-cat="seo">SEO</button>
+          <button class="catalog__tab" data-cat="video">Video</button>
+          <button class="catalog__tab" data-cat="print">Print</button>
+        </div>
+
+        <div class="catalog__list" id="catalogList">
+          <!-- JS injects cards here -->
+        </div>
+      </div>
+
+      <!-- RIGHT: QUOTE DOC -->
+      <div class="doc-wrap">
+        <article class="doc" id="quoteDoc">
+          <header class="doc__head">
+            <div class="doc__logo">vexel<i>.media</i></div>
+            <div class="doc__num">
+              <span class="lab">Quotation</span>
+              <strong id="quoteNum">VM-2026-001</strong>
+              <span id="quoteDate">14 Jun 2026</span>
+              <span id="quoteValid">Valid till · 14 Jul 2026</span>
+            </div>
+          </header>
+
+          <div class="doc__title">
+            <h1>Quotation</h1>
+            <span class="badge">DRAFT</span>
+          </div>
+
+          <div class="doc__parties">
+            <div class="doc__party">
+              <span class="lab">Prepared for</span>
+              <input class="doc-input" id="clientName" placeholder="Client name" autocomplete="name">
+              <input class="doc-input" id="clientCompany" placeholder="Company / Brand">
+              <input class="doc-input" id="clientEmail" placeholder="Email" type="email">
+              <input class="doc-input" id="clientPhone" placeholder="Phone" type="tel">
+              <input class="doc-input" id="clientGst" placeholder="GSTIN (optional)">
+            </div>
+            <div class="doc__party">
+              <span class="lab">Prepared by</span>
+              <span class="doc-static"><strong>Vexel Media</strong></span>
+              <span class="doc-static muted">Bengaluru, India · 560038</span>
+              <span class="doc-static muted">hello@vexelmedia.in</span>
+              <span class="doc-static muted">+91 78168 16963</span>
+              <span class="doc-static muted">GSTIN · 29ABCDE1234F1Z5</span>
+            </div>
+          </div>
+
+          <div class="doc__table-wrap">
+            <table class="doc__table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Service</th>
+                  <th>Qty</th>
+                  <th>Rate</th>
+                  <th>Amount</th>
+                </tr>
+              </thead>
+              <tbody id="itemsBody">
+                <tr><td colspan="5" class="doc__empty">No items yet — <em>add a service from the catalog →</em></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="doc__totals">
+            <div class="row"><span>Subtotal</span><strong id="subTotal">₹0</strong></div>
+            <div class="row"><span>GST · 18%</span><strong id="gstTotal">₹0</strong></div>
+            <div class="row grand"><span>Total</span><strong><em>₹</em><span id="grandTotal">0</span></strong></div>
+          </div>
+
+          <div class="doc__notes">
+            <span class="lab">Notes</span>
+            <textarea id="quoteNotes" placeholder="Timeline, scope notes, special conditions — anything you'd like on the quote."></textarea>
+          </div>
+
+          <div class="doc__terms">
+            <div>
+              <span class="lab">Terms of payment</span>
+              50% on kick-off · 40% on first review · 10% on hand-off. Bank transfer or UPI. Recurring services billed monthly in advance.
+            </div>
+            <div>
+              <span class="lab">Validity</span>
+              This quotation is valid for 30 days from the issue date. Scopes are fixed once a kick-off is paid; change requests carry their own quote.
+            </div>
+          </div>
+
+          <footer class="doc__foot">
+            <div class="doc__sign">
+              <strong>~ Vexel Media</strong>
+              <span class="lab">For Vexel Media · Bengaluru</span>
+              <span class="note">Computer-generated quotation — no signature required.</span>
+            </div>
+            <button class="doc__cta" id="downloadBtn" type="button">Download PDF <span class="arrow">↓</span></button>
+          </footer>
+        </article>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="foot__mega" aria-hidden="true">
+    <div class="foot__mega-track">
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+      <span>vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · vexel · <em>media</em> · </span>
+    </div>
+  </div>
+  <div class="container foot__cols">
+    <div class="foot__col">
+      <span class="foot__logo">vexel<i>.media</i></span>
+      <p class="foot__tag"><em>Design-first growth for modern brands. Crafted in Bengaluru.</em></p>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Work</span>
+      <a href="websites.html" data-cursor="link">Websites</a>
+      <a href="design.html" data-cursor="link">Design</a>
+      <a href="video.html" data-cursor="link">Video</a>
+      <a href="quote.html" data-cursor="link">Quotation</a>
+      <a href="contact.html" data-cursor="link">Contact</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Services</span>
+      <a href="index.html#services" data-cursor="link">Branding</a>
+      <a href="index.html#services" data-cursor="link">Social Media</a>
+      <a href="index.html#services" data-cursor="link">Meta Ads</a>
+      <a href="index.html#services" data-cursor="link">SEO</a>
+      <a href="index.html#services" data-cursor="link">Web Design</a>
+    </div>
+    <div class="foot__col">
+      <span class="foot__h">Connect</span>
+      <a href="mailto:hello@vexelmedia.in" data-cursor="link">hello@vexelmedia.in</a>
+      <a href="tel:+917816816963" data-cursor="link">+91 78168 16963</a>
+      <a href="https://wa.me/917816816963" data-cursor="link">WhatsApp</a>
+      <span class="muted">Bengaluru, India</span>
+    </div>
+  </div>
+  <div class="container foot__bot">
+    <span>© 2026 Vexel Media · All rights reserved</span>
+    <span>Crafted with care, not templates</span>
+  </div>
+</footer>
+
+</main>
+
+<!-- Inline data + logic for the quotation builder -->
+<script>
+const CATALOG = [
+  { id:'brand-logo',  cat:'brand',  tag:'Branding',     name:'Logo + wordmark',           desc:'Wordmark, monogram, lockup variants in 3 directions.', price: 25000, type:'one-time' },
+  { id:'brand-id',    cat:'brand',  tag:'Branding',     name:'Brand identity system',     desc:'Logo, type, palette, motion principles, applied mockups.', price: 85000, type:'one-time' },
+  { id:'brand-guide', cat:'brand',  tag:'Branding',     name:'Brand guidelines doc',      desc:'32-page printable + Figma library handoff.', price: 45000, type:'one-time' },
+
+  { id:'web-landing', cat:'web',    tag:'Web',          name:'Landing page',              desc:'1-page conversion-tuned site, 2-week ship.', price: 45000, type:'one-time' },
+  { id:'web-5',       cat:'web',    tag:'Web',          name:'Marketing site · 5—8 pages',desc:'Bespoke design, custom build, fast, SEO-ready.', price: 125000, type:'one-time' },
+  { id:'web-20',      cat:'web',    tag:'Web',          name:'Marketing site · 10—20 pages', desc:'Larger sitemaps, content templates, blog setup.', price: 240000, type:'one-time' },
+  { id:'web-ecom',    cat:'web',    tag:'Web',          name:'E-commerce build',          desc:'Shopify or custom — design, build, payments, ship.', price: 350000, type:'one-time' },
+
+  { id:'soc-mgmt',    cat:'social', tag:'Social',       name:'Social management · 1 mo',  desc:'16 posts + 8 stories. Calendar, captions, design.', price: 35000, type:'monthly' },
+  { id:'soc-reel',    cat:'social', tag:'Social',       name:'Reel batch · 5 reels',      desc:'Scripted, shot/AI-generated, edited 9:16 reels.', price: 45000, type:'one-time' },
+  { id:'soc-static',  cat:'social', tag:'Social',       name:'Static post batch · 10',    desc:'10 carousel-ready 1:1 + 4:5 designs.', price: 18000, type:'one-time' },
+
+  { id:'ads-meta',    cat:'ads',    tag:'Ads',          name:'Meta Ads · setup + 1 mo',   desc:'Pixel, audiences, 5 creatives, daily optimisation.', price: 55000, type:'monthly' },
+  { id:'ads-google',  cat:'ads',    tag:'Ads',          name:'Google Ads · setup + 1 mo', desc:'Search + Pmax, conversion tracking, weekly review.', price: 55000, type:'monthly' },
+  { id:'ads-creative',cat:'ads',    tag:'Ads',          name:'Performance creative · 5',  desc:'5 ad variants tuned for Meta + Google placements.', price: 35000, type:'one-time' },
+
+  { id:'seo-audit',   cat:'seo',    tag:'SEO',          name:'Technical SEO audit',       desc:'Crawl, Core Web Vitals, schema, fix-plan PDF.', price: 40000, type:'one-time' },
+  { id:'seo-retainer',cat:'seo',    tag:'SEO',          name:'SEO retainer · 1 mo',       desc:'On-page, links, content briefs, monthly report.', price: 45000, type:'monthly' },
+
+  { id:'vid-film',    cat:'video',  tag:'Video',        name:'60s brand film',            desc:'Script, shoot/AI, edit, color, sound. 1 master + 3 cutdowns.', price: 250000, type:'one-time' },
+
+  { id:'print-bro',   cat:'print',  tag:'Print',        name:'Brochure · 8-page A4',      desc:'Editorial-grade layout, print-ready PDF + web cut.', price: 40000, type:'one-time' },
+  { id:'print-deck',  cat:'print',  tag:'Print',        name:'Sales deck · 15—20 slides', desc:'Slide system, on-brand, exportable to PPT + PDF.', price: 55000, type:'one-time' },
+];
+
+const fmtINR = n => '₹' + new Intl.NumberFormat('en-IN').format(Math.round(n));
+
+const state = {
+  cart: new Map(),       // id → qty
+  cat: 'all',
+};
+
+const $ = sel => document.querySelector(sel);
+const list = $('#catalogList');
+const itemsBody = $('#itemsBody');
+
+function renderCatalog(){
+  const items = CATALOG.filter(c => state.cat === 'all' || c.cat === state.cat);
+  list.innerHTML = items.map(c => `
+    <article class="cat-card" data-id="${c.id}" data-added="${state.cart.has(c.id)}">
+      <span class="cat-card__tag">${c.tag}</span>
+      <h3 class="cat-card__title">${c.name}</h3>
+      <p class="cat-card__desc">${c.desc}</p>
+      <div class="cat-card__foot">
+        <span class="cat-card__price">${fmtINR(c.price)}${c.type === 'monthly' ? '<em>/mo</em>' : ''}</span>
+        <button type="button" class="add-btn" data-add="${c.id}">${state.cart.has(c.id) ? 'Added' : '+ Add'}</button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function renderItems(){
+  if (!state.cart.size){
+    itemsBody.innerHTML = `<tr><td colspan="5" class="doc__empty">No items yet — <em>add a service from the catalog →</em></td></tr>`;
+    updateTotals();
+    return;
+  }
+  const rows = [];
+  let idx = 0;
+  for (const [id, qty] of state.cart){
+    const c = CATALOG.find(s => s.id === id);
+    if (!c) continue;
+    idx++;
+    rows.push(`
+      <tr data-id="${id}">
+        <td>${String(idx).padStart(2,'0')}</td>
+        <td>
+          <span class="item-name">${c.name}<button class="remove" data-rm="${id}" title="Remove">×</button></span>
+          <span class="item-meta">${c.tag}${c.type === 'monthly' ? ' · billed monthly' : ' · one-time'}</span>
+          <div class="item-desc">${c.desc}</div>
+        </td>
+        <td>
+          <span class="qty">
+            <button type="button" data-dec="${id}" aria-label="Decrease">−</button>
+            <span class="num">${qty}</span>
+            <button type="button" data-inc="${id}" aria-label="Increase">+</button>
+          </span>
+        </td>
+        <td>${fmtINR(c.price)}</td>
+        <td>${fmtINR(c.price * qty)}</td>
+      </tr>
+    `);
+  }
+  itemsBody.innerHTML = rows.join('');
+  updateTotals();
+}
+
+function updateTotals(){
+  let sub = 0;
+  for (const [id, qty] of state.cart){
+    const c = CATALOG.find(s => s.id === id);
+    if (c) sub += c.price * qty;
+  }
+  const gst = sub * 0.18;
+  const grand = sub + gst;
+  $('#subTotal').textContent = fmtINR(sub);
+  $('#gstTotal').textContent = fmtINR(gst);
+  $('#grandTotal').textContent = new Intl.NumberFormat('en-IN').format(Math.round(grand));
+  $('#quoteDoc').dataset.empty = state.cart.size ? 'no' : 'yes';
+}
+
+// Event delegation — catalog
+list.addEventListener('click', e => {
+  const addBtn = e.target.closest('[data-add]');
+  if (!addBtn) return;
+  const id = addBtn.dataset.add;
+  if (state.cart.has(id)) {
+    state.cart.delete(id);
+  } else {
+    state.cart.set(id, 1);
+  }
+  renderCatalog();
+  renderItems();
+  if (state.cart.has(id)) {
+    // Pulse the doc as feedback
+    $('#quoteDoc').animate(
+      [{transform:'scale(1)'},{transform:'scale(1.005)'},{transform:'scale(1)'}],
+      {duration:380, easing:'cubic-bezier(.2,.8,.2,1)'}
+    );
+  }
+});
+
+// Event delegation — items table (qty + remove)
+itemsBody.addEventListener('click', e => {
+  const t = e.target;
+  if (t.matches('[data-rm]')){
+    state.cart.delete(t.dataset.rm);
+  } else if (t.matches('[data-inc]')){
+    const id = t.dataset.inc; state.cart.set(id, (state.cart.get(id)||1)+1);
+  } else if (t.matches('[data-dec]')){
+    const id = t.dataset.dec; const n = (state.cart.get(id)||1)-1;
+    if (n <= 0) state.cart.delete(id); else state.cart.set(id, n);
+  } else return;
+  renderCatalog();
+  renderItems();
+});
+
+// Tab switching
+document.querySelectorAll('.catalog__tab').forEach(t => {
+  t.addEventListener('click', () => {
+    document.querySelectorAll('.catalog__tab').forEach(x => x.classList.toggle('is-active', x === t));
+    state.cat = t.dataset.cat;
+    renderCatalog();
+  });
+});
+
+// Quote number + dates
+(function setMeta(){
+  const now = new Date();
+  const valid = new Date(now); valid.setDate(valid.getDate() + 30);
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const stamp = d => `${String(d.getDate()).padStart(2,'0')} ${months[d.getMonth()]} ${d.getFullYear()}`;
+  // Deterministic-ish number from date + a small random hash
+  const seq = Math.floor((now.getTime() / 1000) % 10000).toString().padStart(4,'0');
+  $('#quoteNum').textContent = `VM-${now.getFullYear()}-${seq}`;
+  $('#quoteDate').textContent = stamp(now);
+  $('#quoteValid').textContent = `Valid till · ${stamp(valid)}`;
+})();
+
+// Convert inputs to static text for clean PDF (and back when not printing)
+const inputsToSnap = ['#clientName','#clientCompany','#clientEmail','#clientPhone','#clientGst'];
+function syncForPrint(){
+  inputsToSnap.forEach(sel => {
+    const el = $(sel);
+    if (!el) return;
+    el.setAttribute('value', el.value || '');
+    if (el.placeholder && !el.value) el.dataset.empty = 'true';
+  });
+  const notes = $('#quoteNotes');
+  if (notes) notes.textContent = notes.value;
+}
+
+// Download → trigger native print (user picks "Save as PDF")
+$('#downloadBtn').addEventListener('click', () => {
+  if (!state.cart.size){
+    $('#downloadBtn').animate(
+      [{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(6px)'},{transform:'translateX(0)'}],
+      {duration:280}
+    );
+    return;
+  }
+  syncForPrint();
+  // Replace badge briefly
+  const badge = document.querySelector('.doc__title .badge');
+  const old = badge.textContent;
+  badge.textContent = 'FINAL';
+  setTimeout(() => { window.print(); badge.textContent = old; }, 80);
+});
+
+// Initial paint
+renderCatalog();
+renderItems();
+</script>
+
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="script.js?v=19"></script>
+</body>
+</html>
