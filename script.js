@@ -34,7 +34,9 @@ function kickOff(){
   safe('heroReveal', heroReveal);
   if (!PREFERS_REDUCED){
     safe('initCursor', initCursor);
-    safe('initLenis', initLenis);
+    // initLenis intentionally disabled — was blocking wheel scroll
+    // on some browsers. Falling back to native scroll, which works
+    // everywhere. Re-enable by adding safe('initLenis', initLenis) below.
     safe('initMagnetic', initMagnetic);
     safe('initTilt', initTilt);
     safe('initMarqueeVelocity', initMarqueeVelocity);
