@@ -57,8 +57,9 @@ em{font-style:italic;color:var(--accent);font-weight:inherit}
   pointer-events:none;z-index:1000;opacity:.06;mix-blend-mode:overlay;
 }
 
-/* LOADER --------------------------------------------------- */
-.loader{
+/* LOADER (DISABLED — kept for legacy markup, hidden by default) ---- */
+.loader{display:none !important}
+.loader--legacy{
   position:fixed;inset:0;z-index:2000;background:var(--bg);
   display:flex;align-items:center;justify-content:center;
   padding:0 var(--pad-x);

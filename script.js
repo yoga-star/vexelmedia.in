@@ -16,32 +16,15 @@ function initMobileMenuEarly(){
   try { initMobileMenu(); } catch (e) { console.error('mobi init failed', e); }
 }
 
-/* ---------- LOADER ---------- */
+/* ---------- LOADER (disabled — kick off instantly) ---------- */
 (function loader(){
   const el = document.getElementById('loader');
-  const count = document.getElementById('loaderCount');
-  const bar = document.getElementById('loaderBar');
-  if (!el) { kickOff(); return; }
-  let done = false;
-  const dur = PREFERS_REDUCED ? 200 : 1400;
-  const start = performance.now();
-  function tick(t){
-    if (done) return;
-    const k = Math.min(1, (t - start) / dur);
-    if (count) count.textContent = Math.round(k * 100);
-    if (bar) bar.style.width = (k * 100) + '%';
-    if (k < 1) requestAnimationFrame(tick);
-    else finish();
+  if (el) {
+    el.classList.add('is-done','is-gone');
+    el.setAttribute('hidden','');
   }
-  function finish(){
-    if (done) return;
-    done = true;
-    el.classList.add('is-done');
-    setTimeout(()=>{ el.classList.add('is-gone'); document.body.classList.add('is-loaded'); kickOff(); }, 1000);
-  }
-  requestAnimationFrame(tick);
-  // Failsafe: never let the loader linger past 4 seconds
-  setTimeout(finish, 4000);
+  document.body.classList.add('is-loaded');
+  kickOff();
 })();
 
 /* ---------- KICK OFF after loader ---------- */
