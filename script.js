@@ -29,21 +29,23 @@ function initMobileMenuEarly(){
 
 /* ---------- KICK OFF after loader ---------- */
 function kickOff(){
-  heroReveal();
+  // Wrap each init in try/catch so one failure doesn't kill the chain
+  const safe = (label, fn) => { try { fn(); } catch (e) { console.warn('[init]', label, e); } };
+  safe('heroReveal', heroReveal);
   if (!PREFERS_REDUCED){
-    initCursor();
-    initLenis();
-    initMagnetic();
-    initTilt();
-    initMarqueeVelocity();
-    initManifesto();
-    initDragRail();
+    safe('initCursor', initCursor);
+    safe('initLenis', initLenis);
+    safe('initMagnetic', initMagnetic);
+    safe('initTilt', initTilt);
+    safe('initMarqueeVelocity', initMarqueeVelocity);
+    safe('initManifesto', initManifesto);
+    safe('initDragRail', initDragRail);
   } else {
     document.querySelectorAll('[data-reveal]').forEach(e => e.classList.add('is-in'));
   }
-  initRevealOnScroll();
-  initCounters();
-  initNavScroll();
+  safe('initRevealOnScroll', initRevealOnScroll);
+  safe('initCounters', initCounters);
+  safe('initNavScroll', initNavScroll);
 }
 
 /* ---------- SMOOTH SCROLL HELPER (bypasses Lenis hijack) ---------- */
@@ -468,19 +470,56 @@ function initDragRail(){
 
 /* ---------- REVEAL ON SCROLL ---------- */
 function initRevealOnScroll(){
+  const els = [...document.querySelectorAll('[data-reveal]')];
   if (PREFERS_REDUCED){
-    document.querySelectorAll('[data-reveal]').forEach(e => e.classList.add('is-in'));
+    els.forEach(e => e.classList.add('is-in'));
     return;
   }
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (en.isIntersecting){
-        en.target.classList.add('is-in');
-        io.unobserve(en.target);
-      }
+  const checkInView = el => {
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    // Treat element as "in view" once its top crosses ~92% of viewport
+    return r.top < vh * 0.92 && r.bottom > 0;
+  };
+  const revealIfIn = el => {
+    if (!el.classList.contains('is-in') && checkInView(el)) el.classList.add('is-in');
+  };
+  // Pass 1 — immediate
+  els.forEach(revealIfIn);
+  // Pass 2 — after layout settles
+  requestAnimationFrame(() => requestAnimationFrame(() => els.forEach(revealIfIn)));
+  // Try IntersectionObserver first (preferred path)
+  let io = null;
+  if (typeof IntersectionObserver !== 'undefined'){
+    io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting){
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(el => { if (!el.classList.contains('is-in')) io.observe(el); });
+  }
+  // Belt-and-braces — also fire on scroll, throttled to rAF. This guarantees
+  // reveals work even in environments where IntersectionObserver doesn't
+  // fire correctly (some iframes / older WebViews).
+  let ticking = false;
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      ticking = false;
+      els.forEach(el => {
+        if (!el.classList.contains('is-in') && checkInView(el)){
+          el.classList.add('is-in');
+          if (io) io.unobserve(el);
+        }
+      });
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('[data-reveal]').forEach(el => io.observe(el));
+  };
+  window.addEventListener('scroll', onScroll, { passive:true });
+  window.addEventListener('resize', onScroll);
 }
 
 /* ---------- ANIMATED COUNTERS ---------- */
