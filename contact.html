@@ -43,7 +43,6 @@
     <a href="websites.html" data-cursor="link">/websites</a>
     <a href="design.html" data-cursor="link">/design</a>
     <a href="video.html" data-cursor="link">/video</a>
-    <a href="quote.html" data-cursor="link">/quote</a>
     <a href="index.html#studio" data-cursor="link">/studio</a>
     <a href="contact.html" class="is-active" data-cursor="link">/contact</a>
   </nav>
@@ -65,9 +64,8 @@
     <a href="websites.html" data-mobi-link><span class="mobi__num">01</span><span>/websites</span></a>
     <a href="design.html" data-mobi-link><span class="mobi__num">02</span><span>/design</span></a>
     <a href="video.html" data-mobi-link><span class="mobi__num">03</span><span>/video</span></a>
-    <a href="quote.html" data-mobi-link><span class="mobi__num">04</span><span>/quote</span></a>
-    <a href="index.html#studio" data-mobi-link><span class="mobi__num">05</span><span>/studio</span></a>
-    <a href="contact.html" class="is-active" data-mobi-link><span class="mobi__num">06</span><span>/contact</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">04</span><span>/studio</span></a>
+    <a href="contact.html" class="is-active" data-mobi-link><span class="mobi__num">05</span><span>/contact</span></a>
   </nav>
   <div class="mobi__cta">
     <a href="https://wa.me/917816816963?text=Hi%20Vexel%2C%20I%27d%20like%20to%20chat%20about%20a%20project" class="btn btn--primary" target="_blank" rel="noopener" data-mobi-link>Chat on WhatsApp <span class="arrow">→</span></a>
@@ -135,18 +133,6 @@
 
           <div class="brief__row brief__row--2">
             <label class="field">
-              <span class="field__label">Which package interests you?</span>
-              <select name="package" id="pkgSelect">
-                <option value="">Pick one — or "Not sure"</option>
-                <option value="Basic — ₹20K/mo">Basic — ₹20,000 / mo</option>
-                <option value="Starter — ₹35K/mo">Starter — ₹35,000 / mo</option>
-                <option value="Growth — ₹60K/mo">Growth — ₹60,000 / mo</option>
-                <option value="Scale — ₹80K/mo">Scale — ₹80,000 / mo</option>
-                <option value="One-time project (brand / web / reels)">One-time project (brand / web / reels)</option>
-                <option value="Custom / not sure">Custom / not sure yet</option>
-              </select>
-            </label>
-            <label class="field">
               <span class="field__label">What do you need most?</span>
               <select name="service">
                 <option value="">Pick one</option>
@@ -158,21 +144,6 @@
                 <option value="UGC / video / reels">UGC / video / reels</option>
                 <option value="Full retainer (everything)">Full retainer (everything)</option>
                 <option value="Not sure yet">Not sure yet</option>
-              </select>
-            </label>
-          </div>
-
-          <div class="brief__row brief__row--2">
-            <label class="field">
-              <span class="field__label">Monthly budget</span>
-              <select name="budget">
-                <option value="">Pick a range</option>
-                <option value="Under ₹20K / mo">Under ₹20K / mo</option>
-                <option value="₹20K – ₹50K / mo">₹20K – ₹50K / mo</option>
-                <option value="₹50K – ₹2L / mo">₹50K – ₹2L / mo</option>
-                <option value="₹2L – ₹5L / mo">₹2L – ₹5L / mo</option>
-                <option value="₹5L+ / mo">₹5L+ / mo</option>
-                <option value="One-time project — share scope below">One-time project — share scope below</option>
               </select>
             </label>
             <label class="field">
@@ -292,7 +263,7 @@
       <span class="foot__h">Navigate</span>
       <a href="index.html#top" data-cursor="link">Home</a>
       <a href="index.html#services" data-cursor="link">Services</a>
-      <a href="index.html#packages" data-cursor="link">Packages</a>
+      <a href="index.html#recent" data-cursor="link">Recent work</a>
       <a href="project.html" data-cursor="link">Single project</a>
       <a href="website.html" data-cursor="link">Website build</a>
       <a href="contact.html" data-cursor="link">Contact</a>
@@ -328,23 +299,8 @@
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="script.js?v=23"></script>
 <script>
-/* ---- Brief form: pre-fill from ?package=, then mailto on submit ---- */
+/* ---- Brief form: mailto on submit ---- */
 (function () {
-  // Pre-fill package dropdown from URL ?package=basic|starter|growth|scale
-  const params = new URLSearchParams(location.search);
-  const pkg = (params.get('package') || '').toLowerCase();
-  const map = {
-    basic:    'Basic — ₹20K/mo',
-    starter:  'Starter — ₹35K/mo',
-    growth:   'Growth — ₹60K/mo',
-    scale:    'Scale — ₹80K/mo',
-    project:  'One-time project (brand / web / reels)',
-  };
-  const sel = document.getElementById('pkgSelect');
-  if (sel && map[pkg]) {
-    [...sel.options].forEach(o => { if (o.value === map[pkg]) { o.selected = true; } });
-  }
-
   // Submit handler — builds a clean mailto: with all fields
   const form = document.getElementById('briefForm');
   const status = document.getElementById('briefStatus');
@@ -372,9 +328,7 @@
       `Company: ${get('company') || '—'}`,
       `Phone: ${get('phone') || '—'}`,
       ``,
-      `Package: ${get('package') || '—'}`,
       `Primary need: ${get('service') || '—'}`,
-      `Budget: ${get('budget') || '—'}`,
       `Timeline: ${get('timeline') || '—'}`,
       `Heard via: ${get('source') || '—'}`,
       ``,

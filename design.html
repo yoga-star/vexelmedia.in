@@ -3,17 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Design — Vexel Media</title>
-<meta name="description" content="Selected design work from Vexel Media — brand systems, print, posters and editorial layouts crafted in Bengaluru.">
+<title>Graphic work — Vexel Media</title>
+<meta name="description" content="Recent graphic work from Vexel Media, Bengaluru: spec ad posters for Indian brands, Instagram feed concepts and an AI fashion catalogue.">
 <meta name="theme-color" content="#0a0907">
-<meta property="og:title" content="Design — Vexel Media">
-<meta property="og:description" content="Brand systems, print, posters and editorial layouts from a Bengaluru studio.">
+<meta property="og:title" content="Graphic work — Vexel Media">
+<meta property="og:description" content="Spec ad posters, full Instagram feed concepts and an AI fashion catalogue from a Bengaluru studio.">
+<meta property="og:image" content="assets/work/graphic/mysore-sandal.webp">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css?v=23">
+<link rel="stylesheet" href="work.css?v=1">
 </head>
 <body>
 
@@ -21,18 +23,6 @@
   <filter id="grainFilter"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1   0 0 0 0.55 0"/></filter>
   <rect width="100%" height="100%" filter="url(#grainFilter)"/>
 </svg>
-
-<!-- LOADER -->
-<div class="loader" id="loader" aria-hidden="true">
-  <div class="loader__inner">
-    <span class="loader__welcome">Selected work</span>
-    <span class="loader__mark">vexel<i>.media</i></span>
-    <span class="loader__tag">design with <em>weight</em></span>
-    <div class="loader__bar"><i id="loaderBar"></i></div>
-    <span class="loader__count" id="loaderCount">0</span>
-  </div>
-  <div class="loader__curtain"></div>
-</div>
 
 <!-- CURSOR -->
 <div class="cursor" id="cursor" aria-hidden="true"><span class="cursor__label" id="cursorLabel"></span></div>
@@ -44,7 +34,6 @@
     <a href="websites.html" data-cursor="link">/websites</a>
     <a href="design.html" class="is-active" data-cursor="link">/design</a>
     <a href="video.html" data-cursor="link">/video</a>
-    <a href="quote.html" data-cursor="link">/quote</a>
     <a href="index.html#studio" data-cursor="link">/studio</a>
     <a href="contact.html" data-cursor="link">/contact</a>
   </nav>
@@ -66,9 +55,8 @@
     <a href="websites.html" data-mobi-link><span class="mobi__num">01</span><span>/websites</span></a>
     <a href="design.html" class="is-active" data-mobi-link><span class="mobi__num">02</span><span>/design</span></a>
     <a href="video.html" data-mobi-link><span class="mobi__num">03</span><span>/video</span></a>
-    <a href="quote.html" data-mobi-link><span class="mobi__num">04</span><span>/quote</span></a>
-    <a href="index.html#studio" data-mobi-link><span class="mobi__num">05</span><span>/studio</span></a>
-    <a href="contact.html" data-mobi-link><span class="mobi__num">06</span><span>/contact</span></a>
+    <a href="index.html#studio" data-mobi-link><span class="mobi__num">04</span><span>/studio</span></a>
+    <a href="contact.html" data-mobi-link><span class="mobi__num">05</span><span>/contact</span></a>
   </nav>
   <div class="mobi__cta">
     <a href="contact.html" class="btn btn--primary" data-mobi-link>Start a project <span class="arrow">→</span></a>
@@ -88,184 +76,123 @@
   <div class="page-hero__glow"></div>
   <div class="page-hero__glow page-hero__glow--alt"></div>
   <div class="page-hero__inner">
-    <div class="page-hero__eyebrow"><span class="dot"></span>Brand · Print · Editorial · Social</div>
-    <h1 class="page-hero__title" data-reveal>Design with <em>weight.</em></h1>
-    <p class="page-hero__sub" data-reveal>Brand systems, print, packaging, editorial layouts and social — built around a single, sharp idea and finished with the care you'd give a wedding invitation.</p>
+    <div class="page-hero__eyebrow"><span class="dot"></span>Spec ads · Feed concepts · AI catalogue</div>
+    <h1 class="page-hero__title" data-reveal>Graphic work, <em>made recently.</em></h1>
+    <p class="page-hero__sub" data-reveal>Spec ad posters for Indian brands, full Instagram feed concepts and an AI fashion catalogue, all from the last few weeks. <strong>Tap any piece to see it full size.</strong></p>
     <div class="page-hero__meta" data-reveal>
-      <span><i>Disciplines</i> Brand · Print · Editorial · Packaging · Social</span>
-      <span><i>Formats</i> A4 · Letter · 1:1 · 9:16 · 16:9</span>
-      <span><i>Output</i> Print-ready · Web · Social cuts</span>
-      <span><i>Tools</i> Figma · InDesign · Code</span>
+      <span><i>Made</i> Nov 2026</span>
+      <span><i>Formats</i> 4:5 posts · 3:4 catalogue</span>
+      <span><i>Craft</i> Art direction · AI imagery · Type</span>
+      <span><i>For</i> Instagram · Ads · Catalogues</span>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 01 — FEATURED SPREAD (one project, magazine-style)
-     SLOTS: 1 big + 2 side images (all swappable)
+     01 — SPEC ADS
      ============================================================ -->
-<section class="show">
-  <div class="container">
-    <div class="case-feat" data-reveal>
-      <div>
-        <span class="case-feat__num">/ Selected 01 — Featured project</span>
-        <h2 class="case-feat__title">Project <em>name</em> goes here.</h2>
-      </div>
-      <div>
-        <p class="case-feat__copy">A short, sharp paragraph describing the brief, the idea, and the result. Two sentences — three at most.</p>
-        <dl class="case-feat__meta">
-          <div><dt>Client</dt><dd>Client Name</dd></div>
-          <div><dt>Year</dt><dd>2026</dd></div>
-          <div><dt>Discipline</dt><dd>Brand + Print</dd></div>
-          <div><dt>Output</dt><dd>32-page system</dd></div>
-        </dl>
-      </div>
-    </div>
-
-    <div class="spread" data-reveal>
-      <!-- SLOT · big hero image · 4/5 portrait works best -->
-      <div class="spread__main">
-        <div class="slot slot--portrait">
-          <span class="slot__tag">Cover</span>
-          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b8?w=1200&q=85&auto=format&fit=crop" alt="Featured design — main">
-          <div class="slot__plate">
-            <span>/ Brand · 2026</span>
-            <h4>Project name — main cover</h4>
-            <p>32-page brand system · A4 portrait</p>
-          </div>
-        </div>
-      </div>
-      <div class="spread__side">
-        <!-- SLOT · side 01 · square works best -->
-        <div class="slot slot--square">
-          <img src="https://images.unsplash.com/photo-1542435503-956c469947f6?w=900&q=85&auto=format&fit=crop" alt="Detail crop">
-          <div class="slot__plate"><span>/ Detail 01</span><h4>System detail</h4></div>
-        </div>
-        <!-- SLOT · side 02 · square works best -->
-        <div class="slot slot--square">
-          <img src="https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?w=900&q=85&auto=format&fit=crop" alt="Detail crop">
-          <div class="slot__plate"><span>/ Detail 02</span><h4>Print finish</h4></div>
-        </div>
-      </div>
-    </div>
-    <p class="slotnote">Drop your files into <em>spread__main</em> (cover) and the two <em>spread__side</em> slots.</p>
-  </div>
-</section>
-
-<!-- ============================================================
-     SECTION 02 — PRINT GRID (clean N-up brochure / poster grid)
-     SLOTS: 6 × A4 portrait covers (swap freely)
-     ============================================================ -->
-<section class="show show--alt">
+<section class="gx-sec" id="spec-ads">
   <div class="container">
     <div class="show__head" data-reveal>
       <div>
-        <span class="show__index">/ Selected 02 — Print + Brochure</span>
-        <h2>Pages that <em>do the work.</em></h2>
+        <span class="show__index">/ 01 — Spec ads</span>
+        <h2>Ads with <em>a story.</em></h2>
       </div>
-      <p class="show__copy">A clean grid of recent print covers — A4 brochures, fee-structure books, packaging mocks. <strong>Drop any image into a slot.</strong> Each tile is the same A4 aspect, so swaps stay aligned.</p>
+      <p class="show__copy">Self-initiated posters for brands we love. Each starts from a real brand story and turns it into a single, striking image. <strong>Spec concepts, not paid work.</strong></p>
     </div>
 
-    <div class="grid-3" data-reveal>
-      <!-- SLOT · A4 portrait · 6 cards · keep adding rows as needed -->
-      <a class="slot slot--a4" href="#"><img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=900&q=85&auto=format&fit=crop" alt=""><span class="slot__tag">01</span><div class="slot__plate"><span>/ Brochure</span><h4>Cover 01</h4></div></a>
-      <a class="slot slot--a4" href="#"><img src="https://images.unsplash.com/photo-1561948955-570b270e7c36?w=900&q=85&auto=format&fit=crop" alt=""><span class="slot__tag">02</span><div class="slot__plate"><span>/ Brochure</span><h4>Cover 02</h4></div></a>
-      <a class="slot slot--a4" href="#"><img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=900&q=85&auto=format&fit=crop" alt=""><span class="slot__tag">03</span><div class="slot__plate"><span>/ Brochure</span><h4>Cover 03</h4></div></a>
-      <a class="slot slot--a4" href="#"><img src="https://images.unsplash.com/photo-1602576666092-bf6447a729fc?w=900&q=85&auto=format&fit=crop" alt=""><span class="slot__tag">04</span><div class="slot__plate"><span>/ Brochure</span><h4>Cover 04</h4></div></a>
-      <a class="slot slot--a4" href="#"><img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=900&q=85&auto=format&fit=crop" alt=""><span class="slot__tag">05</span><div class="slot__plate"><span>/ Brochure</span><h4>Cover 05</h4></div></a>
-      <a class="slot slot--a4" href="#"><img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=900&q=85&auto=format&fit=crop" alt=""><span class="slot__tag">06</span><div class="slot__plate"><span>/ Brochure</span><h4>Cover 06</h4></div></a>
+    <div class="gx-spec">
+      <div class="gx-spec__item" data-reveal>
+        <a class="wk-frame wk-frame--post" href="assets/work/graphic/mysore-sandal.webp" data-lb="image" data-cap="Mysore Sandal Soap · spec ad" data-cursor="link"><img src="assets/work/graphic/mysore-sandal.webp" alt="Spec ad: a Mysore Sandal Soap bar set into the trunk of a sandalwood tree" loading="lazy"><span class="wk-zoom">View</span></a>
+        <div class="wk-cap"><span class="wk-cap__kicker"><b>Spec ad</b> · 4:5</span><h3>Mysore Sandal Soap</h3><p>Sandalwood, from the tree to the bar.</p></div>
+      </div>
+      <div class="gx-spec__item" data-reveal>
+        <a class="wk-frame wk-frame--post" href="assets/work/graphic/nandini.webp" data-lb="image" data-cap="Nandini · spec ad" data-cursor="link"><img src="assets/work/graphic/nandini.webp" alt="Spec ad: a Nandini milk carton in a green Karnataka field with a Kannada headline" loading="lazy"><span class="wk-zoom">View</span></a>
+        <div class="wk-cap"><span class="wk-cap__kicker"><b>Spec ad</b> · 4:5</span><h3>Nandini</h3><p>Karnataka's purest milk, in Kannada and English.</p></div>
+      </div>
+      <div class="gx-spec__item" data-reveal>
+        <a class="wk-frame wk-frame--post" href="assets/work/graphic/mtr.webp" data-lb="image" data-cap="MTR · spec ad" data-cursor="link"><img src="assets/work/graphic/mtr.webp" alt="Spec ad: a cook at an old tiffin centre with an MTR rava idli pouch in the foreground" loading="lazy"><span class="wk-zoom">View</span></a>
+        <div class="wk-cap"><span class="wk-cap__kicker"><b>Spec ad</b> · 4:5</span><h3>MTR</h3><p>Rava idli, from his kitchen to yours.</p></div>
+      </div>
+      <div class="gx-spec__item" data-reveal>
+        <a class="wk-frame wk-frame--post" href="assets/work/graphic/blinkit.webp" data-lb="image" data-cap="Blinkit · spec ad" data-cursor="link"><img src="assets/work/graphic/blinkit.webp" alt="Spec ad: a Blinkit grocery bag arriving by zipline on a yellow background" loading="lazy"><span class="wk-zoom">View</span></a>
+        <div class="wk-cap"><span class="wk-cap__kicker"><b>Spec ad</b> · 4:5</span><h3>Blinkit</h3><p>Arrived in just 9 minutes, by zipline.</p></div>
+      </div>
     </div>
-    <p class="slotnote">Swap each <em>&lt;img src&gt;</em>. Repeat the <em>&lt;a class="slot slot--a4"&gt;</em> block to add more.</p>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 03 — BENTO MOSAIC (mixed sizes, editorial energy)
-     SLOTS: 6 varied (lg, md, wide, half, sm)
+     02 — FEED CONCEPTS
      ============================================================ -->
-<section class="show">
+<section class="gx-sec gx-sec--alt" id="feeds">
   <div class="container">
     <div class="show__head" data-reveal>
       <div>
-        <span class="show__index">/ Selected 03 — Brand + Editorial</span>
-        <h2>Identity systems, <em>told visually.</em></h2>
+        <span class="show__index">/ 02 — Feed concepts</span>
+        <h2>A whole feed, <em>planned as a set.</em></h2>
       </div>
-      <p class="show__copy">A bento mosaic for brand systems, packaging, and editorial spreads. Each tile fits its own crop — large for hero shots, smaller for detail. <strong>Drop your images in.</strong></p>
+      <p class="show__copy">Nine posts designed together, so the grid reads as a set and every post still works on its own.</p>
     </div>
 
-    <div class="bento" data-reveal>
-      <!-- SLOT · large feature · 16/10 landscape or portrait -->
-      <div class="slot bento__lg">
-        <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=1400&q=85&auto=format&fit=crop" alt="">
-        <div class="slot__plate"><span>/ Brand 01</span><h4>Identity system</h4><p>Full lock-up, type and palette</p></div>
+    <article class="gx-feed" data-reveal>
+      <div class="gx-feed__grid">
+        <a class="wk-frame wk-frame--post" href="assets/work/graphic/twc-grid.webp" data-lb="image" data-cap="Third Wave Coffee · spec feed, 9 posts" data-cursor="link"><img src="assets/work/graphic/twc-grid.webp" alt="Third Wave Coffee feed concept: nine posts in a three by three grid" loading="lazy"><span class="wk-zoom">View</span></a>
       </div>
-      <!-- SLOT · tall feature -->
-      <div class="slot bento__md">
-        <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=85&auto=format&fit=crop" alt="">
-        <div class="slot__plate"><span>/ Packaging</span><h4>Packaging mock</h4></div>
+      <div class="gx-feed__info">
+        <span class="gx-feed__kicker">Spec feed · 9 posts</span>
+        <h3>Third Wave <em>Coffee.</em></h3>
+        <p>Real menu drinks shot like editorial still life, a handwritten title on each post, and the brand's slate navy holding the grid together.</p>
+        <div class="gx-feed__trio">
+          <figure><a class="wk-frame wk-frame--post" href="assets/work/graphic/twc-1.webp" data-lb="image" data-cap="Third Wave Coffee · House Favourite" data-cursor="link"><img src="assets/work/graphic/twc-1.webp" alt="Iced coffee held in a hand, titled House Favourite" loading="lazy"></a><figcaption>House Favourite</figcaption></figure>
+          <figure><a class="wk-frame wk-frame--post" href="assets/work/graphic/twc-2.webp" data-lb="image" data-cap="Third Wave Coffee · Brew It Your Way" data-cursor="link"><img src="assets/work/graphic/twc-2.webp" alt="Pour-over coffee being brewed, titled Brew It Your Way" loading="lazy"></a><figcaption>Brew It Your Way</figcaption></figure>
+          <figure><a class="wk-frame wk-frame--post" href="assets/work/graphic/twc-3.webp" data-lb="image" data-cap="Third Wave Coffee · Low &amp; Slow" data-cursor="link"><img src="assets/work/graphic/twc-3.webp" alt="Iced cold brew in a glass, titled Low and Slow" loading="lazy"></a><figcaption>Low &amp; Slow</figcaption></figure>
+        </div>
       </div>
-      <!-- SLOT · half-width -->
-      <div class="slot bento__half">
-        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b8?w=1200&q=85&auto=format&fit=crop" alt="">
-        <div class="slot__plate"><span>/ Editorial</span><h4>Spread layout</h4></div>
+    </article>
+
+    <article class="gx-feed gx-feed--flip" data-reveal>
+      <div class="gx-feed__grid">
+        <a class="wk-frame wk-frame--post" href="assets/work/graphic/sobha-grid.webp" data-lb="image" data-cap="SOBHA OneWorld · spec feed, 9 posts" data-cursor="link"><img src="assets/work/graphic/sobha-grid.webp" alt="SOBHA OneWorld feed concept: nine posts in a three by three grid" loading="lazy"><span class="wk-zoom">View</span></a>
       </div>
-      <!-- SLOT · half-width -->
-      <div class="slot bento__half">
-        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?w=1200&q=85&auto=format&fit=crop" alt="">
-        <div class="slot__plate"><span>/ Stationery</span><h4>Letterhead + card</h4></div>
+      <div class="gx-feed__info">
+        <span class="gx-feed__kicker">Spec feed · 9 posts</span>
+        <h3>SOBHA <em>OneWorld.</em></h3>
+        <p>Blue-hour and daylight scenes laid out as a checkerboard, with facts taken from the project's own page. The images are AI renders, not photos of the actual project.</p>
+        <div class="gx-feed__trio">
+          <figure><a class="wk-frame wk-frame--post" href="assets/work/graphic/sobha-1.webp" data-lb="image" data-cap="SOBHA OneWorld · the skyline" data-cursor="link"><img src="assets/work/graphic/sobha-1.webp" alt="AI render of residential towers at blue hour" loading="lazy"></a><figcaption>The skyline</figcaption></figure>
+          <figure><a class="wk-frame wk-frame--post" href="assets/work/graphic/sobha-2.webp" data-lb="image" data-cap="SOBHA OneWorld · After Hours" data-cursor="link"><img src="assets/work/graphic/sobha-2.webp" alt="AI render of a lit pool deck at night" loading="lazy"></a><figcaption>After Hours</figcaption></figure>
+          <figure><a class="wk-frame wk-frame--post" href="assets/work/graphic/sobha-3.webp" data-lb="image" data-cap="SOBHA OneWorld · The View From Up Here" data-cursor="link"><img src="assets/work/graphic/sobha-3.webp" alt="AI render of a couple on a balcony at dusk" loading="lazy"></a><figcaption>The View From Up Here</figcaption></figure>
+        </div>
       </div>
-      <!-- SLOT · wide banner -->
-      <div class="slot bento__wide">
-        <img src="https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=1400&q=85&auto=format&fit=crop" alt="">
-        <div class="slot__plate"><span>/ Campaign</span><h4>Out-of-home</h4><p>City billboard, A0</p></div>
-      </div>
-      <!-- SLOT · small -->
-      <div class="slot bento__sm">
-        <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?w=900&q=85&auto=format&fit=crop" alt="">
-        <div class="slot__plate"><span>/ Detail</span><h4>Type detail</h4></div>
-      </div>
-    </div>
-    <p class="slotnote">Each tile uses <em>bento__lg</em> / <em>__md</em> / <em>__wide</em> / <em>__half</em> / <em>__sm</em> — pick the one that fits your crop.</p>
+    </article>
   </div>
 </section>
 
 <!-- ============================================================
-     SECTION 04 — MEDABROAD · SOCIAL MEDIA (4-up portrait grid)
-     Live client work — festivals + lead-gen creative
+     03 — AI CATALOGUE
      ============================================================ -->
-<section class="show show--alt">
+<section class="gx-sec" id="catalogue">
+  <div class="container gx-cat">
+    <div class="gx-cat__info" data-reveal>
+      <span class="show__index">/ 03 — AI catalogue</span>
+      <h2>Sindhu Reddy <em>lehengas.</em></h2>
+      <p>Catalogue shots for a lehenga collection, made with AI, plus a clearance-sale cover for Instagram.</p>
+      <dl class="mv-facts">
+        <div><dt>Client</dt><dd>Sindhu Reddy</dd></div>
+        <div><dt>Made</dt><dd>Nov 2026</dd></div>
+        <div><dt>Format</dt><dd>3:4 catalogue</dd></div>
+        <div><dt>Use</dt><dd>Instagram + store</dd></div>
+      </dl>
+    </div>
+    <div class="gx-cat__row">
+      <figure data-reveal><a class="wk-frame wk-frame--port" href="assets/work/graphic/lehenga-2.webp" data-lb="image" data-cap="Sindhu Reddy · AI catalogue" data-cursor="link"><img src="assets/work/graphic/lehenga-2.webp" alt="AI catalogue shot: model in a pink blouse and teal lehenga" loading="lazy"><span class="wk-zoom">View</span></a></figure>
+      <figure data-reveal><a class="wk-frame wk-frame--port" href="assets/work/graphic/lehenga-3.webp" data-lb="image" data-cap="Sindhu Reddy · AI catalogue" data-cursor="link"><img src="assets/work/graphic/lehenga-3.webp" alt="AI catalogue shot: model in a mint blouse and pink lehenga" loading="lazy"><span class="wk-zoom">View</span></a></figure>
+      <figure data-reveal><a class="wk-frame wk-frame--port" href="assets/work/graphic/lehenga-cover.webp" data-lb="image" data-cap="Sindhu Reddy · clearance-sale cover" data-cursor="link"><img src="assets/work/graphic/lehenga-cover.webp" alt="Clearance-sale cover with two lehengas for Sindhu Reddy" loading="lazy"><span class="wk-zoom">View</span></a></figure>
+    </div>
+  </div>
   <div class="container">
-    <div class="show__head" data-reveal>
-      <div>
-        <span class="show__index">/ Selected 04 — MedAbroad · Social</span>
-        <h2>Posts that <em>earn the click.</em></h2>
-      </div>
-      <p class="show__copy">A slice of recent MedAbroad social work — festival moments, lead-gen ads, and brand pieces. <strong>Each post ships inside 24 hours</strong> and tracks back to a WhatsApp enquiry. Below, four from the last quarter.</p>
-    </div>
-
-    <div class="grid-4" data-reveal>
-      <a class="slot slot--portrait" href="assets/design/medabroad-social/01-independence-day.jpg" target="_blank" rel="noopener">
-        <img src="assets/design/medabroad-social/01-independence-day.jpg" alt="MedAbroad — 79th Independence Day creative">
-        <span class="slot__tag">Festival</span>
-        <div class="slot__plate"><span>/ Aug 15 · 1:1</span><h4>79th Independence Day</h4><p>Festival post · Red Fort</p></div>
-      </a>
-      <a class="slot slot--portrait" href="assets/design/medabroad-social/02-maharashtra-day.jpg" target="_blank" rel="noopener">
-        <img src="assets/design/medabroad-social/02-maharashtra-day.jpg" alt="MedAbroad — Maharashtra Day creative">
-        <span class="slot__tag">Festival</span>
-        <div class="slot__plate"><span>/ May 01 · 4:5</span><h4>Happy Maharashtra Day</h4><p>State-day · heritage motifs</p></div>
-      </a>
-      <a class="slot slot--portrait" href="assets/design/medabroad-social/03-merry-christmas.jpg" target="_blank" rel="noopener">
-        <img src="assets/design/medabroad-social/03-merry-christmas.jpg" alt="MedAbroad — Merry Christmas creative">
-        <span class="slot__tag">Festival</span>
-        <div class="slot__plate"><span>/ Dec 25 · 4:5</span><h4>Merry Christmas</h4><p>Brand wish · AI character</p></div>
-      </a>
-      <a class="slot slot--portrait" href="assets/design/medabroad-social/04-mbbs-seat.jpg" target="_blank" rel="noopener">
-        <img src="assets/design/medabroad-social/04-mbbs-seat.jpg" alt="MedAbroad — MBBS seat lead-gen ad">
-        <span class="slot__tag">Lead-gen</span>
-        <div class="slot__plate"><span>/ Meta ad · 4:5</span><h4>"She booked her MBBS seat"</h4><p>Performance creative · WhatsApp CTA</p></div>
-      </a>
-    </div>
-    <p class="slotnote">Drop more MedAbroad creatives into <em>assets/design/medabroad-social/</em> and add a card. Same <em>slot--portrait</em> aspect — they line up automatically.</p>
+    <p class="wk-note" data-reveal>Spec concepts are self-initiated pieces made to show our craft. They are not affiliated with or endorsed by Mysore Sandal Soap, Nandini, MTR, Blinkit, Third Wave Coffee or SOBHA.</p>
   </div>
 </section>
 
@@ -273,12 +200,12 @@
 <section class="tail">
   <div class="tail__glow"></div>
   <div class="container tail__inner">
-    <span class="tail__eyebrow" data-reveal>/ Brand · Print · Editorial · Packaging · Social</span>
-    <h2 class="tail__title" data-reveal>Want work that <em>does this</em> for your brand?</h2>
-    <p class="tail__sub" data-reveal>Full brand systems, single-brief brochures, sales decks, social-ready templates — we scope tightly and turn things around in days, not months.</p>
+    <span class="tail__eyebrow" data-reveal>/ Spec ads · Feeds · Catalogues</span>
+    <h2 class="tail__title" data-reveal>Want work like this <em>for your brand?</em></h2>
+    <p class="tail__sub" data-reveal>Send us the brand and the idea. We design it, size it for every platform and hand over the files.</p>
     <div class="tail__ctas" data-reveal>
       <a href="contact.html" class="btn btn--primary magnetic" data-cursor="link">Start a project <span class="arrow">→</span></a>
-      <a href="video.html" class="btn btn--ghost magnetic" data-cursor="link">See video work</a>
+      <a href="video.html" class="btn btn--ghost magnetic" data-cursor="link">See motion &amp; AI films</a>
     </div>
   </div>
 </section>
@@ -301,7 +228,6 @@
       <a href="websites.html" data-cursor="link">Websites</a>
       <a href="design.html" data-cursor="link">Design</a>
       <a href="video.html" data-cursor="link">Video</a>
-      <a href="quote.html" data-cursor="link">Quotation</a>
       <a href="index.html#studio" data-cursor="link">Studio</a>
       <a href="contact.html" data-cursor="link">Contact</a>
     </div>
@@ -331,5 +257,6 @@
 
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="script.js?v=23"></script>
+<script src="work.js?v=1"></script>
 </body>
 </html>
